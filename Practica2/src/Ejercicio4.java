@@ -6,7 +6,7 @@ public class Ejercicio4 {
             arrayInt[i] = i + 1;
             suma = arrayInt[i]+suma;
         }
-        int media = suma/arrayInt.length;
+        double media = (double) suma /arrayInt.length;
         System.out.println("La suma del 1 al 100 incrementalmente es: "+suma);
         System.out.println("Y la media será: "+media);
     }
