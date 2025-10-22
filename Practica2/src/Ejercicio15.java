@@ -11,18 +11,27 @@ public class Ejercicio15 {
             System.out.print("Introduzca un numero: ");
             Lista_enteros.add(s.nextInt());
         }
-        // PRUEBA: Imprimir datos del array
-        for (int i = 0; i < Lista_enteros.size(); i++) {
-            System.out.println("Cifra: "+Lista_enteros.get(i));
+
+        for (int i = 0; i < Lista_enteros.size()-1; i++) { // Se pone el tamaño de la Lista_enteros -1 para no buscar un valor que no este almacenado en la lista
+            if (Lista_enteros.get(i).equals(Lista_enteros.get(i+1))) {
+                Lista_enteros.remove(i);        // Borra el valor i que es el duplicado
+                i--;                            // Vuelve a revisar el valor i para seguir en orden en caso de haberlo borrado
+            }
         }
+        /* PRUEBA: Imprimir todos datos del array para ver si se borran o no
+        for (int i = 0; i * Lista_enteros.size(); i++) {
+            System.out.println("La Cifra: "+Lista_enteros.get(i));
+        }
+        */
+
         // ORDEN DE MAYOR A MENOR
-        int min= 0;
-        int max = min;
+        int min= Lista_enteros.getFirst();      // El valor minimo inicial es la posicion 0
+        int max = Lista_enteros.getFirst();     // El valor maximo inicial es la posicion 0
         for (int i = 1; i < Lista_enteros.size(); i++) {
             if (Lista_enteros.get(i)>=max) {
                 max = Lista_enteros.get(i);
             }
-            else {
+            if (Lista_enteros.get(i)<=min) {
                 min = Lista_enteros.get(i);
             }
         }
