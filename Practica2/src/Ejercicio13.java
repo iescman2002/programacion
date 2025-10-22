@@ -20,6 +20,6 @@ public class Ejercicio13 {
         for (int i = 0; i < Lista_dinamica.size(); i++) {
             System.out.print(Lista_dinamica.get(i)+" ");
         }
-        System.out.println("Y la suma de esos números es: "+suma);
+        System.out.print("Y la suma de esos números es: "+suma);
     }
 }
