@@ -9,7 +9,6 @@ public class Ejercicio14 {
             System.out.print("Introduzca un nombre: ");
             String nombre = (s.next());
             if (nombre.equals("fin")) {
-                Lista_nombres.removeLast();
                 break;
             }
             Lista_nombres.add(nombre);
@@ -22,12 +21,12 @@ public class Ejercicio14 {
         }
          */
         for (int i = 0; i < Lista_nombres.size(); i++) {
-            if (nombre_introducido.equals(Lista_nombres.get(i))) {
-                Esta_en_lista = true;
-                System.out.print("El nombre: " + nombre_introducido + " se encuentra en la lista y está en la posición " + i);
+            if (nombre_introducido.equals(Lista_nombres.get(i))) { // Si el nombre que buscamos es igual que la posicion i del array Lista_nombres, Esta_en_lista lo hace true y no se cumple el siguiente if, y se imprime
+            Esta_en_lista = true;
+            System.out.print("El nombre: " + nombre_introducido + " se encuentra en la lista y está en la posición " + i);
             }
         }
-        if (Esta_en_lista == false) {
+        if (!Esta_en_lista) {   // Si Esta_en_lista es falso entonces imprime:
             System.out.print("El nombre introducido no se encuentra en la lista.");
         }
     }
