@@ -22,7 +22,9 @@ public class Ejercicio7 {
                 CantNegativos++;
             }
         }
-        System.out.println("Media de los Numeros positivos: "+(positivo/CantPositivos));
-        System.out.println("Media de los numeros negativos: "+(negativo/CantNegativos));
+        double media_positivos = (double) positivo/CantPositivos ;
+        double media_negativos = (double) negativo/CantNegativos;
+        System.out.println("Media de los Numeros positivos: "+media_positivos);
+        System.out.print("Media de los numeros negativos: "+media_negativos);
     }
 }

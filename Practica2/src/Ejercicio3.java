@@ -8,6 +8,7 @@ public class Ejercicio3 {
             System.out.print("Introduzca el numero: ");
             arrayInt[i] = s.nextInt();
         }
+        /*
         if ((arrayInt[0]<arrayInt[1])&&(arrayInt[0]<arrayInt[2])&&(arrayInt[0]<arrayInt[3])&&(arrayInt[0]<arrayInt[4])) {
             System.out.print("El numero mas pequeño es: "+arrayInt[0]);
         }
@@ -22,6 +23,13 @@ public class Ejercicio3 {
         }
         else if ((arrayInt[4]<arrayInt[0])&&(arrayInt[4]<arrayInt[1])&&(arrayInt[4]<arrayInt[2])&&(arrayInt[4]<arrayInt[3])) {
             System.out.print("El numero mas pequeño es: "+arrayInt[4]);
+        }*/
+        int min = arrayInt[0];
+        for (int i = 0; i < arrayInt.length; i++) {
+            if (arrayInt[i] <= min) {
+                min = arrayInt[i];
+            }
         }
+        System.out.print("El valor más pequeño será: "+min);
     }
 }

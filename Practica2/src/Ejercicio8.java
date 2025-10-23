@@ -14,17 +14,17 @@ public class Ejercicio8 {
             n[i] = s.nextInt();
             altura +=n[i];
         }
-        int alturamedia = altura/n.length;
+        altura = altura/n.length;       // Cambia el valor de la altura que ahora mismo era la suma de la altura de todas las personas por la altura media de ellas
         for (int i=0;i< n.length;i++) {
-            if (n[i]>alturamedia) {
+            if (n[i]>altura) {
                 persona_mayor_media++;
             }
-            else if (n[i]<alturamedia) {
+            else if (n[i]<altura) {
                 persona_menor_media++;
             }
         }
-        System.out.println("La altura media es: "+alturamedia+"cm");
+        System.out.println("La altura media es: "+altura+"cm");
         System.out.println("Las personas que miden mas que la media son: "+persona_mayor_media);
-        System.out.println("Las personas que miden menos que la media son: "+persona_menor_media);
+        System.out.print("Las personas que miden menos que la media son: "+persona_menor_media);
     }
 }
