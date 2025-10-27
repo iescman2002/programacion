@@ -1,4 +1,4 @@
-# Práctica 02 - Java III  
+# Práctica 03 - Java III  
 ## Array bidimensionales
 
 ---
