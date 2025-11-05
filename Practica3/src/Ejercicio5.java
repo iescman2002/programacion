@@ -23,23 +23,32 @@ public class Ejercicio5 {
             }
         }
         // NUMERO MAXIMO Y MINIMO: CALCULARLOS Y OBTENER POSICION --->>>> INTUYO DE USAR ARRAY AUXILIAR BIDIRECCIONAL PARA ALMACENAR POSICIONES DEL VALOR MAXIMO Y ARRAY NORMAL PARA EL VALOR
-        // ARRAYS AUXILIAR PARA LA POSICION
+        // CALCULAR MAXIMOS Y MINIMOS
         int max = array_bi[0][0];
         int min = array_bi[0][0];
-        int[][] posicion = array_bi;
+        int columna = 0;
+        int fila = 0;
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
-                if (array_bi[i][j]>=max) {
+                if (array_bi[i][j] >= max) {
                     max = array_bi[i][j];
-                    posicion[i][j] = array_bi[i][j];
-                }
-                System.out.println("El valor maximo es: "+max+" y esta en la posicion"posicion[i][j]);
-                if (array_bi[i][j]<min) {
-                    min = array_bi[i][j];
-                    posicion[i][j] = array_bi[i][j];
+                    columna = j;
+                    fila = i;
                 }
             } // !!!!!!!!!!!!!!!!!!!! HAY QUE SEPARAR ESTO PARA HACERLO EN DOS BUCLES
         }
+        System.out.println("El valor maximo es: " + max + " y esta en la fila " + fila + " y columna " + columna);
+        for (int i = 0; i < array_bi.length; i++) {
+            for (int j = 0; j < array_bi[i].length; j++) {
+                if (array_bi[i][j]<min) {
+                    min = array_bi[i][j];
+                    columna = j;
+                    fila = i;
+                }
+            }
+        }
+        System.out.println("El valor minimo es: "+min+" y esta en la fila "+fila+" y columna "+columna);
+
         /*for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 int max= array_bi[i][j];
@@ -53,7 +62,7 @@ public class Ejercicio5 {
                 suma_total += array_bi[i][j];
             }
         }
-        System.out.println("La suma total será: "+suma_total);
+            System.out.println("La suma total será: "+suma_total);
         // OBTENER SUMA DE FILAS
         int[] suma_filas = new int[array_bi.length];
         for (int i = 0; i < array_bi.length; i++) {
