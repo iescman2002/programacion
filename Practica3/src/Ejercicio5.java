@@ -1,11 +1,13 @@
-import java.util.Scanner;
-
 public class Ejercicio5 {
     public static void main(String[] args) {
-        int[][] array_bi = new int[2][3]; // Crar array bidireccional
-        Scanner s = new Scanner(System.in);
-        // RELLENAR DATOS ARRAY
+        int[][] array_bi = new int[6][10]; // Crar array bidireccional
+        // RELLENAR DATOS ARRAY CON ALEATORIO
         for (int i = 0; i < array_bi.length; i++) {
+            for (int j = 0; j < array_bi[i].length; j++) {
+                array_bi[i][j] = (int)(Math.random()*1001);
+            }
+        }
+        /* RELLENAR DATOS A MANO.... for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 while (true) {
                     System.out.print("Introduzca un numero entre 0 y 1000: ");
@@ -16,13 +18,8 @@ public class Ejercicio5 {
                     }
                 }
             }
-        }
-        for (int i = 0; i < array_bi.length; i++) {
-            for (int j = 0; j < array_bi[i].length; j++) {
-                System.out.println("El valor introducido es: "+array_bi[i][j]);
-            }
-        }
-        // NUMERO MAXIMO Y MINIMO: CALCULARLOS Y OBTENER POSICION --->>>> INTUYO DE USAR ARRAY AUXILIAR BIDIRECCIONAL PARA ALMACENAR POSICIONES DEL VALOR MAXIMO Y ARRAY NORMAL PARA EL VALOR
+        }*/
+        // NUMERO MAXIMO Y MINIMO: CALCULARLOS Y OBTENER POSICION
         // CALCULAR MAXIMOS Y MINIMOS
         int max = array_bi[0][0];
         int min = array_bi[0][0];
@@ -35,9 +32,11 @@ public class Ejercicio5 {
                     columna = j;
                     fila = i;
                 }
-            } // !!!!!!!!!!!!!!!!!!!! HAY QUE SEPARAR ESTO PARA HACERLO EN DOS BUCLES
+            }
         }
         System.out.println("El valor maximo es: " + max + " y esta en la fila " + fila + " y columna " + columna);
+
+
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 if (array_bi[i][j]<min) {
@@ -48,13 +47,6 @@ public class Ejercicio5 {
             }
         }
         System.out.println("El valor minimo es: "+min+" y esta en la fila "+fila+" y columna "+columna);
-
-        /*for (int i = 0; i < array_bi.length; i++) {
-            for (int j = 0; j < array_bi[i].length; j++) {
-                int max= array_bi[i][j];
-                int min= array_bi[i][j];
-            }
-        }*/
         // OBTENER SUMA DE TODAS LAS FILAS Y COLUMNAS:
         int suma_total = 0;
         for (int i = 0; i < array_bi.length; i++) {
@@ -85,6 +77,5 @@ public class Ejercicio5 {
         }
     }
 }
-
 // SI VALOR INTRODUCIDO >= 0 && <= 1000 ENTONCES
 // ARRRAY_BI[i][j] = VALOR INTRODUCIDO
