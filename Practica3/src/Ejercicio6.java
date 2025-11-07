@@ -29,7 +29,7 @@ public class Ejercicio6 {
         // NUMERO MAXIMO Y MINIMO: CALCULARLOS Y OBTENER POSICION
         // CALCULAR MAXIMOS Y MINIMOS
         int max = array_bi[0][0];
-        int min = 20;
+        int min = 40;
         int columna = 0;
         int fila = 0;
         for (int i = 0; i < array_bi.length; i++) {
