@@ -52,19 +52,39 @@ public class Ejercicio7 {
             }
         }
         double media = (double) suma / contar;
-        System.out.println("La media aritmetica de los valores es: "+media);
+        // CALCULAR VALORES PROPORCIONALES DE UN RANGO PARA PONER *
+        String[][] asterisco = new String[6][10];
+        double[][] valor_proporcional = new double[6][10]; // Mismo tamaño q array_bi
+        for (int i = 0; i < array_bi.length; i++) {
+            for (int j = 0; j < array_bi[i].length; j++) {
+            // Para calcularlo se resta el valor del array_bi[i][j] con el valor_minimo y obtenemos resultado1. Despues el valor maximo se resta con el valor_minimo para obtener el resultado2. Despues, dividimos el resultado1 entre el resultado2 y el resultado se multiplica entre el valor_minimo
+                if (array_bi[i][j]!=0) {
+                    valor_proporcional[i][j]= (double) (array_bi[i][j] - valor_minimo) / (valor_maximo - valor_minimo);
+                    //System.out.println("Los valores proporcionales son: " + valor_proporcional[i][j]);
+                }
+            }
+        }
+        // TRANSFORMAR valor_proporcional a *:
+        for (int i = 0; i < valor_proporcional.length; i++) {
+            for (int j = 0; j < valor_proporcional[i].length; j++) {
+                asterisco[i][j] = ""; // para rellenar los asteriscos y que no sean null
+                for (int k = 0; k < valor_proporcional[i][j] * 10; k++) { // *10 porque los valores proporcionales son entre 0.0 y 1
+                    asterisco[i][j] += "*";
+                }
+            }
+        }
+
         // IMPRIMIR VALORES !!!!!! EL CODIGO DE FORMATO A TABLA ES RECICLADO DEL EJERCICIO 3 Y DEL 1 PERO MODIFICADO Y FALTA REPRESENTARLOS CON *
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
-                System.out.printf("%5s | %9s", "", array_bi[i][j]);
+                System.out.printf(" | %12s", asterisco[i][j]); // HAY QUE SUSTITUIR array_bi[i][j] por otra variable que sea string * y se repita tantas veces como el valor sea
             }
             System.out.print("     | "+" fila "+i+"\n");
         }
-        System.out.printf("%5s","");
         for (int i = 0; i < 10; i++) {
-                System.out.printf(" | %4s Columna "+i,"");
+            System.out.printf(" | %12s", "Columna " + i);
         }
-        System.out.print("| \n");
+        System.out.print("     | "+media+" (media aritmetica)"+"\n");
         /* TODO EL CONTENIDO DEL EJERCICIO 6 (QUE NO SE SI HAY QUE LLEGAR A MOSTRARLO O NO)
         array_bi[i][j] donde se compara con unas posiciones inventadas [k][l]
            k hace como si fuera la i, mientras que l hace de j en el array_bi
@@ -133,10 +153,9 @@ public class Ejercicio7 {
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 if (EsPrimo(array_bi[i][j])) {  // Si el valor de la posicion i,j es primo entonces:
-                    System.out.println("El valor primo : "+array_bi[i][j]+" está en la fila "+i+" y a su vez está en la columna "+j);
+                    System.out.println("El valor primo: "+array_bi[i][j]+" está en la fila "+i+" y a su vez está en la columna "+j);
                 }
             }
         }
-        // IMPRIME LOS NUMEROS PRIMOS Y SUS NUMEROS POSICIONES
     }
 }
