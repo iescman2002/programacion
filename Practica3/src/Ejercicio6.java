@@ -10,41 +10,22 @@ public class Ejercicio6 {
                 }
             }
         }
-        // COMPARAR VALORES REPETIDOS POR FILA DEL ARRAY_BI <--------- PROBLEMA: SOLO COMPARA SI SON IGUALES ENTRE EL ADYACENTE, NO ENTRE SI SON IGUALES ENTRE EL RESTO
-        for (int i = 0; i < array_bi.length; i++) { // VALOR MAXIMO RANGO: i= 0 - 5;
-            for (int j = 0; j < array_bi[i].length; j++) { // VALOR MAXIMO RANGO: j= 0 - 9;
-                for (int k = j+1; k < array_bi[i].length; k++) { // VALOR MAXIMO = 8
-                    if (array_bi[i][j] == array_bi[i][k]) {
-                        array_bi[i][j] = 0;
-                    }
-                }
-                /*
-                SI ARRAY_BI 0,0 ES IGUAL QUE ARRAY_BI 0,0+1
-                    ARRAY_BI 0,0 VALE 0.                         0,0 es igual que [i][j] y es igual que array_bi 0,0+1 el +1 es +k
-                SI ARRAY_BI 0,1 ES IGUAL QUE ARRAY BI 0,0+2
-                    ARRAY_BI 0,1 VALE 0.
-                SI ARRAY_BI 0,2 ES IGUAL QUE ARRAY BI 0,0+3
-                    ARRAY_BI 0,2 VALE 0.
-                SI ARRAY_BI 0,3 ES IGUAL QUE ARRAY BI 0,0+4
-                    ARRAY_BI 0,3 VALE 0.
-                * */
-            }
-        }
-        // COMPARAR VALORES REPETIDOS POR COLUMNA DEL ARRAY_BI
+        // COMPARAR VALORES ENTEROS DEL ARRAY_BI
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
-                for (int k = j+1; k < array_bi.length; k++) {
-                    if (array_bi[j][i]==array_bi[k][i]) {
-                        array_bi[j][i] = 0;
+                for (int k = 0; k < array_bi.length; k++) {
+                    for (int l = (k == i ? j + 1 : 0); l < array_bi[k].length; l++) { // El valor de l será j+1 si k es igual a i, y si no es igual el resultado es 0. Así no comparamos el mismo valor consigo mismo.
+                        if (array_bi[i][j] == array_bi[k][l]) {
+                            array_bi[i][j] = 0;
+                        }
                     }
                 }
-                /*
-                SI ARRAY_BI 0,0 ES IGUAL QUE ARRAY_BI 0+1,0
-                    ARRAY_BI 0,0 VALE 0;                        0,0 es igual que [j][i] y es igual que array_bi 0+1,0 el +1 es +k
-                SI ARRAY_BI 1,0 ES IGUAL QUE ARRAY_BI 0+2,0
-                 */
             }
         }
+
+        /* array_bi[i][j] donde se compara con unas posiciones inventadas [k][l]
+           k hace como si fuera la i, mientras que l hace de j en el array_bi
+                * */
         System.out.print("Valores sin repetirse: ");
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
