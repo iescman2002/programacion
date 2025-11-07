@@ -51,14 +51,20 @@ public class Ejercicio7 {
                 }
             }
         }
-        // IMPRIMIR VALORES !!!!!! FALTA HACERLOS EN FORMATO TABLA Y REPRESENTARLOS CON *
-        for (int i = 0; i < array_bi.length; i++) {
-            for (int j = 0; j < array_bi[i].length; j++) {
-                System.out.println(array_bi[i][j]);
-            }
-        }
         double media = (double) suma / contar;
         System.out.println("La media aritmetica de los valores es: "+media);
+        // IMPRIMIR VALORES !!!!!! EL CODIGO DE FORMATO A TABLA ES RECICLADO DEL EJERCICIO 3 Y DEL 1 PERO MODIFICADO Y FALTA REPRESENTARLOS CON *
+        for (int i = 0; i < array_bi.length; i++) {
+            for (int j = 0; j < array_bi[i].length; j++) {
+                System.out.printf("%5s | %9s", "", array_bi[i][j]);
+            }
+            System.out.print("     | "+" fila "+i+"\n");
+        }
+        System.out.printf("%5s","");
+        for (int i = 0; i < 10; i++) {
+                System.out.printf(" | %4s Columna "+i,"");
+        }
+        System.out.print("| \n");
         /* TODO EL CONTENIDO DEL EJERCICIO 6 (QUE NO SE SI HAY QUE LLEGAR A MOSTRARLO O NO)
         array_bi[i][j] donde se compara con unas posiciones inventadas [k][l]
            k hace como si fuera la i, mientras que l hace de j en el array_bi
@@ -124,9 +130,6 @@ public class Ejercicio7 {
             System.out.println("La suma de la columna " + i + " es: " + suma_columnas[i]);
         }*/
         // OBTENER POSICION DE LOS NUMEROS QUE SON PRIMOS
-        /*
-         */
-
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 if (EsPrimo(array_bi[i][j])) {  // Si el valor de la posicion i,j es primo entonces:
