@@ -21,9 +21,9 @@ public class Ejercicio9 {
                  {"a7","b7","c7","d7","e7","f7","g7","h7"},
                  {"a8","b8","c8","d8","e8","f8","g8","h8"}};
         // PEDIR AL USUARIO LA UBICACIÓN DEL CABALLO
-        System.out.println("Introduzca aquí la posición del caballo: ");
-        //String posicion_caballo = s.next();
-        String posicion_caballo = "d5";
+        System.out.print("Introduzca aquí la posición del caballo: ");
+        String posicion_caballo = s.next();
+        //String posicion_caballo = "d5";
         // POSICIONES POSIBLES:
         System.out.println("El caballo puede moverse a las siguientes posiciones: ");
         for (int i = 0; i < tablero.length; i++) {
