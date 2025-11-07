@@ -5,13 +5,51 @@ public class Ejercicio6 {
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 array_bi[i][j] = (int) (Math.random() * 41);
-                if (array_bi[i][j]<20) {
+                if (array_bi[i][j] < 20) {
                     array_bi[i][j] += 20;
                 }
-                // HACER QUE NO SE REPITAN LOS NUMEROS
-                if (array_bi[i][j]==(array_bi[i][j]+1)) { // LOS NUMEROS REPETIDOS LOS CONVIERTE EN 0
-                    array_bi[i][j] = 0;
+            }
+        }
+        // COMPARAR VALORES REPETIDOS POR FILA DEL ARRAY_BI <--------- PROBLEMA: SOLO COMPARA SI SON IGUALES ENTRE EL ADYACENTE, NO ENTRE SI SON IGUALES ENTRE EL RESTO
+        for (int i = 0; i < array_bi.length; i++) { // VALOR MAXIMO RANGO: i= 0 - 5;
+            for (int j = 0; j < array_bi[i].length; j++) { // VALOR MAXIMO RANGO: j= 0 - 9;
+                for (int k = j+1; k < array_bi[i].length; k++) { // VALOR MAXIMO = 8
+                    if (array_bi[i][j] == array_bi[i][k]) {
+                        array_bi[i][j] = 0;
+                    }
                 }
+                /*
+                SI ARRAY_BI 0,0 ES IGUAL QUE ARRAY_BI 0,0+1
+                    ARRAY_BI 0,0 VALE 0.                         0,0 es igual que [i][j] y es igual que array_bi 0,0+1 el +1 es +k
+                SI ARRAY_BI 0,1 ES IGUAL QUE ARRAY BI 0,0+2
+                    ARRAY_BI 0,1 VALE 0.
+                SI ARRAY_BI 0,2 ES IGUAL QUE ARRAY BI 0,0+3
+                    ARRAY_BI 0,2 VALE 0.
+                SI ARRAY_BI 0,3 ES IGUAL QUE ARRAY BI 0,0+4
+                    ARRAY_BI 0,3 VALE 0.
+                * */
+            }
+        }
+        // COMPARAR VALORES REPETIDOS POR COLUMNA DEL ARRAY_BI
+        for (int i = 0; i < array_bi.length; i++) {
+            for (int j = 0; j < array_bi[i].length; j++) {
+                for (int k = j+1; k < array_bi.length; k++) {
+                    if (array_bi[j][i]==array_bi[k][i]) {
+                        array_bi[j][i] = 0;
+                    }
+                }
+                /*
+                SI ARRAY_BI 0,0 ES IGUAL QUE ARRAY_BI 0+1,0
+                    ARRAY_BI 0,0 VALE 0;                        0,0 es igual que [j][i] y es igual que array_bi 0+1,0 el +1 es +k
+                SI ARRAY_BI 1,0 ES IGUAL QUE ARRAY_BI 0+2,0
+                 */
+            }
+        }
+        System.out.print("Valores sin repetirse: ");
+        for (int i = 0; i < array_bi.length; i++) {
+            for (int j = 0; j < array_bi[i].length; j++) {
+                System.out.print(array_bi[i][j]+" o ");
+
             }
         }
         // NUMERO MAXIMO Y MINIMO: CALCULARLOS Y OBTENER POSICION
@@ -23,12 +61,10 @@ public class Ejercicio6 {
         for (int i = 0; i < array_bi.length; i++) {
             for (int j = 0; j < array_bi[i].length; j++) {
                 // EXCLUYE LOS NUMEROS REPETIDOS (LOS Q VALEN 0)
-                if (array_bi[i][j] >= max) {
-                    if (array_bi[i][j]!=0) {
+                if ((array_bi[i][j] >= max)&&(array_bi[i][j]!=0)) {
                     max = array_bi[i][j];
                     columna = j;
                     fila = i;
-                    }
                 }
             }
         }
