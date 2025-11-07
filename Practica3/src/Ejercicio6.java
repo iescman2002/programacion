@@ -26,13 +26,6 @@ public class Ejercicio6 {
         /* array_bi[i][j] donde se compara con unas posiciones inventadas [k][l]
            k hace como si fuera la i, mientras que l hace de j en el array_bi
                 * */
-        System.out.print("Valores sin repetirse: ");
-        for (int i = 0; i < array_bi.length; i++) {
-            for (int j = 0; j < array_bi[i].length; j++) {
-                System.out.print(array_bi[i][j]+" o ");
-
-            }
-        }
         // NUMERO MAXIMO Y MINIMO: CALCULARLOS Y OBTENER POSICION
         // CALCULAR MAXIMOS Y MINIMOS
         int max = array_bi[0][0];
