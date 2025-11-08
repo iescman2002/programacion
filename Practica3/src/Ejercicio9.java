@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Ejercicio9 {
-    public static boolean DentroDelrango(int[][] tablero,int posicion1, int posicion2) {    // FUNCION PARA COMPROBAR SI LA POSICION A LA QUE EL CABALLO PUEDE MOVERSE ESTÁ DENTRO DEL TABLERO O NO
+    public static boolean DentroDelrango(String[][] tablero,int posicion1, int posicion2) {    // FUNCION PARA COMPROBAR SI LA POSICION A LA QUE EL CABALLO PUEDE MOVERSE ESTÁ DENTRO DEL TABLERO O NO
         if ((posicion1 >= 0) && (posicion1 < tablero.length) && (posicion2 >= 0) && (posicion2 < tablero[0].length)) { // Se comprueba que posicion1 y posicion2 (que serán [i][j]) son >= que 0 y < la longitud del tablero es decir la maxima posicion
             return true; // devuelve verdadero si se cumple
         }
@@ -34,10 +34,14 @@ public class Ejercicio9 {
         //String[] posible_posicion = new int[8]; // 8 pq es el maximo de posiciones que puede moverse el caballo estando en una posicion
         //String posicion_caballo = "d5";
         // POSICIONES POSIBLES:
-        System.out.println("El caballo puede moverse a las siguientes posiciones: ");
         //String[] posibles_posiciones = new String[8];
-        int[] posiciones_filas = {1,2,-1,-2};       // VARIACIONES DE POSICION FILA i-2 i+2 i-1 i+1
-        int[] posiciones_columnas = {1,2,-1,-2};    // VARIACIONES DE POSICION COLUMNA j-2 j+2 j-1 j+1
+// 🔹 CAMBIO: Movimientos posibles del caballo
+        int[][] Movimientos = {
+                {-2,-1}, {-2,1},
+                {-1,-2}, {-1,2},
+                {1,-2},  {1,2},
+                {2,-1},  {2,1}
+        };
         // RELLENAR ARRAY POSICIONES DEL CABALLO:
         /*for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
@@ -49,10 +53,17 @@ public class Ejercicio9 {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
                 if (posicion_caballo.equals(tablero[i][j])) { // Busca la posicion donde se encuentra el caballo
-                    System.out.print("El caballo se encuentra en la posicion :"+tablero[i][j]);
+                    System.out.print("El caballo se encuentra en la posicion: "+tablero[i][j]);
                     posicion_caballo1 = i;
                     posicion_caballo2 = j;
                 }
+            }
+        }
+        // IMPRIME LAS POSICIONES
+        System.out.println("El caballo puede moverse a las siguientes posiciones: ");
+        for (int i = 0; i < Movimientos.length; i++) {
+            if (DentroDelrango(tablero,,)) {
+                System.out.print();
             }
         }
         /*for (int i = 0; i < tablero.length; i++) {
