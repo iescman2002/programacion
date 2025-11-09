@@ -10,13 +10,6 @@ public class Ejercicio9 {
         }
     }
     public static void main(String[] args) {
-    /*
-    Escribe un programa que, dada una posición en un tablero de ajedrez,
-    nos diga a qué casillas podría saltar un caballo que se encuentra en esa posición.
-    Como se indica en la figura, el caballo se mueve siempre en forma de L.
-    El tablero cuenta con 64 casillas. Las columnas se indican con las letras de la “a” a la “h”
-    y las filas se indican del 1 al 8.
-     */
         Scanner s = new Scanner(System.in);
     // CREACION TABLERO AJEDREZ
         String[][] tablero =
@@ -31,10 +24,6 @@ public class Ejercicio9 {
         // PEDIR AL USUARIO LA UBICACIÓN DEL CABALLO
         System.out.print("Introduzca aquí la posición del caballo: ");
         String posicion_caballo = s.next();
-        //String[] posible_posicion = new int[8]; // 8 pq es el maximo de posiciones que puede moverse el caballo estando en una posicion
-        //String posicion_caballo = "d5";
-        // POSICIONES POSIBLES:
-        //String[] posibles_posiciones = new String[8];
 // 🔹 CAMBIO: Movimientos posibles del caballo
         int[][] Movimientos = { // Movimientos[i] sería las filas que sube o baja
                 {-2,-1}, {-2,1},// Movimientos[j] sería las columnas que se mueve
@@ -42,12 +31,6 @@ public class Ejercicio9 {
                 {1,-2},  {1,2},
                 {2,-1},  {2,1}
         };
-        // RELLENAR ARRAY POSICIONES DEL CABALLO:
-        /*for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                posible_posicion[i] = tablero[i]
-            }
-        }*/
         int posicion_caballo1 = 0;
         int posicion_caballo2 = 0;
         for (int i = 0; i < tablero.length; i++) {
@@ -56,52 +39,55 @@ public class Ejercicio9 {
                     System.out.print("El caballo se encuentra en la posicion: "+tablero[i][j]);
                     posicion_caballo1 = i; // Guarda fila DEL ARRAY del caballo
                     posicion_caballo2 = j; // Guarda columna DEL ARRAY del caballo
+                    break; // Una vez ha obtenido el valor del caballo para de buscar
                 }
             }
         }
-        // IMPRIME LAS POSICIONES ---> Para esto he necesitado ayuda de chatgpt
+        // IMPRIME LAS POSICIONES V2
+        int[][] posicionesvalidas = new int [8][2]; // Cada fila es un movimiento posible y cada columna es igual a la fila y la columna
+        int contar = 0;     // los movimientos que se pueden hacer
         System.out.println("\n"+"El caballo puede moverse a las siguientes posiciones: ");
-        for (int i = 0; i < Movimientos.length; i++) {
+        for (int i = 0; i < Movimientos.length; i++) {      // La parte donde trabajo con variables fila, columna, contar y posicionesvalidas me ha ayudado chatgpt
             int fila = posicion_caballo1+Movimientos[i][0];
             int columna = posicion_caballo2+Movimientos[i][1];
-            if (DentroDelrango(tablero,fila,columna)) {
-                System.out.println(tablero[fila][columna]);
+            if (DentroDelrango(tablero,fila,columna)) {     // Si la posicion está dentro del rango del tablero
+
+                posicionesvalidas[contar][0] = fila;        // Se guarda la posicion en la ubicacion contar y el 0 es la fila
+                posicionesvalidas[contar][1] = columna;     // Se guarda la posicion en la ubicacion contar y el 1 que es la columna
+                contar++;
             }
         }
         // IMPRIMIR TABLERO
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-                if ((i==posicion_caballo1)&&(j==posicion_caballo2)) {
-                    System.out.printf("|%5s",posicion_caballo);
+                boolean movimientovalido = false;       // SE ESTABLECE SI ES VALIDA O NO UNA POSICION
+                for (int k = 0; k < contar; k++) {
+                    if ((i == posicionesvalidas[k][0])&&(j==posicionesvalidas[k][1])) {
+                        movimientovalido = true;
+                        break;
+                    }
+                }
+                /*
+                SI EL MOVIMIENTO ES VALIDO PONE X EN LA CELDA
+                    SI NO ES VALIDO PERO VALE IGUAL QUE LA POSICION DEL CABALLO PONE SU POSICION
+                        SI NO ES NADA PUES SE DEJA VACIO
+                 */
+                if (movimientovalido) {
+                    System.out.printf("|%9s","X");
+                }
+                else if ((i==posicion_caballo1)&&(j==posicion_caballo2)) {
+                    System.out.printf("|%9s","caballo");
                 }
                 else {
-                    System.out.printf("|%5s", "");
+                    System.out.printf("|%9s", "");
                 }
             }
             System.out.print("|");
-            System.out.print("\n");
+            System.out.println();
             for (int j = 0; j < 8; j++) {
-                System.out.print("|-----");
+                System.out.print("----------");
             }
-            System.out.print("|");
-            System.out.print("\n");
+            System.out.println();
         }
-        /*for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                if (posicion_caballo.equals(tablero[i][j]))  {    // identificar posicion del caballo en el array
-                    //System.out.print("El caballo está en la posicion: "+tablero[i][j]);
-                    posibles_posiciones[0] = tablero[i-2][j+1];
-                    posibles_posiciones[1] = tablero[i+2][j+1];
-                    posibles_posiciones[2] = tablero[i-1][j+2];
-                    posibles_posiciones[3] = tablero[i+1][j+2];
-                    posibles_posiciones[4] = tablero[i-2][j-1];
-                    posibles_posiciones[5] = tablero[i+2][j-1];
-                    posibles_posiciones[6] = tablero[i-1][j-2];
-                    posibles_posiciones[7] = tablero[i-2][j-2];
-                    System.out.print(tablero[i-2][j+1]+" , "+tablero[i+2][j+1]+" , "+tablero[i-1][j+2]+" , "+tablero[i+1][j+2]); // posibles movimientos a la derecha
-                    System.out.print(" , "+tablero[i-2][j-1]+" , "+tablero[i+2][j-1]+" , "+tablero[i-1][j-2]+" , "+tablero[i-2][j-2]); // posibles movimientos a la izquierda
-                }
-            }
-        }*/
     }
 }
