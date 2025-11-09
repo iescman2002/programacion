@@ -36,8 +36,8 @@ public class Ejercicio9 {
         // POSICIONES POSIBLES:
         //String[] posibles_posiciones = new String[8];
 // 🔹 CAMBIO: Movimientos posibles del caballo
-        int[][] Movimientos = {
-                {-2,-1}, {-2,1},
+        int[][] Movimientos = { // Movimientos[i] sería las filas que sube o baja
+                {-2,-1}, {-2,1},// Movimientos[j] sería las columnas que se mueve
                 {-1,-2}, {-1,2},
                 {1,-2},  {1,2},
                 {2,-1},  {2,1}
@@ -54,16 +54,18 @@ public class Ejercicio9 {
             for (int j = 0; j < tablero[i].length; j++) {
                 if (posicion_caballo.equals(tablero[i][j])) { // Busca la posicion donde se encuentra el caballo
                     System.out.print("El caballo se encuentra en la posicion: "+tablero[i][j]);
-                    posicion_caballo1 = i;
-                    posicion_caballo2 = j;
+                    posicion_caballo1 = i; // Guarda fila DEL ARRAY del caballo
+                    posicion_caballo2 = j; // Guarda columna DEL ARRAY del caballo
                 }
             }
         }
-        // IMPRIME LAS POSICIONES
-        System.out.println("El caballo puede moverse a las siguientes posiciones: ");
+        // IMPRIME LAS POSICIONES ---> Para esto he necesitado ayuda de chatgpt
+        System.out.println("\n"+"El caballo puede moverse a las siguientes posiciones: ");
         for (int i = 0; i < Movimientos.length; i++) {
-            if (DentroDelrango(tablero,,)) {
-                System.out.print();
+            int fila = posicion_caballo1+Movimientos[i][0];
+            int columna = posicion_caballo2+Movimientos[i][1];
+            if (DentroDelrango(tablero,fila,columna)) {
+                System.out.println(tablero[fila][columna]);
             }
         }
         /*for (int i = 0; i < tablero.length; i++) {
