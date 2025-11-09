@@ -68,6 +68,24 @@ public class Ejercicio9 {
                 System.out.println(tablero[fila][columna]);
             }
         }
+        // IMPRIMIR TABLERO
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if ((i==posicion_caballo1)&&(j==posicion_caballo2)) {
+                    System.out.printf("|%5s",posicion_caballo);
+                }
+                else {
+                    System.out.printf("|%5s", "");
+                }
+            }
+            System.out.print("|");
+            System.out.print("\n");
+            for (int j = 0; j < 8; j++) {
+                System.out.print("|-----");
+            }
+            System.out.print("|");
+            System.out.print("\n");
+        }
         /*for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
                 if (posicion_caballo.equals(tablero[i][j]))  {    // identificar posicion del caballo en el array
