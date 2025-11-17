@@ -1,13 +1,14 @@
 public class Usuario { // Crear clase
     // Parametros Atributos locales de la clase (son privados, no se puede llamar desde main)
+
     private String nombre;
     private String apellidos;
-    private Integer codigoPostal;
+    private String codigoPostal;
     private String direccion;
     private String email;
     private String contrasena;
     // Constructor
-    public Usuario(String n, String a, Integer cp, String d, String e, String c) { // mismo nombre que la clase -> public Usuario. Los parametros que recibimos lo igualamos a la variable. This hace referencia a los atributos y  metodos de dentro de la clase
+    public Usuario(String n, String a, String cp, String d, String e, String c) { // mismo nombre que la clase -> public Usuario. Los parametros que recibimos lo igualamos a la variable. This hace referencia a los atributos y  metodos de dentro de la clase
         this.nombre = n;
         this.apellidos = a;
         this.codigoPostal = cp;
@@ -28,10 +29,10 @@ public class Usuario { // Crear clase
     public void setApellidos(String a){
         this.apellidos = a;
     }
-    public Integer getCodigoPostal(){
+    public String getCodigoPostal(){
         return this.codigoPostal;
     }
-    public void setCodigoPostal(Integer cp){
+    public void setCodigoPostal(String cp){
         this.codigoPostal = cp;
     }
     public String getDireccion(){
