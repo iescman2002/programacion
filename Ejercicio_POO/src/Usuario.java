@@ -57,12 +57,9 @@ public class Usuario { // Crear clase
     public void setContrasena(String c){  // No devuelve nada. Metodo modificador.
         this.contrasena = c;
     }
-    public Boolean checkUsuario(String email, String contrasena) {              // ES UNA FUNCION. verifica si el email y password coincide con el valor interno de los objetos
+    public Boolean checkUsuario(String email, String contrasena) {              // Verifica si el email y password coincide con el valor interno de los objetos
         return this.email.equals(email) && this.contrasena.equals(contrasena);  // Si el valor actual de email es igual que email y el valor actual de contrasena es igual a contrasena, devuelve true. Si algun dato ha sido modificado devuelve false.
     }
-    // APUNTE IMPORTANTE: Dentro del get, se pone public String o lo que sea getNombre porque devuelve un valor String
-    // APUNTE IMPORTANTE: Dentro del set, see pone public void setNombre siempre, porque set no devuelve (return) nada entonces lo que devuelva siempre será void
-
     // Metodo ToString
     public String toString(){   // Siempre es public String porque por algo se llama ToString el metodo
         return "El nombre completo es: "+nombre+" "+apellidos+" El codigo postal es "+codigoPostal+" Y su direccion es "+direccion+". El email es: "+email+"Y la contraseña es: "+contrasena; // devuelve todos los valores definidos en el constructor
