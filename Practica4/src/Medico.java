@@ -84,12 +84,12 @@ public class Medico {
     }
     public double proximoAumento(double porcentajeAumento, int aniosRequeridos) {   // Si Antigüedad cumple AniosRequeridos return sueldoBrutoAumentado; else sueldo_actual
         if (getAniosAntiguedad() >= aniosRequeridos) {
-            return this.sueldoBruto * porcentajeAumento;
+            return this.sueldoBruto * (1+(0.1*porcentajeAumento));
         } else {
             return this.sueldoBruto;
         }
     }
     public void cambiarArea(Area nuevaArea) { // Gestiona la transferencia de areas, decrementa el contador de area y aumenta area nueva
-        
+
     }
 }
