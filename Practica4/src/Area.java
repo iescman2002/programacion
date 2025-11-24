@@ -2,11 +2,12 @@ public class Area {
     // Crear atributos
     private String nombre;
     private int identificador;
-    private String planta;
-    private String hospitales; // -> Referencia a hospital
+    private int planta;
+    private Hospital hospitales; // -> Referencia a hospital
+    private Medico medicos;
     private int numMedicos; // contador de medicos por area
     // Crear constructor
-    public Area(String nombre, int id, String planta,String hospital) {
+    public Area(String nombre, int id, int planta,Hospital hospital) {
         this.nombre = nombre;
         this.identificador = id;
         this.planta = planta;
@@ -28,17 +29,30 @@ public class Area {
         this.identificador = id;
     }
 
-    public String getPlanta() {
+    public int getPlanta() {
         return this.planta;
     }
-    public void setPlanta(String planta) {
+    public void setPlanta(int planta) {
         this.planta = planta;
     }
 
-    public String hospitales(){
+    public Hospital hospitales(){
         return this.hospitales;
     }
-    public void setHospitales(String hospital) {
+    public void setHospitales(Hospital hospital) {
         this.hospitales = hospital;
+    }
+    public int getNumMedicos() {
+        return this.getNumMedicos();
+    }
+    public void setNumMedicos(int i) {
+        this.numMedicos = i;
+    }
+
+    public void agregarMedico(Medico medicos) { // METODO AGREGAR MEDICO AL AREA
+        this.medicos = medicos;
+    }
+    public void IncrementarMedico() {   // Metodo que Incrementa numMedicos +1
+        this.numMedicos++;
     }
 }

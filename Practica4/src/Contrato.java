@@ -1,12 +1,12 @@
 public class Contrato {
     // Crear atributos
     private int fechaCreacion;
-    private String dni_medico; // Referencia a medico
-    private String hospital; // Referencia a hospital involucrado
+    private Medico medico; // Referencia a medico
+    private Hospital hospital; // Referencia a hospital involucrado
     // Crear constructor
-    public Contrato(int fechaCreacion, String medico, String hospital) {
+    public Contrato(int fechaCreacion, Medico medico, Hospital hospital) {
         this.fechaCreacion = fechaCreacion;
-        this.dni_medico = medico;
+        this.medico = medico;
         this.hospital = hospital;
     }
     // Metodos Get y Set
@@ -17,17 +17,17 @@ public class Contrato {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public String getDni_medico() {
-        return this.dni_medico;
+    public Medico getMedico() {
+        return this.medico;
     }
-    public void setDni_medico(String dni_medico) {
-        this.dni_medico = dni_medico;
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
-    public String getHospital() {
+    public Hospital getHospital() {
         return hospital;
     }
-    public void setHospital(String hospital) {
+    public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
 }

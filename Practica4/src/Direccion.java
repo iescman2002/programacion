@@ -4,15 +4,15 @@ public class Direccion {
     private int numero;
     private int codPostal;
     private String localidad;
-    private String provincias;
+    private String provincia;
 
     // Crear constructor
-    public Direccion (String calle, int num, int cp, String localidad, String provincias) {
+    public Direccion (String calle, int num, int cp, String localidad, String provincia) {
         this.calle = calle;
         this.numero = num;
         this.codPostal = cp;
         this.localidad = localidad;
-        this.provincias = provincias;
+        this.provincia = provincia;
     }
     // Metodos Get y Set
     public String getCalle () {
@@ -43,10 +43,10 @@ public class Direccion {
         this.localidad = localidad;
     }
 
-    public String getProvincias() {
-        return this.provincias;
+    public String getProvincia() {
+        return this.provincia;
     }
-    public void setProvincias(String localidad) {
-        this.localidad = localidad;
+    public void setProvincias(String provincia) {
+        this.provincia = provincia;
     }
 }

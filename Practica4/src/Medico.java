@@ -8,10 +8,10 @@ public class Medico {
     private String sexo;
     private double sueldoBruto;
     private int anoInicio;
-    private ArrayList<Area> areas; // -> Referencia area donde trabaja, es el array list que creamos en hospital porque si no hay hospital no hay areas
+    private Area areas; // -> Referencia a las areas
 
     // Crear constructor
-    public Medico(String dni, String nombre, int edad, String sexo, double sueldo, int fechaInicio, ArrayList<Area> area) {
+    public Medico(String dni, String nombre, int edad, String sexo, double sueldo, int fechaInicio, Area area) {
         this.dni = dni;
         this.edad = edad;
         this.sexo = sexo;
@@ -63,10 +63,33 @@ public class Medico {
         this.anoInicio = fechaInicio;
     }
 
-    public ArrayList<Area> getAreas() {
+    public Area getAreas() {
         return this.areas;
     }
-    public void setAreas(ArrayList<Area> area) {
+    public void setAreas(Area area) {
         this.areas = area;
+    }
+
+    public double calcularSueldoNeto(double retencion) {    // Calcular Sueldo Neto -> Sueldo Bruto - (Sueldo Bruto * (retencion% /100))
+        return this.sueldoBruto-(this.sueldoBruto*(retencion/100));
+    }
+    public int getAniosAntiguedad(){ // Calcular Años Antigüedad -> Año actual - fecha de inicio
+        return java.time.Year.now().getValue()-this.anoInicio;
+    }
+    public double calcularImpuestosAnuales(double tasaImpositiva) { // Calcular Impuestos anuales -> (SalarioBruto*12)*tasaImpositiva
+        return (this.sueldoBruto*12)*tasaImpositiva;
+    }
+    public boolean esMayorDeEdad(int mayoriaEdad) { // Calcular si es Mayor de Edad -> Si >= 18 true sino false
+        return mayoriaEdad>=18;
+    }
+    public double proximoAumento(double porcentajeAumento, int aniosRequeridos) {   // Si Antigüedad cumple AniosRequeridos return sueldoBrutoAumentado; else sueldo_actual
+        if (getAniosAntiguedad() >= aniosRequeridos) {
+            return this.sueldoBruto * porcentajeAumento;
+        } else {
+            return this.sueldoBruto;
+        }
+    }
+    public void cambiarArea(Area nuevaArea) { // Gestiona la transferencia de areas, decrementa el contador de area y aumenta area nueva
+        
     }
 }

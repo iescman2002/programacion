@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Hospital {
@@ -31,5 +30,8 @@ public class Hospital {
     }
     public void setAreas(ArrayList<Area>areas) {
         this.areas = areas;
+    }
+    public void agregarArea(Area area) {    // CREAR METODO PARA AGREGAR AREAS AL HOSPITAL
+        this.areas.add(area);
     }
 }
