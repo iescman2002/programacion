@@ -13,4 +13,23 @@ public class Hospital {
         this.areas = new ArrayList<>(); // Creacion ArrayList para guardar las areas.
     }
     // Metodos Get y Set
+    public String getNombre() {
+        return this.nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCif() {
+        return this.cif = cif;
+    }
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+    public ArrayList<Area> getAreas() {
+        return this.areas;
+    }
+    public void setAreas(ArrayList<Area>areas) {
+        this.areas = areas;
+    }
 }
