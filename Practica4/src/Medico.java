@@ -90,6 +90,12 @@ public class Medico {
         }
     }
     public void cambiarArea(Area nuevaArea) { // Gestiona la transferencia de areas, decrementa el contador de area y aumenta area nueva
-
+        // Restar 1 a NumMedicos del area donde estaba el medico, sumar 1 al NumMedicos del area nueva nuevaArea
+        int NumMedicoArea1 = getAreas().getNumMedicos();  // Usa una variable temporal para guardar NumMedicos actual
+        getAreas().setNumMedicos(NumMedicoArea1-1);       // Le resta 1 a numMedicos del area actual
+        // entramos en la configuracion del area nueva
+        setAreas(nuevaArea); // Cambia el area inicial con la que trabajamos por la nueva introducida
+        int NumMedicoArea2 = getAreas().getNumMedicos(); // Almacena NumMedicos de AreaNueva
+        getAreas().setNumMedicos(NumMedicoArea2+1); // Suma 1 al NumMedicos area nueva
     }
 }
