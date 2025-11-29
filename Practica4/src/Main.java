@@ -19,12 +19,15 @@ public class Main {
         a2.IncrementarMedico();
         m1.cambiarArea(a2); // Pasa medico m1 que esta en area a1 a area a2
         // FALTA numMedicos HACERLO
-        Contrato c1 = new Contrato(m1.getAnoInicio(),m1,h1);
-        Contrato c2 = new Contrato(m2.getAnoInicio(),m2,h1);
-        Contrato c3 = new Contrato(m3.getAnoInicio(),m3,h1);
+        Contrato c1 = new Contrato(2019,m1, h1);
+        Contrato c2 = new Contrato(2016,m2,h1);
+        Contrato c3 = new Contrato(1998,m3,h1);
         a1.compararMedicos(a2); // Compara los medicos de a1 con los medicos a2
         a2.calcularCapacidadRestante(5); // Calcula la cantidad max de medicos que puedo meter en el area antes del limite
         h1.getNumeroTotalMedicos(); // Suma todos los medicos de todas las areas
         h1.getProporcionMedicosArea("3d");
+        h1.existeArea("3d");
+        c1.esDeAnio(2019);
+        c1.diasDesdeCreacion();
     }
 }

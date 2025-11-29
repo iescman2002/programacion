@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.IdentityHashMap;
 
 public class Hospital {
     // Crear atributos
@@ -41,8 +42,23 @@ public class Hospital {
         }
         return suma;
     }
-    public double getProporcionMedicosArea(String idArea) { // Calcula la proporcion de medicos en un area respecto el max de medicos en el hospital
-        // numMedicos del idArea * 100 (q es el total de % de proporcion) y el resultado / NumTotalMedicos
-        getNumeroTotalMedicos();// Si en un hospital hay ej 15 personas entonces 15 personas es el 100%. -> Si en una hay 6 personas sabiendo que el max son 60, calcula la diferencia
+    public double getProporcionMedicosArea(String idArea) { // Calcula la proporcion de medicos en un area respecto el max de medicos en el hospital         // Bucle que recorre todas las areas buscando que area tiene el mismo id que el idArea introducido
+        int i; // i es la posicion del area en el array, lo defino fuera del for para poder trabajar fuera del bucle despues con la i
+        for(i = 0; i < areas.size();i++) {  // Recorre todo el array hasta encontrar un area que tenga el identificador igual que el IdArea
+            if (areas.get(i).getIdentificador().equals(idArea)) {
+                break; // Si lo encuentra se sale del bucle, haciendo que la ultima posicion de i guardada sea donde el area actual donde esta el id que hemos introducido
+            }
+        }
+        // La operacion es: El NumMedicos del area donde se encuentra el IdArea introducido / Total de medicos del hospital. Da 0,algo porque es el % pero sin multiplicar *100
+        return (double) areas.get(i).getNumMedicos() /getNumeroTotalMedicos(); // Casteo el resultado a double porque estoy diviendo enteros y sino lo que haria seria convertir
+    }
+    public boolean existeArea(String idArea) { // Devuelve true si hospital ya tiene un area con el idArea insertado.
+        // Mismo bucle que antes para recorrer el array
+        for (int i = 0; i < areas.size(); i++) {
+            if (areas.get(i).getIdentificador().equals(idArea)) {
+                return true; // Devuelve true solo si ya ha encontrado idArea y se detiene
+            }
+        }
+        return false; // Sino devuelve falso
     }
 }
