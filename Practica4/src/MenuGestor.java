@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class MenuGestor {
     public static void elegirSeccion(int seccion) { // Mostramos las posibles operaciones en funcion a la seleccion elegida i
         System.out.println("A continuación, eliga la operación a realizar: ");
@@ -26,7 +24,6 @@ public class MenuGestor {
         System.out.print("Indicar aquí: ");
     }
     public static void elegirOperacion(int seccion, int operacion) {
-        Scanner s = new Scanner(System.in);
         if (seccion == 1) { // Operaciones posibles eligiendo Creación
             switch (operacion) {
                 case 1: // Crear Hospital: Pedir datos y Direccion
@@ -36,20 +33,20 @@ public class MenuGestor {
                     System.out.println("Introduzca a continuación los datos del Area y su hospital correspondiente: ");
                     break;
                 case 3: // Crear Médico: Pedir datos, asociar a Area y crear su contrato
-                    System.out.println("Introduzca a continuación los datos del Médico, el área al que pertenece y su contrato: ");
+                    System.out.println("Introduzca a continuación los datos del Médico, el área al que pertenece y su contrato");
                     break;
             }
         }
         else if (seccion == 2) { // Operaciones posibles eligiendo Modificación
             switch (operacion) {
                 case 1: // Modificar Médico: Pedir DNI del médico.
-                    System.out.println("Introduzca a continuación el DNI del Médico y del dato que desee modificar: ");
+                    System.out.println("Introduzca a continuación el dato que desee modificar y posteriormente el DNI del médico:");
                     System.out.println("A. Sueldo Bruto");
                     System.out.println("B. Dirección");
                     System.out.println("C. Área de trabajo");
                     break;
                 case 2: // Modificar Hospital: Pedir Nombre Hospital.
-                    System.out.println("Introduzca a continuación el nombre del Hospital y el dato que desee modificar: ");
+                    System.out.println("Introduzca a continuación el dato que desee modificar y posteriormente el nombre del hospital:");
                     System.out.println("A. Nombre");
                     System.out.println("B. Dirección");
                     break;

@@ -13,6 +13,7 @@ public class Medico {
     // Crear constructor
     public Medico(String dni, String nombre, int edad, String sexo, double sueldo, int fechaInicio, Area area) {
         this.dni = dni;
+        this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
         this.sueldoBruto = sueldo;

@@ -3,49 +3,125 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    // Crear los arrays donde se almacenaran los objetos
+    public static ArrayList<Direccion> direcciones = new ArrayList<>();
+    public static ArrayList<Hospital> hospitales = new ArrayList<>();
+    public static ArrayList<Area> areas = new ArrayList<>();
+    public static ArrayList<Medico> medicos = new ArrayList<>();
+    public static ArrayList<Contrato> contratos = new ArrayList<>();
     public static void main(String[] args) {
         Scanner s = new Scanner (System.in);
         precargaDatos();
         ejecutarMenuPrincipal();
         int seccion = s.nextInt(); // Insertamos la seccion a la que queremos acceder
-        if ((seccion != 1)&&(seccion != 2)&&(seccion != 3)) { // Si elige 4 del MenuPrincipal devuelve void finalizando ahí el codigo o si devuelve un numero incorrecto igual
+        if ((seccion != 1)&&(seccion != 2)&&(seccion != 3)) { // devuelve void y finaliza ahí el codigo si es un numero que no sea ni 1 ni 2 ni 3
             System.out.print("Va a salir.");
             return;
         };
         MenuGestor.elegirSeccion(seccion);
         int operacion = s.nextInt(); // Insertamos la operacion que queremos realizar
         MenuGestor.elegirOperacion(seccion, operacion);
-        /*for (int i = 1; i < 3; i++) { // 3 porque es el maximo de secciones que hay
-            for (int j = 1; j < 12; j++) { // 12 porque es el maximo de operadores que hay
-                if (i == 1) {
-                    if (j == 1) {
-                        System.out.print("Formato: NombreHospital -> CifHospital \n Direccion: calle num cp localidad provincia");
-                        Hospital h3 = new Hospital(s.next(), s.next()); // Creo nuevo hospital
-                        hospitales.add(h3);
-                        Direccion d3 = new Direccion(s.next(), s.nextInt(), s.nextInt(), s.next(), s.next());
-                        direcciones.add(d3);
-                    }
-                    else if (j == 2) {
-                        System.out.print("Formato: -> NombreArea idArea NºPlanta Hospital");
-                        ArrayList<Hospital> h3
-                        Area a6 = new Area(s.next(),s.next(),s.nextInt(), h1);
-                    }
-                    else if (j == 3) {
-
-                    }
-                    else break;
+        if ((seccion==1)&&(operacion==1)) { // Crear hospital
+            System.out.println("Introduzca el nombre del hospital: ");
+            String nombre = s.next();
+            System.out.println("Y a continuación introduzca el cif: ");
+            String cif = s.next();
+            Hospital h3 = new Hospital(nombre,cif);
+            hospitales.add(h3);
+            System.out.println("Introduzca ahora la calle, num, cp, localidad y provincia de la direccion : ");
+            String calle = s.next();int num = s.nextInt();int cp = s.nextInt();String localidad = s.next();String provincia = s.next();
+            Direccion d3 = new Direccion(calle,num,cp,localidad,provincia);
+            direcciones.add(d3);
+            System.out.print("Datos añadidos correctamente.");
+        }
+        else if ((seccion==1)&&(operacion==2)) { // Crear Area
+            System.out.println("Introduzca ahora el nombre, id, planta y nombre hospital del area: ");
+            String nombre2 = s.next(); String id = s.next(); int planta = s.nextInt(); String NomHosp = s.next();
+            int hosp;
+            for (hosp = 0; hosp < direcciones.size(); hosp++) {
+                if (hospitales.get(hosp).getNombre().equals(NomHosp)) {
+                    break;
+                }
+                Area a6 = new Area(nombre2,id,planta,hospitales.get(hosp));
+                areas.add(a6);
+                hospitales.get(hosp).agregarArea(a6); // Agrega area nueva al hospital donde se encuentra el nombre que ha introducido el usuario
+            }
+            System.out.print("Datos añadidos correctamente.");
+        }
+        else if ((seccion==1)&&(operacion==3)) { // Crea médico
+            System.out.println("El formato es: dniMedico nombre edad sexo sueldo fechainicio y idarea");
+            String dni_medico = s.next(); String nomMed = s.next(); int edadMedico = s.nextInt(); String sex= s.next(); double sueldoMed = s.nextDouble(); int fechaStart = s.nextInt(); String areaelegia= s.next();
+            int var1;
+            for (var1 = 0; var1 < areas.size(); var1++) {
+                if (areas.get(var1).getIdentificador().equals(areaelegia)) {
+                    break;
                 }
             }
-        */
+            Medico m10 = new Medico(dni_medico,nomMed,edadMedico,sex,sueldoMed,fechaStart,areas.get(var1));
+            areas.get(var1).agregarMedico(m10);
+            areas.get(var1).incrementarMedico();
+            System.out.print("Datos añadidos correctamente.");
+        }
+        else if ((seccion==2)&&(operacion==1)) { // Consulta Año antigüedad medico
+            String opcion = s.next();
+            System.out.print("Y ahora el dni del médico donde vamos a modificar: ");
+            String dni = s.next();
+            for (int i = 0; i < medicos.size(); i++) { // Buscar el medico que tenga el dni que ha introducido
+                if (medicos.get(i).getDni().equals(dni)) {
+                    if (opcion.equals("A")) { // Modifica Sueldo Bruto
+                        System.out.print("Introduzca el nuevo valor del sueldo: ");
+                        medicos.get(i).setSueldoBruto(s.nextDouble());
+                    }
+                    else if (opcion.equals("B")) { // Modifica Direccion
+                        System.out.print("Introduzca la nueva direccion: ");
+                        //medicos.get(i).setDireccion(s.next()); COMENTADO PORQUE SUPUESTAMENTE MODIFICA LA DIRECCION DEL MEDICO PERO NO ES UN CAMPO NI VALOR QUE ALMACENAMOS
+                    }
+                    else if (opcion.equals("C")) { // Modifica Area de trabajo
+                        System.out.print("Introduzca el Id de la nueva área de trabajo: ");
+                        String idearea = s.next();
+                        for (int j = 0; j < areas.size(); j++) { // Buscamos el area que queremos cambiar al medico segun la id
+                            if (areas.get(j).getIdentificador().equals(idearea)) {
+                                medicos.get(i).cambiarArea(areas.get(j));
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            System.out.print("Datos modificados correctamente.");
+        }
+        else if ((seccion==2)&&(operacion==2)) {
+            String opcion = s.next();
+            System.out.print("Y ahora el nombre del hospital donde vamos a modificar: ");
+            String nombrehospi = s.next();
+            for (int i=0; i<hospitales.size();i++) {
+                if (hospitales.get(i).getNombre().equals(nombrehospi)) {
+                    if (opcion.equals("A")) {
+                    System.out.print("Introduzca el nuevo nombre del hospital: ");
+                    hospitales.get(i).setNombre(s.next());
+                    }
+                    else if (opcion.equals("B")) {
+                    System.out.println("Introduzca la nueva direccion del hospital: ");
+                    // hospitales.get(i).setDireccion(s.next()); COMENTADO PORQUE NO TENGO DIRECCION ASIGNADA AL HOSPITAL
+                    }
+                }
+                break;
+            }
+            System.out.println("Datos modificados correctamente.");
+        }
+        else if ((seccion==3)&&(operacion==1)) { // Consulta Año antigüedad medico
+         String dni = s.next();
+            for (int i = 0; i < medicos.size(); i++) {
+                if (medicos.get(i).getDni().equals(dni)) {
+                    System.out.println("El médico "+medicos.get(i).getnombre()+" tiene " +medicos.get(i).getAniosAntiguedad()+" años de antigüedad.");
+                    break;
+                }
+            }
+            System.out.print("Consulta realizada correctamente.");
+        }
     }
     // Precarga de datos -> Tener los minimos de datos para que funcione.
     public static void precargaDatos() {
-        // Crear los arrays donde se almacenaran los objetos
-        ArrayList<Direccion> direcciones = new ArrayList<>();
-        ArrayList<Hospital> hospitales = new ArrayList<>();
-        ArrayList<Area> areas = new ArrayList<>();
-        ArrayList<Medico> medicos = new ArrayList<>();
-        ArrayList<Contrato> contratos = new ArrayList<>();
         // Orden: Direccion -> Hospital -> Area(s) -> Médicos -> Contratos
         // Creacion Direccion
         Direccion d1 = new Direccion("C/ Corredera", 5,11500,"Jerez de la frontera","Cadiz");
@@ -54,7 +130,7 @@ public class Main {
         direcciones.add(d1);
         direcciones.add(d2);
         // Creacion Hospitales
-        Hospital h1 = new Hospital("La Salvacion","B12345678");
+        Hospital h1 = new Hospital("Salvacion","B12345678");
         Hospital h2 = new Hospital("La Mala Suerte","D87654321");
         // Añadir al ArrayList
         hospitales.add(h1);

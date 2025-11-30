@@ -50,7 +50,7 @@ public class Area {
     }
 
     public int getNumMedicos() {
-        return this.getNumMedicos();
+        return this.numMedicos;
     }
 
     public void setNumMedicos(int i) {
