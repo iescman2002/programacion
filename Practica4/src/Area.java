@@ -61,7 +61,7 @@ public class Area {
         this.medicos = medicos;
     }
 
-    public void IncrementarMedico() {   // Metodo que Incrementa numMedicos +1
+    public void incrementarMedico() {   // Metodo que Incrementa numMedicos +1
         this.numMedicos++;
     }
 
