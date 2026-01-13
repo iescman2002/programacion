@@ -1,9 +1,8 @@
 package com.juego.razas;
 
-public class Elfo extends EstadisticasBase{
-
-    // Crear Constructor con herencia de stats base y asignar valores
+public class Elfo extends ModificadoresRazas {
+    // Crear constructor con los atributos ya hechos
     public Elfo() {
-        super(4,6,7,90);
+        super(90,4,3,6,7);
     }
 }

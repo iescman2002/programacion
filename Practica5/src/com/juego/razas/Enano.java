@@ -1,9 +1,8 @@
 package com.juego.razas;
 
-public class Enano extends EstadisticasBase{
-
-    // Crear Constructor con herencia de stats base y asignar valores
+public class Enano extends ModificadoresRazas {
+    // Crear constructor con los atributos ya hechos
     public Enano() {
-        super(7,4,4,110);
+        super(110, 7, 5, 4, 4);
     }
 }

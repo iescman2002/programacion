@@ -1,9 +1,8 @@
 package com.juego.razas;
 
-public class Humano extends EstadisticasBase {
-
-    // Crear Constructor con herencia de stats base y asignar valores
+public class Humano extends ModificadoresRazas {
+    // Crear constructor con los atributos ya hechos
     public Humano() {
-        super(5, 5, 5, 100);
+        super(100, 5, 2, 5, 5);
     }
 }

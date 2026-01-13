@@ -18,9 +18,9 @@ public class PrecargaDatos {
         personajes.add(pj2);
     }
     /* Seleccionar la raza y la clase de los personajes
-    pj1.addRaza();
-    pj1.addClase();
-    pj2.addRaza();
-    pj2.addClase();
+    pj1.asignarRaza();
+    pj1.asignarClase();
+    pj2.asignarRaza();
+    pj2.asignarClase();
     */
 }
