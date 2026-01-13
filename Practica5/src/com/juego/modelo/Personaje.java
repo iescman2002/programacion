@@ -1,5 +1,7 @@
 package com.juego.modelo;
 
+import com.juego.razas.ModificadoresRazas;
+
 public class Personaje {
 
     // Crear atributos por defecto del personaje
@@ -9,15 +11,17 @@ public class Personaje {
     private int defensa;
     private int inteligencia;
     private int destreza;
+    private ModificadoresRazas raza; // Atributo para indicar la raza, se crea una variable (raza) de tipo ModificadoresRaza (que será el padre de los tipos de raza)
 
-    // Crear constructor personaje
-    public Personaje(String nombre, int vida, int fuerza, int defensa, int inteligencia, int destreza) {
+    // Crear constructor personaje con los valores por defecto del Personaje
+    public Personaje(String nombre, ModificadoresRazas raza) {
         this.nombre = nombre;
-        this.vida = vida;
-        this.fuerza = fuerza;
-        this.defensa = defensa;
-        this.inteligencia = inteligencia;
-        this.destreza = destreza;
+        this.vida = 0;
+        this.fuerza = 0;
+        this.defensa = 0;
+        this.inteligencia = 0;
+        this.destreza = 0;
+        this.raza = raza;
     }
     // Crear Getter y Setter
     public String getNombre() {
@@ -60,5 +64,12 @@ public class Personaje {
     }
     public void setDestreza(int destreza) {
         this.destreza = destreza;
+    }
+
+    public ModificadoresRazas getRaza() {
+        return this.raza;
+    }
+    public void setDestreza(ModificadoresRazas raza) {
+        this.raza = raza;
     }
 }

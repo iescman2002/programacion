@@ -1,6 +1,9 @@
 package com.juego.modelo;
 
-import java.lang.reflect.Array;
+import com.juego.razas.Elfo;
+import com.juego.razas.Humano;
+import com.juego.razas.Enano;
+
 import java.util.ArrayList;
 
 public class PrecargaDatos {
@@ -10,17 +13,11 @@ public class PrecargaDatos {
 
     // Crear personajes por defecto 1 y 2 con stats por defecto 0 en el Constructor
     public PrecargaDatos() {
-        Personaje pj1 = new Personaje("personaje1", 0, 0, 0, 0, 0);
-        Personaje pj2 = new Personaje("personaje2", 0, 0, 0, 0, 0);
+        Personaje pj1 = new Personaje("personaje1",new Elfo());     // Se crea pj1 y le indicamos que la raza será Elfo (Falta añadir clase, modificar despues)
+        Personaje pj2 = new Personaje("personaje2", new Humano());  // Se crea pj2 y le indicamos que la raza será Humano
 
         // Añadir los personajes precargados a la lista de personajes
         personajes.add(pj1);
         personajes.add(pj2);
     }
-    /* Seleccionar la raza y la clase de los personajes
-    pj1.asignarRaza();
-    pj1.asignarClase();
-    pj2.asignarRaza();
-    pj2.asignarClase();
-    */
 }
