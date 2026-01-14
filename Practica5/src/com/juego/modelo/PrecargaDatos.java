@@ -19,6 +19,9 @@ public class PrecargaDatos {
         // Añadir los personajes precargados a la lista de personajes
         personajes.add(pj1);
         personajes.add(pj2);
+        // Añadir las stats de la raza al pj
+        pj1.actualizarStatsSegunRaza();
+        pj1.actualizarStatsSegunRaza();
     }
     public static void main (String[] args ) {
         PrecargaDatos p = new PrecargaDatos();

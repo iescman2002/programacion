@@ -73,6 +73,15 @@ public class Personaje {
         this.raza = raza;
     }
 
+    // Metodo para sumar las bonificaciones de Razas al personaje
+    public void actualizarStatsSegunRaza() {
+        setVida(raza.getVida());
+        setFuerza(raza.getFuerza());
+        setDefensa(raza.getDefensa());
+        setInteligencia(raza.getInteligencia());
+        setDestreza(raza.getDestreza());
+    }
+
     @Override
     public String toString() {
         return "{" +
