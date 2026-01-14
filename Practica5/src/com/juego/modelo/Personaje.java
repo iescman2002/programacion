@@ -110,6 +110,7 @@ public class Personaje {
                 ", inteligencia=" + inteligencia +
                 ", destreza=" + destreza +
                 ", raza=" + raza +
+                ", clase=" + clase +
                 '}';
     }
 }
