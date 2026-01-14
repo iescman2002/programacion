@@ -72,4 +72,17 @@ public class Personaje {
     public void setDestreza(ModificadoresRazas raza) {
         this.raza = raza;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "nombre='" + nombre + '\'' +
+                ", vida=" + vida +
+                ", fuerza=" + fuerza +
+                ", defensa=" + defensa +
+                ", inteligencia=" + inteligencia +
+                ", destreza=" + destreza +
+                ", raza=" + raza +
+                '}';
+    }
 }
