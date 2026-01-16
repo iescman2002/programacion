@@ -1,5 +1,6 @@
 package com.juego.modelo;
 
+import com.juego.clases.StatsClases;
 import com.juego.razas.ModificadoresRazas;
 
 public class Personaje {
@@ -12,9 +13,10 @@ public class Personaje {
     private int inteligencia;
     private int destreza;
     private ModificadoresRazas raza; // Atributo para indicar la raza, se crea una variable (raza) de tipo ModificadoresRaza (que será el padre de los tipos de raza)
+    private StatsClases clase;
 
     // Crear constructor personaje con los valores por defecto del Personaje
-    public Personaje(String nombre, ModificadoresRazas raza) {
+    public Personaje(String nombre, ModificadoresRazas raza, StatsClases clase) {
         this.nombre = nombre;
         this.vida = 0;
         this.fuerza = 0;
@@ -22,6 +24,7 @@ public class Personaje {
         this.inteligencia = 0;
         this.destreza = 0;
         this.raza = raza;
+        this.clase = clase;
     }
     // Crear Getter y Setter
     public String getNombre() {
@@ -73,6 +76,30 @@ public class Personaje {
         this.raza = raza;
     }
 
+    public StatsClases getClase() {
+        return this.clase;
+    }
+    public void setClase(StatsClases clase) {
+        this.clase = clase;
+    }
+
+    // Metodo para sumar las bonificaciones de Razas al personaje
+    public void actualizarStatsSegunRaza() {
+        setVida(raza.getVida());
+        setFuerza(raza.getFuerza());
+        setDefensa(raza.getDefensa());
+        setInteligencia(raza.getInteligencia());
+        setDestreza(raza.getDestreza());
+    }
+    // Metodo para sumar las bonificaciones de las clases a las stats del personaje una vez actualizado los de la raza
+    public void AnadirStatsClase() {
+        setVida(getVida()+clase.getVida());
+        setFuerza(getFuerza()+clase.getFuerza());
+        setDefensa(getDefensa()+clase.getDefensa());
+        setInteligencia(getInteligencia()+clase.getInteligencia());
+        setDestreza(getDestreza()+clase.getDestreza());
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -83,6 +110,7 @@ public class Personaje {
                 ", inteligencia=" + inteligencia +
                 ", destreza=" + destreza +
                 ", raza=" + raza +
+                ", clase=" + clase +
                 '}';
     }
 }
