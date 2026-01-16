@@ -61,4 +61,6 @@ public class EstadisticasHabilidades implements Habilidades {
         String info = this.nombre+": "+this.descripcion+".\nRealiza "+this.danio+"de danio, y lo puedes usar hasta un máximo de"+this.usosPorDefecto+" veces en toda la partida.";
         return info;
     }
+    public void golpear() {
+    }
 }
