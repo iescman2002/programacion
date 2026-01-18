@@ -2,7 +2,7 @@ package com.juego.habilidades;
 
 public class DanioCortaDistancia extends EstadisticasHabilidades {
 
-    public DanioCortaDistancia(String nombre, String desc, int dmg) {
-        super(nombre,desc,dmg,3); // Por defecto sin nombre ni descripción ni daño
+    public DanioCortaDistancia(String nombre, String desc) {
+        super(nombre,desc,5); // Se fijan ya los usos que tendrán las habilidades que sean de tipo corta distancia
     }
 }

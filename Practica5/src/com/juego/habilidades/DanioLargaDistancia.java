@@ -2,7 +2,7 @@ package com.juego.habilidades;
 
 public class DanioLargaDistancia extends EstadisticasHabilidades {
 
-    public DanioLargaDistancia(String nombre, String desc, int dmg) {
-        super(nombre,desc,dmg,3); // Por defecto sin nombre ni descripción ni daño
+    public DanioLargaDistancia(String nombre, String desc) {
+        super(nombre,desc,1); // Se fijan ya los usos que tendrán las habilidades que sean de tipo larga distancia
     }
 }

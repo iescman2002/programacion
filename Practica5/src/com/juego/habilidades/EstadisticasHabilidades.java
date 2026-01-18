@@ -9,10 +9,10 @@ public class EstadisticasHabilidades implements Habilidades {
     private int usosActuales;
 
     // Crear constructor de las habilidades
-    public EstadisticasHabilidades(String nombre, String desc, int dmg, int usos) {
+    public EstadisticasHabilidades(String nombre, String desc, int usos) {
         this.nombre = nombre;
         this.descripcion = desc;
-        this.danio = dmg;
+        this.danio = 0; // todas las habilidades empiezan quitando 0, el daño se modificará después según el personaje
         this.usosPorDefecto = usos;
         this.usosActuales = this.usosPorDefecto;
     }
