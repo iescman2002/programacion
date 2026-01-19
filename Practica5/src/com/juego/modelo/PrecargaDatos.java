@@ -47,10 +47,4 @@ public class PrecargaDatos {
         pj1.agregarHabilidad();
         pj2.agregarHabilidad();
     }
-    public static void main (String[] args ) {
-        PrecargaDatos p = new PrecargaDatos();
-        System.out.println(personajes.get(0).toString());
-        System.out.print(personajes.get(1).toString());
-
-    }
 }
