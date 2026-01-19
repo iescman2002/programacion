@@ -41,8 +41,8 @@ public class PrecargaDatos {
         pj1.actualizarStatsSegunRaza();
         pj2.actualizarStatsSegunRaza();
         // Actualizar las stats del personaje a los valores de la raza + los valores de la clase
-        pj1.AnadirStatsClase();
-        pj2.AnadirStatsClase();
+        pj1.anadirStatsClase();
+        pj2.anadirStatsClase();
         // Añadir habilidades al personaje
         pj1.agregarHabilidad();
         pj2.agregarHabilidad();

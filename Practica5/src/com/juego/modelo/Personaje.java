@@ -104,7 +104,7 @@ public class Personaje {
         setDestreza(raza.getDestreza());
     }
     // Metodo para sumar las bonificaciones de las clases a las stats del personaje una vez actualizado los de la raza
-    public void AnadirStatsClase() {
+    public void anadirStatsClase() {
         setVida(getVida()+clase.getVida());
         setFuerza(getFuerza()+clase.getFuerza());
         setDefensa(getDefensa()+clase.getDefensa());
