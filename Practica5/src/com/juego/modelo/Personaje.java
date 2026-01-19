@@ -1,7 +1,10 @@
 package com.juego.modelo;
 
 import com.juego.clases.StatsClases;
+import com.juego.habilidades.EstadisticasHabilidades;
 import com.juego.razas.ModificadoresRazas;
+
+import java.util.ArrayList;
 
 public class Personaje {
 
@@ -13,7 +16,8 @@ public class Personaje {
     private int inteligencia;
     private int destreza;
     private ModificadoresRazas raza; // Atributo para indicar la raza, se crea una variable (raza) de tipo ModificadoresRaza (que será el padre de los tipos de raza)
-    private StatsClases clase;
+    private StatsClases clase;  // Atributo para indicar la clase, se crea una variable (raza) de tipo StatsClase (que será el padre de los tipos de clase)
+    private ArrayList<EstadisticasHabilidades> habilidades; // Crear lista del padre habilidades para guardar las habilidades que tiene el personaje
 
     // Crear constructor personaje con los valores por defecto del Personaje
     public Personaje(String nombre, ModificadoresRazas raza, StatsClases clase) {
@@ -25,6 +29,7 @@ public class Personaje {
         this.destreza = 0;
         this.raza = raza;
         this.clase = clase;
+        this.habilidades = new ArrayList<>();
     }
     // Crear Getter y Setter
     public String getNombre() {
@@ -72,7 +77,7 @@ public class Personaje {
     public ModificadoresRazas getRaza() {
         return this.raza;
     }
-    public void setDestreza(ModificadoresRazas raza) {
+    public void setRaza(ModificadoresRazas raza) {
         this.raza = raza;
     }
 
@@ -81,6 +86,13 @@ public class Personaje {
     }
     public void setClase(StatsClases clase) {
         this.clase = clase;
+    }
+
+    public ArrayList<EstadisticasHabilidades> getHabilidades() {
+        return this.habilidades;
+    }
+    public void setHabilidades(ArrayList<EstadisticasHabilidades> habilidades) {
+        this.habilidades = habilidades;
     }
 
     // Metodo para sumar las bonificaciones de Razas al personaje
@@ -99,6 +111,12 @@ public class Personaje {
         setInteligencia(getInteligencia()+clase.getInteligencia());
         setDestreza(getDestreza()+clase.getDestreza());
     }
+    // Metodo para agregar las habilidades de la clase a la lista de habilidades en personaje
+    public void agregarHabilidad() {
+        for (EstadisticasHabilidades habilidad : clase.almacenarHabilidades()) { // Bucle for each que recorre cada habilidad guardada en el array de la clase asignada al personaje
+            this.habilidades.add(habilidad); // Relleno el arraylist habilidades de personaje con los objetos habilidades de las clases.
+        }
+    }
 
     @Override
     public String toString() {
@@ -111,6 +129,7 @@ public class Personaje {
                 ", destreza=" + destreza +
                 ", raza=" + raza +
                 ", clase=" + clase +
+                ", habilidades="+ habilidades+
                 '}';
     }
 }

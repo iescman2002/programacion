@@ -1,4 +1,6 @@
 package com.juego.clases;
+import com.juego.habilidades.EstadisticasHabilidades;
+import java.util.ArrayList;
 
 public class StatsClases {
     // Atributos y sus modificadores que tendrán en común cada clase.
@@ -51,5 +53,10 @@ public class StatsClases {
     }
     public void setDestreza(int destreza) {
         this.destreza = destreza;
+    }
+
+    // Metodo que devuelve un arrayList con las habilidades de la clase
+    public ArrayList<EstadisticasHabilidades> almacenarHabilidades() {
+        return new ArrayList<EstadisticasHabilidades>(); // Devuelve el arraylist de las habilidades para la clase, y en dependiendo de la clase se sobrescribe.
     }
 }
