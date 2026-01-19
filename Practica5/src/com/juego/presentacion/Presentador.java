@@ -1,5 +1,7 @@
 package com.juego.presentacion;
 
+import com.juego.modelo.GestorPersonajes;
+
 import java.util.Scanner;
 
 public class Presentador {
@@ -13,5 +15,17 @@ public class Presentador {
                 "2. Crear personaje"+"\n" +
                 "3. Salir"+
                 "\nIntroduzca a continuación su opción: ");
+        int opcion = s.nextInt();
+        switch (opcion) {
+            case 1:
+
+                break;
+            case 2:
+                new GestorPersonajes();
+                break;
+            case 3:
+                System.out.print("Saliendo...");
+                break;
+        }
     }
 }
