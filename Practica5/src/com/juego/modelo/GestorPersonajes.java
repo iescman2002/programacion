@@ -1,24 +1,25 @@
 package com.juego.modelo;
 
 import com.juego.clases.*;
-import com.juego.razas.Elfo;
-import com.juego.razas.Enano;
-import com.juego.razas.Humano;
-import com.juego.razas.ModificadoresRazas;
+import com.juego.presentacion.Presentador;
+import com.juego.razas.*;
 
 import java.util.Scanner;
 
 import static com.juego.modelo.PrecargaDatos.personajes;
 
 public class GestorPersonajes {
+    // Atributos de GestorPersonaje
+    private Scanner s; // Creo un atributo de tipo scanner llamado s para no tener que crearlo en menuCrearPersonaje todo el rato
 
+    // Constructor de GestorPersonajes
     public GestorPersonajes() {
+        this.s = new Scanner(System.in); // Constuctor atributo del scanner
         menuCrearPersonaje();
     }
 
     // Metodo para el menu de crear personaje
     public void menuCrearPersonaje() {
-        Scanner s = new Scanner(System.in);
         System.out.print("Introduzca el nombre del personaje: ");
         String nombre = s.next();
         System.out.print("Introduzca a continuación la raza: (humano, elfo, enano): ");
@@ -31,6 +32,14 @@ public class GestorPersonajes {
         pj3.actualizarStatsSegunRaza(); // Añadir las stats de la raza al pj
         pj3.anadirStatsClase(); // Actualizar las stats del personaje a los valores de la raza + los valores de la clase
         pj3.agregarHabilidad(); // Añadir las habilidades al personaje
+
+        finCrearPersonaje(); // Volver al menu principal
+    }
+    // Metodo para volver al menu principal una vez terminado la creación de personaje.
+    public void finCrearPersonaje() {
+        System.out.print("Su personaje ha sido creado con exito. Volviendo al menú principal...\n");
+        Presentador p = new Presentador();
+        p.inicio();
     }
     // Metodo unico para agregar la raza al crear el personaje nuevo
     private ModificadoresRazas seleccionarRaza(String raza) {
@@ -67,5 +76,13 @@ public class GestorPersonajes {
             default:
                 return null;
         }
+    }
+    // Metodo para ver los personajes creados en la lista
+    public String mostrarPersonajes() {
+        String muestra = "";
+        for (int i = 0; i<personajes.size();i++) {
+            muestra+=i+". "+personajes.get(i).toString()+"\n";
+        }
+        return muestra;
     }
 }
