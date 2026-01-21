@@ -5,29 +5,20 @@ import com.juego.presentacion.Presentador;
 import com.juego.razas.*;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class GestorPersonajes {
 
-
-    // Crear Lista para almacenar los personajes
-    public ArrayList<Personaje> personajes = new ArrayList<>();
-    // Atributos de GestorPersonaje
-    private Scanner s; // Creo un atributo de tipo scanner llamado s para no tener que crearlo en menuCrearPersonaje todo el rato
-
-    // Constructor de GestorPersonajes
-    public GestorPersonajes() {
-        this.s = new Scanner(System.in); // Constuctor atributo del scanner
-    }
+    // Atributos estaticos para que se puedan usar para todo el programa sin tener que crearlos siempre. Por ejemplo si no se crearan estatic cada vez que creara un nuevo GestorPersonajes se crearia un nuevo arraylist de personajes vacio
+    public static ArrayList<Personaje> personajes = new ArrayList<>();
 
     // Metodo para el menu de crear personaje
     public void menuCrearPersonaje() {
         System.out.print("Introduzca el nombre del personaje: ");
-        String nombre = s.next();
+        String nombre = PrecargaDatos.s.next();
         System.out.print("Introduzca a continuación la raza: (humano, elfo, enano): ");
-        String raza = s.next();
+        String raza = PrecargaDatos.s.next();
         System.out.print("Introduzca a continuación la clase: (bardo, druida, guerrero, mago, monje, paladin, picaro, sacerdote): ");
-        String clase = s.next();
+        String clase = PrecargaDatos.s.next();
 
         Personaje pj3 = new Personaje(nombre,seleccionarRaza(raza),seleccionarClase(clase)); // Crea personaje con los valores que introduzca el usuario
         personajes.add(pj3); // Añade pj3 a la lista de personajes en precarga de datos.
@@ -81,10 +72,12 @@ public class GestorPersonajes {
     }
     // Metodo para ver los personajes creados en la lista
     public void mostrarPersonajes() {
-
+        for (Personaje personaje : personajes) {
+            System.out.println(personaje.toString());
+        }
     }
 
     public void anadirPersonaje(Personaje pj){
-        this.personajes.add(pj);
+        personajes.add(pj);
     }
 }

@@ -120,16 +120,17 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return "{" +
-                "nombre='" + nombre + '\'' +
-                ", vida=" + vida +
-                ", fuerza=" + fuerza +
-                ", defensa=" + defensa +
-                ", inteligencia=" + inteligencia +
-                ", destreza=" + destreza +
-                ", raza=" + raza +
-                ", clase=" + clase +
-                ", habilidades="+ habilidades+
-                '}';
+        return
+                " | "+this.nombre +
+                " | "+this.vida + "hp"+
+                " | "+this.fuerza +" fuerza"+
+                " |" + this.defensa + "defensa"+
+                " |" +this.inteligencia+ " inteligencia"+
+                " |" + destreza + "destreza"+
+                " |" + this.raza + " (Raza)"+
+                " |" + this.clase + " (Clase)" +
+                " |"+ this.habilidades.get(0)+ " (Habilidad 1)"+
+                " |"+ this.habilidades.get(1)+ " (Habilidad 2)"+
+                " |"+ this.habilidades.get(2)+ " (Habilidad 3)";
     }
 }
