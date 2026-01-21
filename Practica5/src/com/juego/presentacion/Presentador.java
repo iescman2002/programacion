@@ -23,7 +23,7 @@ public class Presentador {
                 new Combate();
                 break;
             case 2:
-                new GestorPersonajes();
+                new GestorPersonajes().menuCrearPersonaje();
                 break;
             case 3:
                 System.out.print("Saliendo...");

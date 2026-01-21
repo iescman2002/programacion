@@ -4,18 +4,20 @@ import com.juego.clases.*;
 import com.juego.presentacion.Presentador;
 import com.juego.razas.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.juego.modelo.PrecargaDatos.personajes;
-
 public class GestorPersonajes {
+
+
+    // Crear Lista para almacenar los personajes
+    public ArrayList<Personaje> personajes = new ArrayList<>();
     // Atributos de GestorPersonaje
     private Scanner s; // Creo un atributo de tipo scanner llamado s para no tener que crearlo en menuCrearPersonaje todo el rato
 
     // Constructor de GestorPersonajes
     public GestorPersonajes() {
         this.s = new Scanner(System.in); // Constuctor atributo del scanner
-        menuCrearPersonaje();
     }
 
     // Metodo para el menu de crear personaje
@@ -78,11 +80,11 @@ public class GestorPersonajes {
         }
     }
     // Metodo para ver los personajes creados en la lista
-    public String mostrarPersonajes() {
-        String muestra = "";
-        for (int i = 0; i<personajes.size();i++) {
-            muestra+=i+". "+personajes.get(i).toString()+"\n";
-        }
-        return muestra;
+    public void mostrarPersonajes() {
+
+    }
+
+    public void anadirPersonaje(Personaje pj){
+        this.personajes.add(pj);
     }
 }
