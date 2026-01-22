@@ -82,4 +82,32 @@ public class GestorPersonajes {
     public void anadirPersonaje(Personaje pj){
         personajes.add(pj);
     }
+
+    // Metodo para escoger personaje 1 y personaje 2 (Se devuelve como array de 2 personajes) para poder devolver 2 datos diferentes en una sola ejecucion
+    public Personaje[] elegirPersonajes(){
+        // Crear array local y fijo para guardar los personajes que volvemos
+        Personaje[] personajes_pelean = new Personaje[2]; // Limitamos el tamaño a 2
+        // Para escoger personaje1
+        System.out.println("Jugador 1, escoja su personaje: ");
+        mostrarPersonajes();
+        System.out.println("Inserte aquí su opción: ");
+        int opcion1 = PrecargaDatos.s.nextInt();
+        for (int i=0;i < personajes.size();i++) {
+            if (i+1==opcion1) {
+                personajes_pelean[0] = personajes.get(i); // Guardo en la posicion 0 el personaje elegido por jugador1
+            }
+        }
+        // Para escoger personaje 2
+        System.out.println("Jugador 2, escoja su personaje: ");
+        mostrarPersonajes();
+        System.out.println("Inserte aquí su opción: ");
+        int opcion2 = PrecargaDatos.s.nextInt();
+        for (int i=0;i < personajes.size();i++) {
+            if (i+1==opcion2) {
+                personajes_pelean[1] = personajes.get(i); // Guardo en la posicion 0 el personaje elegido por jugador2
+            }
+        }
+
+        return personajes_pelean; // Devuelvo el array
+    }
 }
