@@ -72,8 +72,10 @@ public class GestorPersonajes {
     }
     // Metodo para ver los personajes creados en la lista
     public void mostrarPersonajes() {
+        int contador= 1;
         for (Personaje personaje : personajes) {
-            System.out.println(personaje.toString());
+            System.out.println(contador+". "+personaje.toString());
+            contador++;
         }
     }
 

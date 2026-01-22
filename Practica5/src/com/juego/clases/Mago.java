@@ -25,4 +25,9 @@ public class Mago extends StatsClases {
         habilidades.add(h12);
         return habilidades;
     }
+    // Crear toString que muestre el nombre de la Clase para verse bien desde el toString de personajes
+    @Override
+    public String toString() {
+        return "Mago";
+    }
 }

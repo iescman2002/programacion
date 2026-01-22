@@ -14,4 +14,9 @@ public class Cura extends EstadisticasHabilidades {
         setUsosActuales(getUsosActuales()-1); // Cuando se usa la habilidad, se resta 1 a los usos actuales que tiene la habilidad
         return cura; // Devuelve lo que se curará el personaje, que será igual que la suma de la inteligencia de la raza y de la clase (que son los valores de inteligencia del personaje)
     }
+    // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
+    @Override
+    public String toString() {
+        return this.getNombre();
+    }
 }
