@@ -107,7 +107,7 @@ public class GestorPersonajes {
                 personajes_pelean[1] = personajes.get(i); // Guardo en la posicion 0 el personaje elegido por jugador2
             }
         }
-
+        System.out.println("¡Comienza el combate!");
         return personajes_pelean; // Devuelvo el array
     }
 }
