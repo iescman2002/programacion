@@ -55,12 +55,13 @@ public class EstadisticasHabilidades implements Habilidades {
         this.usosActuales = usosActuales;
     }
 
-    // Metodo interfaz Habilidades
+    // Metodo de la interfaza Habilidad vacio por defecto que despues se sobrescribe según el tipo de habilidad. Muestra la informacion de la habilidad.
     @Override
-    public String infoHabilidad(){ // Devuelve si se usa ahora o no la habilidad
-        String info = this.nombre+": "+this.descripcion+".\nRealiza "+this.danio+"de danio, y lo puedes usar hasta un máximo de"+this.usosPorDefecto+" veces en toda la partida.";
-        return info;
+    public String infoHabilidad() {
+        return "";
     }
+
+    // Metodo interfaz Habilidades
     public void golpear() {
     }
 }
