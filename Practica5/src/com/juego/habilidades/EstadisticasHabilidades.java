@@ -65,7 +65,7 @@ public class EstadisticasHabilidades implements Habilidades {
     // Crear metodo para ajustar el daño en funcion de la fuerza del personaje
     @Override
     public void actualizarDanioHabilidad(Personaje pj) {
-        setDanio(pj.getFuerza()); // Se actualiza el daño de la habilidad al daño de la vida del personaje.
+        setDanio(pj.getFuerza()); // Se actualiza el daño de la habilidad al daño de la fuerza del personaje.
         setInteligencia(pj.getInteligencia()); // Se actualiza la inteligencia de la habilidad a la que tiene el personaje (es el modificador de curacion).
     }
 

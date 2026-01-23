@@ -9,11 +9,13 @@ public class DanioCortaDistancia extends EstadisticasHabilidades {
     }
 
     // Crear metodo para usar los ataques de corta distancia -> Devuelve la vida que quita
-    /*@Override
+    @Override
     public void atacar(Personaje pj) {
-        int dmg = getDanio()*3;
+        int dmg = (getDanio()-pj.getDefensa())*3; // Guardamos el daño que hará la habilidad según la defensa del rival
         setUsosActuales(getUsosActuales()-1); // Cuando se usa la habilidad, se resta 1 a los usos actuales que tiene la habilidad
-    }*/
+        pj.setVidaActual(pj.getVidaActual()-dmg);         // Se establece la vida del personaje rival al valor de la actual - el daño infligido
+        System.out.println("Has infligido un total de: "+dmg+" daño.");
+    }
 
     // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
     @Override

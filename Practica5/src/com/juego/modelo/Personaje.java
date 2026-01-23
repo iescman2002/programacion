@@ -11,6 +11,7 @@ public class Personaje {
     // Crear atributos por defecto del personaje
     private String nombre;
     private int vida;
+    private int vidaActual;
     private int fuerza;
     private int defensa;
     private int inteligencia;
@@ -23,6 +24,7 @@ public class Personaje {
     public Personaje(String nombre, ModificadoresRazas raza, StatsClases clase) {
         this.nombre = nombre;
         this.vida = 0;
+        this.vidaActual = this.vida;
         this.fuerza = 0;
         this.defensa = 0;
         this.inteligencia = 0;
@@ -44,6 +46,13 @@ public class Personaje {
     }
     public void setVida(int vida) {
         this.vida = vida;
+    }
+
+    public int getVidaActual(){
+        return this.vidaActual;
+    }
+    public void setVidaActual(int vidaActual) {
+        this.vidaActual = vidaActual;
     }
 
     public int getFuerza() {
@@ -102,6 +111,7 @@ public class Personaje {
         setDefensa(raza.getDefensa());
         setInteligencia(raza.getInteligencia());
         setDestreza(raza.getDestreza());
+        setVidaActual(raza.getVida());
     }
     // Metodo para sumar las bonificaciones de las clases a las stats del personaje una vez actualizado los de la raza
     public void anadirStatsClase() {
@@ -110,6 +120,7 @@ public class Personaje {
         setDefensa(getDefensa()+clase.getDefensa());
         setInteligencia(getInteligencia()+clase.getInteligencia());
         setDestreza(getDestreza()+clase.getDestreza());
+        setVidaActual(getVidaActual()+clase.getVida());
     }
     // Metodo para agregar las habilidades de la clase a la lista de habilidades en personaje
     public void agregarHabilidad() {

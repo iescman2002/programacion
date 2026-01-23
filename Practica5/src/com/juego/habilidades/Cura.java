@@ -1,5 +1,7 @@
 package com.juego.habilidades;
 
+import com.juego.modelo.Personaje;
+
 public class Cura extends EstadisticasHabilidades {
 
     // Crear constructor curacion
@@ -8,12 +10,16 @@ public class Cura extends EstadisticasHabilidades {
     }
 
     // Crear metodo para usar la curacion
-    /*@Override
-    public int atacar() {           // En este metodo si hay que introducir personaje para poder acceder al atributo de inteligencia.
+    @Override
+    public void atacar(Personaje pj) {                  // En la entrada de pj en Cura se introduce el personaje como si mismo.
         int cura = getInteligencia()*4;
-        setUsosActuales(getUsosActuales()-1);   // Cuando se usa la habilidad, se resta 1 a los usos actuales que tiene la habilidad
-        return  cura;
-    }*/
+        setUsosActuales(getUsosActuales()-1);           // Cuando se usa la habilidad, se resta 1 a los usos actuales que tiene la habilidad
+        pj.setVidaActual(pj.getVidaActual()+cura);      // Se establece lo que se cura el jugador - el daño infligido
+        if (pj.getVidaActual()>pj.getVida()) {          // Si al curarse, la vida actual supera la vida maxima, se establece la vida actual igual a la vida maxima
+            pj.setVidaActual(pj.getVida());
+        }
+        System.out.println("Te has curado: "+cura+" de vida. Tu vida actual ahora es de: "+pj.getVidaActual());
+    }
 
     // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
     @Override

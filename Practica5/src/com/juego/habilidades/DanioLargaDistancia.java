@@ -1,5 +1,7 @@
 package com.juego.habilidades;
 
+import com.juego.modelo.Personaje;
+
 public class DanioLargaDistancia extends EstadisticasHabilidades {
 
     public DanioLargaDistancia(String nombre, String desc) {
@@ -7,12 +9,13 @@ public class DanioLargaDistancia extends EstadisticasHabilidades {
     }
 
     // Crear metodo para usar los ataques de larga distancia
-    /*@Override
-    public int atacar() {
-        int dmg = getDanio()*6;
+    @Override
+    public void atacar(Personaje pj) {
+        int dmg = (getDanio()-pj.getDefensa())*6; // Guardamos el daño que hará la habilidad según la defensa del rival
         setUsosActuales(0); // Cuando se usa la habilidad, no se podrá usar más, los usos restantes se quedan a 0
-        return dmg;
-    }*/
+        pj.setVidaActual(pj.getVidaActual()-dmg); // Se establece la vida del personaje rival al valor de la actual - el daño infligido
+        System.out.println("Has infligido un total de: "+dmg+" daño.");
+    }
 
     // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
     @Override
