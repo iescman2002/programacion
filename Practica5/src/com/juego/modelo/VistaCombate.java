@@ -25,7 +25,7 @@ public class VistaCombate {
     public void turno(Personaje pj1, Personaje pj2) {
         setContador(this.contador+1); // Autoincremento de contador por turnos
         System.out.printf("%1sTurno "+this.contador+"%1s\n","----------------------","----------------------");
-        System.out.println("Jugador 1, es tu turno: ");
+        System.out.println("Jugador 1"+ " ("+pj1.getNombre()+") " +"es tu turno: ");
         mostrarEstadoActual(pj1,pj2);
         System.out.println("Habilidades disponibles: ");
         mostrarHabilidades(pj1);
