@@ -8,11 +8,12 @@ public class Cura extends EstadisticasHabilidades {
     }
 
     // Crear metodo para usar la curacion
-    public int curar() {           // En este metodo si hay que introducir personaje para poder acceder al atributo de inteligencia.
+    /*@Override
+    public int atacar() {           // En este metodo si hay que introducir personaje para poder acceder al atributo de inteligencia.
         int cura = getInteligencia()*4;
         setUsosActuales(getUsosActuales()-1);   // Cuando se usa la habilidad, se resta 1 a los usos actuales que tiene la habilidad
         return  cura;
-    }
+    }*/
 
     // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
     @Override

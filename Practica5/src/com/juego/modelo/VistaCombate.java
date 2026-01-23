@@ -29,7 +29,13 @@ public class VistaCombate {
         mostrarEstadoActual(pj1,pj2);
         System.out.println("Habilidades disponibles: ");
         mostrarHabilidades(pj1);
-        escogerHabilidad(pj1);
+        if (escogerHabilidad(pj1).puedeAtacar() == ) {
+            //usarhabilidad
+        }
+        else {
+            System.out.println("No le quedan usos disponibles, use otra habilidad: ");
+            escogerHabilidad(pj1);
+        }
     }
 
     // Metodo que muestra el estado actual de ambos personajes.

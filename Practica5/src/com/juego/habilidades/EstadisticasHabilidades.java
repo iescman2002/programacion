@@ -69,7 +69,16 @@ public class EstadisticasHabilidades implements Habilidades {
         setInteligencia(pj.getInteligencia()); // Se actualiza la inteligencia de la habilidad a la que tiene el personaje (es el modificador de curacion).
     }
 
-    // Metodo de la interfaza Habilidad vacio por defecto que despues se sobrescribe según el tipo de habilidad. Muestra la informacion de la habilidad.
+    // Metodo de la interfaz que indica si se puede usar o no la habilidad (si quedan usos restantes o no)
+    @Override
+    public Boolean puedeAtacar(){
+        if (this.getUsosActuales()>0) {
+            return true;
+        }
+        return false;
+    }
+
+    // Metodo de la interfaz Habilidad vacio por defecto que despues se sobrescribe según el tipo de habilidad. Muestra la informacion de la habilidad.
     @Override
     public String infoHabilidad() {
         return "";
@@ -77,5 +86,9 @@ public class EstadisticasHabilidades implements Habilidades {
 
     // Metodo interfaz Habilidades
     public void golpear() {
+    }
+
+    @Override
+    public void atacar(Personaje pj) {
     }
 }

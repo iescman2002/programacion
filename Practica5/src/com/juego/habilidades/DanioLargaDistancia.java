@@ -7,11 +7,12 @@ public class DanioLargaDistancia extends EstadisticasHabilidades {
     }
 
     // Crear metodo para usar los ataques de larga distancia
-    public int atacarLargaDistancia() {
+    /*@Override
+    public int atacar() {
         int dmg = getDanio()*6;
         setUsosActuales(0); // Cuando se usa la habilidad, no se podrá usar más, los usos restantes se quedan a 0
         return dmg;
-    }
+    }*/
 
     // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
     @Override

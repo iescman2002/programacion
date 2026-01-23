@@ -1,5 +1,7 @@
 package com.juego.habilidades;
 
+import com.juego.modelo.Personaje;
+
 public class DanioCortaDistancia extends EstadisticasHabilidades {
 
     public DanioCortaDistancia(String nombre, String desc) {
@@ -7,11 +9,11 @@ public class DanioCortaDistancia extends EstadisticasHabilidades {
     }
 
     // Crear metodo para usar los ataques de corta distancia -> Devuelve la vida que quita
-    public int atacarCortaDistancia() {
+    /*@Override
+    public void atacar(Personaje pj) {
         int dmg = getDanio()*3;
         setUsosActuales(getUsosActuales()-1); // Cuando se usa la habilidad, se resta 1 a los usos actuales que tiene la habilidad
-        return dmg;
-    }
+    }*/
 
     // Crear toString que muestre el nombre de la habilidad para verse bien desde el toString de personajes
     @Override
