@@ -35,8 +35,19 @@ public class Combate {
 
     // Metodo que ejecuta el principio y el fin del combate.
     public void EmpezarPelea() {
+            VistaCombate vc = new VistaCombate();
         while ((pj1.getVidaActual()>=0) && (pj2.getVidaActual()>=0)) { // Se ejecuta el bucle constantemente hasta que la vida de uno baje a 0.
-            new VistaCombate().turno_pj1(pj1,pj2); // Inicia los turnos de cada personaje (Siempre empieza pj1).
+            vc.turno_pj1(pj1,pj2); // Inicia los turnos de cada personaje (Siempre empieza pj1).
+            // Comprobar si ha perdido jugador2.
+            if (EsPerdedor(pj2)) {
+                break;
+            }
+            vc.turno_pj2(pj1,pj2);
         }
+    }
+
+    // Metodo para saber si ha perdido un jugador
+    public Boolean EsPerdedor(Personaje pj) {
+        return pj.getVidaActual()<=0; // Devuelve true (que si es el perdedor) si la vida del personaje es menos o igual que 0
     }
 }

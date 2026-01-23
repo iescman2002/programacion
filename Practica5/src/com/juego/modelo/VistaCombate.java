@@ -21,7 +21,7 @@ public class VistaCombate {
         this.contador = contador;
     }
 
-    // Metodo de los turnos del jugador (INCOMPLETO)
+    // Metodo de los turnos del jugador1
     public void turno_pj1(Personaje pj1, Personaje pj2) {
         setContador(this.contador+1); // Autoincremento de contador por turnos
         System.out.printf("%1sTurno "+this.contador+"%1s\n","----------------------","----------------------");
@@ -38,9 +38,38 @@ public class VistaCombate {
                 if (habilidadEscogida.equals(pj1.getHabilidades().get(0))) {    // Si la habilidad que ha escogido es igual que la habilidad Curar:
                     habilidadEscogida.atacar(pj1); // Aplica el efecto de curación despues de imprimir la cantidad que debe de curar.
                     break;
-                } else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
+                }
+                else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
                     habilidadEscogida.atacar(pj2);
                     break;
+                }
+            }
+            else { // Si no puede usar la habilidad llama a escoger habilidad otra vez.
+                System.out.println("No le quedan usos disponibles, use otra habilidad: ");
+            }
+        }
+    }
+
+    // Metodo de los turnos del jugador2
+    public void turno_pj2(Personaje pj1, Personaje pj2) {
+        setContador(this.contador+1); // Autoincremento de contador por turnos
+        System.out.printf("%1sTurno "+this.contador+"%1s\n","----------------------","----------------------");
+        System.out.println("Jugador 2"+ " ("+pj2.getNombre()+") " +"es tu turno: ");
+        mostrarEstadoActual(pj1,pj2);
+        System.out.println("Habilidades disponibles: ");
+        mostrarHabilidades(pj2);
+
+        // Proceso de elegir habilidad para que siempre se ejecute una habilidad que se pueda usar
+        while (true) {
+            Habilidades habilidadEscogida = escogerHabilidad(pj2); // Se guarda la habilidad escogida en una variable para trabajar con ella ahora en el ataque:
+            // Proceso de ataque
+            if (habilidadEscogida.puedeAtacar() == true) { // Si puede usar la habilidad la usa
+                if (habilidadEscogida.equals(pj2.getHabilidades().get(0))) {    // Si la habilidad que ha escogido es igual que la habilidad Curar:
+                    habilidadEscogida.atacar(pj2); // Aplica el efecto de curación despues de imprimir la cantidad que debe de curar.
+                    break;
+                }
+                else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
+                    habilidadEscogida.atacar(pj1);
                 }
             }
             else { // Si no puede usar la habilidad llama a escoger habilidad otra vez.
