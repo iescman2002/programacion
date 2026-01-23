@@ -110,4 +110,20 @@ public class VistaCombate {
                 return null;
         }
     }
+
+    // Metodo para mostrar el resultado del combate
+    public void resultado(Combate combate, Personaje pj1, Personaje pj2) {
+        System.out.println(" -------------------- ");
+        System.out.println("| FIN DE LA PARTIDA:  |");
+        System.out.println(" -------------------- ");
+        System.out.print("El ganador es: ");
+        if (combate.esPerdedor(pj1)) {
+            System.out.println(pj2.getNombre()+" (Jugador 2).");
+            System.out.print("El perdedor es: "+pj1.getNombre()+" (Jugador 1)");
+        }
+        else {
+            System.out.println(pj1.getNombre()+" (Jugador 1).");
+            System.out.print("El perdedor es: "+pj2.getNombre()+" (Jugador 2)");
+        }
+    }
 }
