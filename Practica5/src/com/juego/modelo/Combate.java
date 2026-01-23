@@ -36,7 +36,7 @@ public class Combate {
     // Metodo que ejecuta el principio y el fin del combate.
     public void EmpezarPelea() {
         while ((pj1.getVida()>=0) && (pj2.getVida()>=0)) { // Se ejecuta el bucle constantemente hasta que la vida de uno baje a 0.
-            new VistaCombate().turno(pj1,pj2); // Inicia los turnos de cada personaje.
+            new VistaCombate().turno_pj1(pj1,pj2); // Inicia los turnos de cada personaje (Siempre empieza pj1).
         }
     }
 }

@@ -22,13 +22,14 @@ public class VistaCombate {
     }
 
     // Metodo de los turnos del jugador (INCOMPLETO)
-    public void turno(Personaje pj1, Personaje pj2) {
+    public void turno_pj1(Personaje pj1, Personaje pj2) {
         setContador(this.contador+1); // Autoincremento de contador por turnos
         System.out.printf("%1sTurno "+this.contador+"%1s\n","----------------------","----------------------");
         System.out.println("Jugador 1"+ " ("+pj1.getNombre()+") " +"es tu turno: ");
         mostrarEstadoActual(pj1,pj2);
         System.out.println("Habilidades disponibles: ");
         mostrarHabilidades(pj1);
+        escogerHabilidad(pj1);
     }
 
     // Metodo que muestra el estado actual de ambos personajes.
@@ -46,5 +47,21 @@ public class VistaCombate {
             System.out.println((i+1)+". "+ habilidades.get(i).infoHabilidad()); // infoHabilidad es un metodo creado en la interfaz de habilidades
         }
         System.out.println("------------------------------------------------------------------");
+    }
+
+    // Metodo para escoger la habilidad que se va a usar
+    public Habilidades escogerHabilidad(Personaje pj) {
+        System.out.print("Introduzca la habilidad a usar: ");
+        int habilidad = PrecargaDatos.s.nextInt();
+        switch (habilidad) {
+            case 1:
+                return pj.getHabilidades().get(0);  // Si la habilidad introducida es 1, se escoge la habilidad de la posicion 0 de la lista de habilidades (Curar)
+            case 2:
+                return pj.getHabilidades().get(1);  // Si la habilidad introducida es 2, se escoge la habilidad de la posicion 1 de la lista de habilidades (Daño a corta distancia)
+            case 3:
+                return pj.getHabilidades().get(2); // Si la habilidad introducida es 3, se escoge la habilidad de la posicion 2 de la lista de habilidades (Daño a larga distancia)
+            default:
+                return null;
+        }
     }
 }
