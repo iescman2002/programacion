@@ -1,10 +1,13 @@
 package com.juego.habilidades;
 
+import com.juego.modelo.Personaje;
+
 public class EstadisticasHabilidades implements Habilidades {
     // Crear atributos de las habilidades
     private String nombre;
     private String descripcion;
     private int danio;
+    private int inteligencia;
     private int usosPorDefecto;
     private int usosActuales;
 
@@ -13,6 +16,7 @@ public class EstadisticasHabilidades implements Habilidades {
         this.nombre = nombre;
         this.descripcion = desc;
         this.danio = 0; // todas las habilidades empiezan quitando 0, el daño se modificará después según el personaje
+        this.inteligencia = 0;
         this.usosPorDefecto = usos;
         this.usosActuales = this.usosPorDefecto;
     }
@@ -34,12 +38,15 @@ public class EstadisticasHabilidades implements Habilidades {
         this.descripcion = descripcion;
     }
 
-    public int GetDanio() {
+    public int getDanio() {
         return this.danio;
     }
     public void setDanio(int danio) {
         this.danio = danio;
     }
+
+    public int getInteligencia() {return this.inteligencia;}
+    public void setInteligencia(int inteligencia) {this.inteligencia = inteligencia;}
 
     public int getUsosPorDefecto() {
         return this.usosPorDefecto;
@@ -53,6 +60,13 @@ public class EstadisticasHabilidades implements Habilidades {
     }
     public void setUsosActuales(int usosActuales) {
         this.usosActuales = usosActuales;
+    }
+
+    // Crear metodo para ajustar el daño en funcion de la fuerza del personaje
+    @Override
+    public void actualizarDanioHabilidad(Personaje pj) {
+        setDanio(pj.getFuerza()); // Se actualiza el daño de la habilidad al daño de la vida del personaje.
+        setInteligencia(pj.getInteligencia()); // Se actualiza la inteligencia de la habilidad a la que tiene el personaje (es el modificador de curacion).
     }
 
     // Metodo de la interfaza Habilidad vacio por defecto que despues se sobrescribe según el tipo de habilidad. Muestra la informacion de la habilidad.

@@ -1,6 +1,7 @@
 package com.juego.modelo;
 
 import com.juego.clases.*;
+import com.juego.habilidades.Habilidades;
 import com.juego.presentacion.Presentador;
 import com.juego.razas.*;
 
@@ -25,6 +26,9 @@ public class GestorPersonajes {
         pj3.actualizarStatsSegunRaza(); // Añadir las stats de la raza al pj
         pj3.anadirStatsClase(); // Actualizar las stats del personaje a los valores de la raza + los valores de la clase
         pj3.agregarHabilidad(); // Añadir las habilidades al personaje
+        for (Habilidades habilidad: pj3.getHabilidades()) { // Actualiza las estadisticas de las habilidades segun la fuerza del personaje
+            habilidad.actualizarDanioHabilidad(pj3); //
+        }
 
         finCrearPersonaje(); // Volver al menu principal
     }

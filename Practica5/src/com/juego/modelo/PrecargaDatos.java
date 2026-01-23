@@ -1,6 +1,7 @@
 package com.juego.modelo;
 
 // Importamos todos los tipos de raza que puede ser un personaje
+import com.juego.habilidades.Habilidades;
 import com.juego.razas.*;
 
 // Importamos todos los tipos de clase que puede ser un personaje
@@ -31,6 +32,11 @@ public class PrecargaDatos {
         // Añadir habilidades al personaje
         pj1.agregarHabilidad();
         pj2.agregarHabilidad();
+        // Actualizar daño e inteligencia de las habilidades
+        for (Personaje personaje : GestorPersonajes.personajes) { // Recorre todos los personajes del array
+            for (Habilidades habilidad : personaje.getHabilidades()) { // Recorre todas las habilidades de cada personaje
+                habilidad.actualizarDanioHabilidad(personaje); // Actualiza las stats de cada habilidad de cada personaje
+            }
+        }
     }
-
 }
