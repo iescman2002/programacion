@@ -20,12 +20,12 @@ public class PrecargaDatos {
         // Precargar personajes
         Personaje pj1 = new Personaje("Gladiador", new Humano(), new Guerrero());     // Se crea pj1 y le indicamos su raza y clase
         Personaje pj2 = new Personaje("Señor Malfoi", new Elfo(), new Mago());  // Se crea pj2 y le indicamos su raza y clase
-        Personaje pj3 = new Personaje("Funko Cantarin",new Enano(),new Bardo());
+        Personaje pj3 = new Personaje("Goblin Cantaor",new Elfo(),new Bardo());
         Personaje pj4 = new Personaje("Buda de los Alpes",new Humano(),new Monje());
         Personaje pj5 = new Personaje("Hippie del bosque",new Humano(),new Druida());
         Personaje pj6 = new Personaje("Justiciero de la espada",new Humano(),new Paladin());
         Personaje pj7 = new Personaje("Cura chikitin",new Enano(),new Sacerdote());
-        Personaje pj8 = new Personaje("Carterista",new Elfo(),new Picaro());
+        Personaje pj8 = new Personaje("Carterista",new Enano(),new Picaro());
         // Añadir los personajes precargados a la lista de personajes
         gp.anadirPersonaje(pj1);
         gp.anadirPersonaje(pj2);
