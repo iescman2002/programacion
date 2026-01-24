@@ -77,7 +77,8 @@ public class GestorPersonajes {
     public void mostrarPersonajes() {
         int contador= 1;
         for (Personaje personaje : personajes) {
-            System.out.println(contador+". "+personaje.toString());
+            System.out.println("╠═════════════════════════════════════╣");
+            System.out.println("║ "+contador+". "+personaje.toString());
             contador++;
         }
     }
@@ -91,20 +92,26 @@ public class GestorPersonajes {
         // Crear array local y fijo para guardar los personajes que volvemos
         Personaje[] personajes_pelean = new Personaje[2]; // Limitamos el tamaño a 2
         // Para escoger personaje1
-        System.out.print("Jugador 1, escoja su personaje: \n");
+        System.out.print("╔═════════════════════════════════════╗\n");
+        System.out.print("║  Jugador 1, escoja su personaje:    ║\n");
         mostrarPersonajes();
-        System.out.print("Inserte aquí su opción: ");
+        System.out.println("╠═════════════════════════════════════╗");
+        System.out.print("║  Inserte aquí su opción: ");
         int opcion1 = PrecargaDatos.s.nextInt();
+        System.out.print("╚═════════════════════════════════════╝\n");
         for (int i=0;i < personajes.size();i++) {
             if (i+1==opcion1) {
                 personajes_pelean[0] = personajes.get(i); // Guardo en la posicion 0 el personaje elegido por jugador1
             }
         }
         // Para escoger personaje 2
-        System.out.print("Jugador 2, escoja su personaje: \n");
+        System.out.print("╔═════════════════════════════════════╗\n");
+        System.out.print("║  Jugador 2, escoja su personaje:    ║\n");
         mostrarPersonajes();
-        System.out.print("Inserte aquí su opción: ");
+        System.out.println("╠═════════════════════════════════════╗");
+        System.out.print("║  Inserte aquí su opción: ");
         int opcion2 = PrecargaDatos.s.nextInt();
+        System.out.print("╚═════════════════════════════════════╝\n");
         for (int i=0;i < personajes.size();i++) {
             if (i+1==opcion2) {
                 personajes_pelean[1] = personajes.get(i); // Guardo en la posicion 0 el personaje elegido por jugador2

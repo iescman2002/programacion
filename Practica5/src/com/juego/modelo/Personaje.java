@@ -132,16 +132,18 @@ public class Personaje {
     @Override
     public String toString() {
         return
-                " | " +this.nombre +
-                " | " +"Vida: "+this.vida+
-                " | " +"Fuerza: "+this.fuerza+
-                " | " +"Defensa: "+this.defensa +
-                " | " +"Inteligencia: "+this.inteligencia+
-                " | " +"Destreza: "+ this.destreza +
-                " | " +"Raza: "+ this.getRaza() +
-                " | " +"Clase: " + this.getClase() +
-                " | " + "Habilidad 1: "+this.habilidades.get(0)+
-                " | " +"Habilidad 2: "+this.habilidades.get(1)+
-                " | " +"Habilidad 3: "+this.habilidades.get(2);
+                this.nombre+
+                       "\n╠═════════════════════════════════════╣\n"+
+                "║ " +"Vida: "+this.vida+
+                " ║ " +"Fuerza: "+this.fuerza+
+                " ║ " +"Defensa: "+this.defensa +"  ║\n"+
+                "║ " +"Inteli: "+this.inteligencia+
+                " ║ " +"Destre: "+ this.destreza +" ║"+
+                "\n║ " +"Raza: "+ this.getRaza()+
+                "\n║ " +"Clase: " + this.getClase()+
+                        "\n╠═════════════════════════════════════╣\n"+
+                "║ " + "Habilidad 1: "+this.habilidades.get(0)+
+                "\n║ " +"Habilidad 2: "+this.habilidades.get(1)+
+                "\n║ " +"Habilidad 3: "+this.habilidades.get(2);
     }
 }
