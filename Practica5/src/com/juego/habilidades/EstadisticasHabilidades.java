@@ -92,7 +92,7 @@ public class EstadisticasHabilidades implements Habilidades {
             dmg = 1;
         }
         pj.setVidaActual(pj.getVidaActual()-dmg);
-        System.out.print("Has inflingido un total de: "+dmg+" daño.\n");
+        System.out.print("║ Has inflingido un total de: "+dmg+" daño.\n");
     }
 
     @Override

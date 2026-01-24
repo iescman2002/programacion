@@ -24,10 +24,11 @@ public class VistaCombate {
     // Metodo de los turnos del jugador1
     public void turno_pj1(Personaje pj1, Personaje pj2) {
         setContador(this.contador+1); // Autoincremento de contador por turnos
-        System.out.printf("%1sTurno "+this.contador+"%1s\n","----------------------","----------------------");
-        System.out.println("Jugador 1"+ " ("+pj1.getNombre()+") " +"es tu turno: ");
+        System.out.printf("%1sTurno "+this.contador+"%1s\n","╠════════","════════╝");
+        System.out.println("╠══════════════════════════════════════════════════╗");
+        System.out.println("║ Jugador 1"+ " ("+pj1.getNombre()+") " +"es tu turno: ");
         mostrarEstadoActual(pj1,pj2);
-        System.out.println("Habilidades disponibles: ");
+        System.out.println("║ Habilidades disponibles: ");
         mostrarHabilidades(pj1);
 
         // Proceso de elegir habilidad para que siempre se ejecute una habilidad que se pueda usar
@@ -62,10 +63,11 @@ public class VistaCombate {
     // Metodo de los turnos del jugador2
     public void turno_pj2(Personaje pj1, Personaje pj2) {
         setContador(this.contador+1); // Autoincremento de contador por turnos
-        System.out.printf("%1sTurno "+this.contador+"%1s\n","----------------------","----------------------");
-        System.out.println("Jugador 2"+ " ("+pj2.getNombre()+") " +"es tu turno: ");
+        System.out.printf("%1sTurno "+this.contador+"%1s\n","╠════════","════════╝");
+        System.out.println("╠══════════════════════════════════════════════════╗");
+        System.out.println("║ Jugador 1"+ " ("+pj2.getNombre()+") " +"es tu turno: ");
         mostrarEstadoActual(pj1,pj2);
-        System.out.println("Habilidades disponibles: ");
+        System.out.println("║ Habilidades disponibles: ");
         mostrarHabilidades(pj2);
 
         // Proceso de elegir habilidad para que siempre se ejecute una habilidad que se pueda usar
@@ -99,25 +101,25 @@ public class VistaCombate {
 
     // Metodo que muestra el estado actual de ambos personajes.
     public void mostrarEstadoActual(Personaje pj1, Personaje pj2) {
-        System.out.printf(pj1.getNombre()+".%2s--->%2s Vida Restante: "+pj1.getVidaActual()+" / "+pj1.getVida()+" hp \n","","");
-        System.out.printf(pj2.getNombre()+".%2s--->%2s Vida Restante: "+pj2.getVidaActual()+" / "+ pj2.getVida()+" hp \n","","");
-        System.out.println("---------------------------------------------------");
+        System.out.printf("║ "+pj1.getNombre()+".%2s--->%2s Vida Restante: "+pj1.getVidaActual()+" / "+pj1.getVida()+" hp \n","","");
+        System.out.printf("║ "+pj2.getNombre()+".%2s--->%2s Vida Restante: "+pj2.getVidaActual()+" / "+ pj2.getVida()+" hp \n","","");
+        System.out.println("╠══════════════════════════╗");
     }
 
     // Metodo para mostrar las habilidades en el turno correspondiente
     public void mostrarHabilidades(Personaje pj) {
         ArrayList<Habilidades> habilidades = new ArrayList<>(pj.getHabilidades());
-        System.out.println("-----------------------");
+        System.out.println("╠══════════════════════════╝");
         for (int i = 0; i <habilidades.size();i++) {
-            System.out.println((i+1)+". "+ habilidades.get(i).infoHabilidad()); // infoHabilidad es un metodo creado en la interfaz de habilidades;
+            System.out.println("║ "+(i+1)+". "+ habilidades.get(i).infoHabilidad()); // infoHabilidad es un metodo creado en la interfaz de habilidades;
         }
-        System.out.println("4. Golpear: El jugador golpea lo más debil posible al enemigo. (Usos ilimitados).");
-        System.out.println("------------------------------------------------------------------");
+        System.out.println("║ 4. Golpear: El jugador golpea lo más debil posible al enemigo. (Usos ilimitados).");
+        System.out.println("╠══════════════════════════════════════════════════╝");
     }
 
     // Metodo para escoger la habilidad que se va a usar
     public Habilidades escogerHabilidad(Personaje pj) {
-        System.out.print("Introduzca la habilidad a usar: ");
+        System.out.print("║ Introduzca la habilidad a usar: ");
         int habilidad = PrecargaDatos.s.nextInt();
         switch (habilidad) {
             case 1:

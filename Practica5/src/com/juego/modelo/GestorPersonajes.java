@@ -117,9 +117,10 @@ public class GestorPersonajes {
                 personajes_pelean[1] = personajes.get(i); // Guardo en la posicion 0 el personaje elegido por jugador2
             }
         }
-        System.out.println("-------------------------");
-        System.out.println("| ¡Comienza el combate! |");
-        System.out.println("| Combate entre "+personajes_pelean[0].getNombre()+" y "+personajes_pelean[1].getNombre()+" | ");
+        System.out.println("╔═══════════════════════╗");
+        System.out.println("║ ¡Comienza el combate! ║");
+        System.out.println("║ Combate entre:        ║");
+        System.out.println("║ "+personajes_pelean[0].getNombre()+" y "+personajes_pelean[1].getNombre());
         return personajes_pelean; // Devuelvo el array
     }
 }

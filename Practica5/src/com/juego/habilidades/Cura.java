@@ -29,6 +29,6 @@ public class Cura extends EstadisticasHabilidades {
     // Sobrescribir el metodo de la interfaz habilidades para que muestre la información de la habilidad siguiendo la siguiente estructura:
     @Override
     public String infoHabilidad(){
-        return this.getNombre() +": "+ this.getDescripcion() +".\n   Realiza: "+ this.getInteligencia()*4 +" de curación. Usos restantes: "+ this.getUsosActuales() +" / "+ this.getUsosPorDefecto();
+        return this.getNombre() +": "+ this.getDescripcion() +"\n║   Realiza: "+ this.getInteligencia()*4 +" de curación. Usos restantes: "+ this.getUsosActuales() +" / "+ this.getUsosPorDefecto();
     }
 }

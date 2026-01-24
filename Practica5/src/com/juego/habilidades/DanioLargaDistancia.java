@@ -25,6 +25,6 @@ public class DanioLargaDistancia extends EstadisticasHabilidades {
     // Sobrescribir el metodo de la interfaz habilidades para que muestre la información de la habilidad siguiendo la siguiente estructura:
     @Override
     public String infoHabilidad() {
-        return this.getNombre() +": "+ this.getDescripcion() +".\n   Realiza: "+ this.getDanio()*6 +" de daño. Usos restantes: "+ this.getUsosActuales() +" / "+ this.getUsosPorDefecto();
+        return this.getNombre() +": "+ this.getDescripcion() +"\n║   Realiza: "+ this.getDanio()*6 +" de daño. Usos restantes: "+ this.getUsosActuales() +" / "+ this.getUsosPorDefecto();
     }
 }
