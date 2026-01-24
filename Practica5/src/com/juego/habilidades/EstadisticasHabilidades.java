@@ -85,7 +85,10 @@ public class EstadisticasHabilidades implements Habilidades {
     }
 
     // Metodo interfaz Habilidades
-    public void golpear() {
+    @Override
+    public void golpear(Personaje pj) {
+        pj.setVidaActual(pj.getVidaActual()-this.getDanio());
+        System.out.print("Has inflingido un total de: "+this.getDanio()+" daño.");
     }
 
     @Override
