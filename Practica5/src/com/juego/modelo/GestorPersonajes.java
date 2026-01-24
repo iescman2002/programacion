@@ -35,8 +35,7 @@ public class GestorPersonajes {
     // Metodo para volver al menu principal una vez terminado la creación de personaje.
     public void finCrearPersonaje() {
         System.out.print("Su personaje ha sido creado con exito. Volviendo al menú principal...\n");
-        Presentador p = new Presentador();
-        p.inicio();
+        new Presentador();
     }
     // Metodo unico para agregar la raza al crear el personaje nuevo
     private ModificadoresRazas seleccionarRaza(String raza) {

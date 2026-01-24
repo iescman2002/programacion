@@ -6,7 +6,6 @@ import com.juego.modelo.PrecargaDatos;
 
 public class Presentador {
     public Presentador(){
-        new PrecargaDatos(); // Precargar los datos al iniciar el presentador
         inicio();
     }
     // Crear metodo menu principal
@@ -19,6 +18,7 @@ public class Presentador {
         int opcion = PrecargaDatos.s.nextInt(); // Se llama al Scanner creado en precarga datos
         switch (opcion) {
             case 1:
+                precargarDatos();
                 new Combate();
                 break;
             case 2:
@@ -28,5 +28,8 @@ public class Presentador {
                 System.out.print("Saliendo...");
                 break;
         }
+    }
+    public void precargarDatos() {
+        new PrecargaDatos(); // Precargar los datos
     }
 }
