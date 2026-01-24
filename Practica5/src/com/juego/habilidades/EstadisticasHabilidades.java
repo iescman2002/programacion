@@ -87,8 +87,12 @@ public class EstadisticasHabilidades implements Habilidades {
     // Metodo interfaz Habilidades
     @Override
     public void golpear(Personaje pj) {
-        pj.setVidaActual(pj.getVidaActual()-this.getDanio());
-        System.out.print("Has inflingido un total de: "+this.getDanio()+" daño.");
+        int dmg = getDanio()-pj.getDefensa();
+        if (dmg <=0) {  // Si por lo que sea la defensa es mayor que el daño, se establece el minimo de daño de golpear en 1.
+            dmg = 1;
+        }
+        pj.setVidaActual(pj.getVidaActual()-dmg);
+        System.out.print("Has inflingido un total de: "+dmg+" daño.\n");
     }
 
     @Override

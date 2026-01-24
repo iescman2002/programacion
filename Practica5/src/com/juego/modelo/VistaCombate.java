@@ -34,18 +34,27 @@ public class VistaCombate {
         while (true) {
             Habilidades habilidadEscogida = escogerHabilidad(pj1); // Se guarda la habilidad escogida en una variable para trabajar con ella ahora en el ataque:
             // Proceso de ataque
-            if (habilidadEscogida.puedeAtacar() == true) { // Si puede usar la habilidad la usa
-                if (habilidadEscogida.equals(pj1.getHabilidades().get(0))) {    // Si la habilidad que ha escogido es igual que la habilidad Curar:
-                    habilidadEscogida.atacar(pj1); // Aplica el efecto de curación despues de imprimir la cantidad que debe de curar.
-                    break;
-                }
-                else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
-                    habilidadEscogida.atacar(pj2);
-                    break;
-                }
+            if (habilidadEscogida == null) { // Si la habilidad escogida vale null (es decir que ha escogido la habilidad golpear)
+                pj1.getHabilidades().get(1).actualizarDanioHabilidad(pj1);  // Asegurarse de tener las has habilidades con el daño actualizado antes de ejecutarlas
+                pj1.getHabilidades().get(1).golpear(pj2); // Llama al personaje que pega en el turno (pj1) y llama a cualquier habilidad existente (en este caso 1 por ejemplo) y usa la funcion de golpear.
+                break;
             }
-            else { // Si no puede usar la habilidad llama a escoger habilidad otra vez.
-                System.out.println("No le quedan usos disponibles, use otra habilidad: ");
+            else {
+                habilidadEscogida.actualizarDanioHabilidad(pj1);  // Asegurarse de tener las has habilidades con el daño actualizado antes de ejecutarlas
+
+                if (habilidadEscogida.puedeAtacar() == true) { // Si puede usar la habilidad la usa
+                    if (habilidadEscogida.equals(pj1.getHabilidades().get(0))) {    // Si la habilidad que ha escogido es igual que la habilidad Curar:
+                        habilidadEscogida.atacar(pj1); // Aplica el efecto de curación despues de imprimir la cantidad que debe de curar.
+                        break;
+                    }
+                    else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
+                        habilidadEscogida.atacar(pj2);
+                        break;
+                    }
+                }
+                else { // Si no puede usar la habilidad llama a escoger habilidad otra vez.
+                    System.out.println("No le quedan usos disponibles, use otra habilidad: ");
+                }
             }
         }
     }
@@ -63,17 +72,27 @@ public class VistaCombate {
         while (true) {
             Habilidades habilidadEscogida = escogerHabilidad(pj2); // Se guarda la habilidad escogida en una variable para trabajar con ella ahora en el ataque:
             // Proceso de ataque
-            if (habilidadEscogida.puedeAtacar() == true) { // Si puede usar la habilidad la usa
-                if (habilidadEscogida.equals(pj2.getHabilidades().get(0))) {    // Si la habilidad que ha escogido es igual que la habilidad Curar:
-                    habilidadEscogida.atacar(pj2); // Aplica el efecto de curación despues de imprimir la cantidad que debe de curar.
-                    break;
-                }
-                else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
-                    habilidadEscogida.atacar(pj1);
-                }
+            if (habilidadEscogida == null) { // Si la habilidad escogida vale null (es decir que ha escogido la habilidad golpear)
+                pj2.getHabilidades().get(1).actualizarDanioHabilidad(pj2); // Asegurarse de tener las has habilidades con el daño actualizado antes de ejecutarlas
+                pj2.getHabilidades().get(1).golpear(pj1); // Llama al personaje que pega en el turno (pj2) y llama a cualquier habilidad existente (en este caso 1 por ejemplo) y usa la funcion de golpear.
+                break;
             }
-            else { // Si no puede usar la habilidad llama a escoger habilidad otra vez.
-                System.out.println("No le quedan usos disponibles, use otra habilidad: ");
+            else {
+                habilidadEscogida.actualizarDanioHabilidad(pj2);  // Asegurarse de tener las has habilidades con el daño actualizado antes de ejecutarlas
+
+                if (habilidadEscogida.puedeAtacar() == true) { // Si puede usar la habilidad la usa
+                    if (habilidadEscogida.equals(pj2.getHabilidades().get(0))) {    // Si la habilidad que ha escogido es igual que la habilidad Curar:
+                        habilidadEscogida.atacar(pj2); // Aplica el efecto de curación despues de imprimir la cantidad que debe de curar.
+                        break;
+                    }
+                    else { // Si no significa que ha cogido una habilidad o de pegar larga distancia o de cerca.
+                        habilidadEscogida.atacar(pj1);
+                        break;
+                    }
+                }
+                else { // Si no puede usar la habilidad llama a escoger habilidad otra vez.
+                    System.out.println("No le quedan usos disponibles, use otra habilidad: ");
+                }
             }
         }
     }
@@ -90,8 +109,9 @@ public class VistaCombate {
         ArrayList<Habilidades> habilidades = new ArrayList<>(pj.getHabilidades());
         System.out.println("-----------------------");
         for (int i = 0; i <habilidades.size();i++) {
-            System.out.println((i+1)+". "+ habilidades.get(i).infoHabilidad()); // infoHabilidad es un metodo creado en la interfaz de habilidades
+            System.out.println((i+1)+". "+ habilidades.get(i).infoHabilidad()); // infoHabilidad es un metodo creado en la interfaz de habilidades;
         }
+        System.out.println("4. Golpear: El jugador golpea lo más debil posible al enemigo. (Usos ilimitados).");
         System.out.println("------------------------------------------------------------------");
     }
 
@@ -107,7 +127,7 @@ public class VistaCombate {
             case 3:
                 return pj.getHabilidades().get(2); // Si la habilidad introducida es 3, se escoge la habilidad de la posicion 2 de la lista de habilidades (Daño a larga distancia)
             default:
-                return null;
+                return null; // Si escoge 4, es como si cogiera default y devuelve null. null es igual a la habilidad golpear()
         }
     }
 
