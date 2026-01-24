@@ -11,10 +11,12 @@ public class Presentador {
     // Crear metodo menu principal
     public void inicio() {
         System.out.print(
-                "1. Jugar"+"\n" +
-                "2. Crear personaje"+"\n" +
-                "3. Salir"+
-                "\nIntroduzca a continuación su opción: ");
+                "╔════ MENU PRINCIPAL ════╗\n"+
+                "║   1. Jugar             ║\n"+
+                "║   2. Crear personaje   ║\n"+
+                "║   3. Salir             ║\n"+
+                "╚════════════════════════╝\n" +
+                "Introduzca a continuación su opción: ");
         int opcion = PrecargaDatos.s.nextInt(); // Se llama al Scanner creado en precarga datos
         switch (opcion) {
             case 1:
