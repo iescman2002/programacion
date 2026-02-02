@@ -7,5 +7,6 @@ public class Main {
         bloque1.censoUnico();
         bloque1.bolsaDeOro();
         bloque1.limpiezaDelCalabozo();
+        bloque1.mercadodeHechizos();
     }
 }

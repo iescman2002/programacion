@@ -55,4 +55,23 @@ public class Bloque1 {
             System.out.println(eventos);
         }
     }
+    // Mercado de Hechizos
+    public void mercadodeHechizos() {
+        // Crear HashMap para hechizos y coste
+        HashMap<String, Double> hechizos = new HashMap<>();
+        // Rellenar HashMap con algunos claves y valor
+        hechizos.put("Bola de fuego", 250.21);
+        hechizos.put("Rayo helado", 12.75);
+        hechizos.put("Tormenta eléctrica", 320.50);
+        hechizos.put("Explosión arcana", 32.15);
+        hechizos.put("Llamas infernales", 275.90);
+        hechizos.put("Viento cortante", 20.33);
+        // Imprimir los hechizos que cuestan mas de 50 de mana
+        System.out.println("Bloque 1 Ejercicio 5:");
+        for (String hechizo : hechizos.keySet()) {
+            if (hechizos.get(hechizo)>50) {
+                System.out.println("Hechizo: "+hechizo+" Cuesta: "+ hechizos.get(hechizo));
+            }
+        }
+    }
 }
