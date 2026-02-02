@@ -5,5 +5,6 @@ public class Main {
         Bloque1 bloque1 = new Bloque1();
         bloque1.registroDeMuertes();
         bloque1.censoUnico();
+        bloque1.bolsaDeOro();
     }
 }
