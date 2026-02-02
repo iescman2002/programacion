@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public class Bloque1 {
     // Registro de Muertes
-    public void registroDeMuertes() {
+    public ArrayList<String> registroDeMuertes() {
         // Crear arraylist
         ArrayList<String> registroCombate = new ArrayList<>();
         // Añadir eventos al array
@@ -17,6 +17,8 @@ public class Bloque1 {
         registroCombate.add("Curar jugador.");
         // Mostrar el 3er evento
         System.out.println("Bloque 1 Ejercicio1: "+registroCombate.get(2));
+        // Devolver registroCombate para poder usarlo en el ejercicio4.
+        return registroCombate;
     }
     // El Censo Único
     public void censoUnico() {
@@ -38,5 +40,19 @@ public class Bloque1 {
         Aventureros.put("Jorge",533);
         // Mostrar el oro (valor) de cualquiera usando el nombre (clave)
         System.out.println("Bloque 1 Ejercicio3: "+Aventureros.get("Maria"));
+    }
+    // Limpieza del Calabozo
+    public void limpiezaDelCalabozo() {
+        // Usar el array list de la lista 1
+        ArrayList<String> lista = registroDeMuertes();
+        // Eliminar el evento más antiguo (posicion 0)
+        lista.removeFirst();
+        // Añadir nuevo evento al final
+        lista.add("Dragón avistado");
+        // Mostrar el arraylist actualizado
+        System.out.println("Bloque 1 Ejercicio 4:");
+        for (String eventos : lista) {
+            System.out.println(eventos);
+        }
     }
 }

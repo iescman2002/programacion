@@ -6,5 +6,6 @@ public class Main {
         bloque1.registroDeMuertes();
         bloque1.censoUnico();
         bloque1.bolsaDeOro();
+        bloque1.limpiezaDelCalabozo();
     }
 }
