@@ -81,8 +81,12 @@ public class Bloque2 {
         // Añadir las estadisticas de los personajes a los Personajes
         personajesConEstadisticas.put("Tomas",estadisticas_pj1);
         personajesConEstadisticas.put("Laura",estadisticas_pj2);
-        personajesConEstadisticas.put("Claudio",estadisticas_pj3);
+        personajesConEstadisticas.put("Conan",estadisticas_pj3);
 
+        // Reto: Buscar a Conan y sumarle +2 a fuerza
+        if (personajesConEstadisticas.containsKey("Conan")) { // Si la clave es igual que el nombre Conan
+            personajesConEstadisticas.get("Conan").put("Fuerza",personajesConEstadisticas.get("Conan").get("Fuerza")+2);  // De la clave Conan cambiamos su valor a otro valor -> El otro valor contiene  la misma clave que tenia pero ahora el parametro será el valor de la fuerza que tenia antes +2
+        }
         // Imprimir personajes con estadisticas
         System.out.println("Bloque 2 Ejercicio 9:\n"+personajesConEstadisticas.entrySet());
     }
