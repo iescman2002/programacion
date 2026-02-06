@@ -56,4 +56,34 @@ public class Bloque2 {
 
         System.out.println("Bloque 2 Ejercicio 8:\n"+Botin.entrySet());
     }
+    // Rastreador de Estadisticas Complejas
+    public void rastreadorEstadisticasComplejas() {
+        // Crear HashMap del personaje con sus estadisticas
+        HashMap<String, HashMap<String, Integer>> personajesConEstadisticas = new HashMap<>();
+
+        // Crear Hashmap que contiene las estadisticas del personaje
+        HashMap<String, Integer> estadisticas_pj1 = new HashMap<>();
+        HashMap<String, Integer> estadisticas_pj2 = new HashMap<>();
+        HashMap<String, Integer> estadisticas_pj3 = new HashMap<>();
+        // Añadir las stats del personaje
+        estadisticas_pj1.put("Fuerza",18);
+        estadisticas_pj1.put("Destreza",12);
+        estadisticas_pj1.put("Vida",100);
+
+        estadisticas_pj2.put("Fuerza",15);
+        estadisticas_pj2.put("Destreza",15);
+        estadisticas_pj2.put("Vida",110);
+
+        estadisticas_pj3.put("Fuerza",17);
+        estadisticas_pj3.put("Destreza",10);
+        estadisticas_pj3.put("Vida",90);
+
+        // Añadir las estadisticas de los personajes a los Personajes
+        personajesConEstadisticas.put("Tomas",estadisticas_pj1);
+        personajesConEstadisticas.put("Laura",estadisticas_pj2);
+        personajesConEstadisticas.put("Claudio",estadisticas_pj3);
+
+        // Imprimir personajes con estadisticas
+        System.out.println("Bloque 2 Ejercicio 9:\n"+personajesConEstadisticas.entrySet());
+    }
 }

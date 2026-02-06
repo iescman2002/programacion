@@ -14,5 +14,6 @@ public class Main {
         Bloque2 bloque2 = new Bloque2();
         bloque2.repositorioDeGremios();
         bloque2.sistemaDeLoot();
+        bloque2.rastreadorEstadisticasComplejas();
     }
 }
