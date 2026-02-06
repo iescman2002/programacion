@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Bloque1 {
-    // Registro de Muertes
+    // Registro de Muertes (Ejercicio 1)
     public ArrayList<String> registroDeMuertes() {
         // Crear arraylist
         ArrayList<String> registroCombate = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Bloque1 {
         // Devolver registroCombate para poder usarlo en el ejercicio4.
         return registroCombate;
     }
-    // El Censo Único
+    // El Censo Único (Ejercicio 2)
     public HashSet<String> censoUnico() {
         // Crear HashSet de nombres de villano
         HashSet<String> Villano = new HashSet<>();
@@ -33,7 +33,7 @@ public class Bloque1 {
         System.out.println("Bloque 1 Ejercicio2: "+Villano);
         return Villano;
     }
-    // Bolsa de Oro
+    // Bolsa de Oro (Ejercicio 3)
     public void bolsaDeOro() {
         // Crear HashMap
         HashMap<String, Integer> Aventureros = new HashMap<>();
@@ -44,7 +44,7 @@ public class Bloque1 {
         // Mostrar el oro (valor) de cualquiera usando el nombre (clave)
         System.out.println("Bloque 1 Ejercicio3: "+Aventureros.get("Maria"));
     }
-    // Limpieza del Calabozo
+    // Limpieza del Calabozo (Ejercicio 4)
     public void limpiezaDelCalabozo() {
         // Usar el array list de la lista 1
         ArrayList<String> lista = registroDeMuertes();
@@ -58,7 +58,7 @@ public class Bloque1 {
             System.out.println(eventos);
         }
     }
-    // Mercado de Hechizos
+    // Mercado de Hechizos (Ejercicio 5)
     public void mercadodeHechizos() {
         // Crear HashMap para hechizos y coste
         HashMap<String, Double> hechizos = new HashMap<>();
@@ -77,7 +77,7 @@ public class Bloque1 {
             }
         }
     }
-    // Expulsión del Reino
+    // Expulsión del Reino (Ejercicio 6)
     public void expulsionDelReino() {
         // Llamar al HashSet de Villanos
         HashSet<String> listaVillanos = censoUnico();
