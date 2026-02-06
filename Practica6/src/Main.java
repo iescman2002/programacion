@@ -11,5 +11,7 @@ public class Main {
         bloque1.mercadodeHechizos();
         bloque1.expulsionDelReino();
         System.out.println("----------------------------------");
+        Bloque2 bloque2 = new Bloque2();
+        bloque2.repositorioDeGremios();
     }
 }
