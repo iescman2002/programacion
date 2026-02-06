@@ -2,6 +2,7 @@ package Bloques;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Bloque2 {
     // El Repositorio de Gremios (Ejercicio 7)
@@ -31,5 +32,12 @@ public class Bloque2 {
         private void imprimirMiembros(HashMap<String, ArrayList<String>> RepositorioDeGremios, String gremio) {
         // Imprime todos los valores (miembros) del gremio que le pasamos (gremio) que se encuentra en el Hashmap (repositoriodeGremios)
         System.out.println(RepositorioDeGremios.get(gremio));
+    }
+    // El Sistema de Loot (Botín) (Ejercicio 8)
+    public void sistemaDeLoot() {
+        // Crear Hashmap de Botin con un una clave String (Monstruo) y un valor HashSet dentro (Objetos)
+        HashMap<String, HashSet<String>> Botin = new HashMap<>();
+        // Definir valores de botin para añadirlos mas tarde
+
     }
 }
