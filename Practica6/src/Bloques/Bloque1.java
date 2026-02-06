@@ -21,14 +21,17 @@ public class Bloque1 {
         return registroCombate;
     }
     // El Censo Único
-    public void censoUnico() {
+    public HashSet<String> censoUnico() {
         // Crear HashSet de nombres de villano
         HashSet<String> Villano = new HashSet<>();
         // Intentar añadir 2 veces Morgoth
         Villano.add("Morgoth");
         Villano.add("Morgoth");
+        // Añadir villano Sauron para eliminarlo en el ejercicio6
+        Villano.add("Sauron");
         // Imprimir el tamaño del Set
         System.out.println("Bloque 1 Ejercicio2: "+Villano);
+        return Villano;
     }
     // Bolsa de Oro
     public void bolsaDeOro() {
@@ -72,6 +75,22 @@ public class Bloque1 {
             if (hechizos.get(hechizo)>50) {
                 System.out.println("Hechizo: "+hechizo+" Cuesta: "+ hechizos.get(hechizo));
             }
+        }
+    }
+    // Expulsión del Reino
+    public void expulsionDelReino() {
+        // Llamar al HashSet de Villanos
+        HashSet<String> listaVillanos = censoUnico();
+        // Recorrer HashSet listaVillanos
+            // Comprobar si esta Sauron en la lista
+            if (listaVillanos.contains("Sauron")) {
+                // Lo sacamos del HashSet
+                listaVillanos.remove("Sauron");
+            }
+        // Imprimir lista tras eliminar a sauro de la lista
+        System.out.println("Bloque 1 Ejercicio 6: ");
+        for (String villano : listaVillanos) {
+            System.out.println(villano);
         }
     }
 }

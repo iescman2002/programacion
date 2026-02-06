@@ -8,5 +8,6 @@ public class Main {
         bloque1.bolsaDeOro();
         bloque1.limpiezaDelCalabozo();
         bloque1.mercadodeHechizos();
+        bloque1.expulsionDelReino();
     }
 }
