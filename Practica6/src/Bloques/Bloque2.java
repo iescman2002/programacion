@@ -90,4 +90,8 @@ public class Bloque2 {
         // Imprimir personajes con estadisticas
         System.out.println("Bloque 2 Ejercicio 9:\n"+personajesConEstadisticas.entrySet());
     }
+    // El Buscador De Traidores
+    public void buscadorDeTraidores() {
+        // Crear HashMap
+    }
 }
