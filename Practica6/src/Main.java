@@ -13,5 +13,6 @@ public class Main {
         System.out.println("----------------------------------");
         Bloque2 bloque2 = new Bloque2();
         bloque2.repositorioDeGremios();
+        bloque2.sistemaDeLoot();
     }
 }

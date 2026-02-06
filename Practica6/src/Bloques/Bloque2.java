@@ -37,7 +37,23 @@ public class Bloque2 {
     public void sistemaDeLoot() {
         // Crear Hashmap de Botin con un una clave String (Monstruo) y un valor HashSet dentro (Objetos)
         HashMap<String, HashSet<String>> Botin = new HashMap<>();
-        // Definir valores de botin para añadirlos mas tarde
+        // Definir los objetos que soltaran los monstruos
+        HashSet<String>  lootTrasgo = new HashSet<>();
+        HashSet<String>  lootHydra = new HashSet<>();
+        HashSet<String>  lootMedusa = new HashSet<>();
+        // Rellenar los loots con contenido
+        lootTrasgo.add("Espada Oxidada");
 
+        lootHydra.add("Cabeza de Hydra");
+
+        lootMedusa.add("Escama de Medusa");
+        // Reto: Si voy a añadir a lootTrasgo Espada Oxidada y esta ya existe se ignora automáticamente.
+        lootTrasgo.add("Espada Oxidada"); // Como es un HashSet no puede haber contenido repetido entonces se omite solo automaticamente
+        // Añadir el loot a cada animal
+        Botin.put("Trasgo", lootTrasgo);
+        Botin.put("Hydra", lootHydra);
+        Botin.put("Medusa", lootMedusa);
+
+        System.out.println("Bloque 2 Ejercicio 8:\n"+Botin.entrySet());
     }
 }
