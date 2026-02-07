@@ -93,5 +93,24 @@ public class Bloque2 {
     // El Buscador De Traidores
     public void buscadorDeTraidores() {
         // Crear HashMap
+        HashMap<String, ArrayList<String>> Gremios = new HashMap<>();
+        //Crear miembros del gremio1
+        ArrayList<String> miembrosGremio1 = new ArrayList<>();
+        miembrosGremio1.add("Juan");
+        miembrosGremio1.add("Manuel");
+        miembrosGremio1.add("Claudia");
+        // Agregar al repositorio de gremios el gremio 1 (clave) y sus miembros (valor)
+        Gremios.put("Magos", miembrosGremio1);
+        //Crear miembros del gremio2
+        ArrayList<String> miembrosGremio2 = new ArrayList<>();
+        miembrosGremio2.add("Laura");
+        miembrosGremio2.add("José");
+        miembrosGremio2.add("Judas"); // Aqui esta el Judas que habrá que eliminarlo
+        // Agregar a los gremios el gremio de luchadores y sus respectivos miembros
+        Gremios.put("Luchadores",miembrosGremio2);
+        // Recorrer gremios buscando Judas dentro de sus medios
+        for () {
+
+        }
     }
 }
