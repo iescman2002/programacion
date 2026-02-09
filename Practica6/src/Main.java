@@ -17,5 +17,6 @@ public class Main {
         bloque2.rastreadorEstadisticasComplejas();
         bloque2.buscadorDeTraidores();
         System.out.println("----------------------------------");
+        Bloque3 bloque3 = new Bloque3();
     }
 }
