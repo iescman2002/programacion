@@ -56,7 +56,7 @@ public class Bloque2 {
 
         System.out.println("Bloque 2 Ejercicio 8:\n"+Botin.entrySet());
     }
-    // Rastreador de Estadisticas Complejas
+    // Rastreador de Estadisticas Complejas (Ejercicio 9)
     public void rastreadorEstadisticasComplejas() {
         // Crear HashMap del personaje con sus estadisticas
         HashMap<String, HashMap<String, Integer>> personajesConEstadisticas = new HashMap<>();
@@ -90,7 +90,7 @@ public class Bloque2 {
         // Imprimir personajes con estadisticas
         System.out.println("Bloque 2 Ejercicio 9:\n"+personajesConEstadisticas.entrySet());
     }
-    // El Buscador De Traidores
+    // El Buscador De Traidores (Ejercicio 10)
     public void buscadorDeTraidores() {
         System.out.println("Bloque 2 Ejercicio 10:");
         // Crear HashMap
