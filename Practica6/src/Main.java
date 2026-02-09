@@ -15,5 +15,6 @@ public class Main {
         bloque2.repositorioDeGremios();
         bloque2.sistemaDeLoot();
         bloque2.rastreadorEstadisticasComplejas();
+        bloque2.buscadorDeTraidores();
     }
 }

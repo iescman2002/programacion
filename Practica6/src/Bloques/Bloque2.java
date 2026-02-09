@@ -92,25 +92,35 @@ public class Bloque2 {
     }
     // El Buscador De Traidores
     public void buscadorDeTraidores() {
+        System.out.println("Bloque 2 Ejercicio 10:");
         // Crear HashMap
-        HashMap<String, ArrayList<String>> Gremios = new HashMap<>();
+        HashMap<String, ArrayList<String>> gremios = new HashMap<>();
         //Crear miembros del gremio1
         ArrayList<String> miembrosGremio1 = new ArrayList<>();
         miembrosGremio1.add("Juan");
         miembrosGremio1.add("Manuel");
         miembrosGremio1.add("Claudia");
         // Agregar al repositorio de gremios el gremio 1 (clave) y sus miembros (valor)
-        Gremios.put("Magos", miembrosGremio1);
+        gremios.put("Magos", miembrosGremio1);
         //Crear miembros del gremio2
         ArrayList<String> miembrosGremio2 = new ArrayList<>();
         miembrosGremio2.add("Laura");
         miembrosGremio2.add("José");
         miembrosGremio2.add("Judas"); // Aqui esta el Judas que habrá que eliminarlo
         // Agregar a los gremios el gremio de luchadores y sus respectivos miembros
-        Gremios.put("Luchadores",miembrosGremio2);
-        // Recorrer gremios buscando Judas dentro de sus medios
-        for () {
-
+        gremios.put("Luchadores",miembrosGremio2);
+        // Imprimir gremios antes de sacar al traidor
+        System.out.println("Los miembros de gremios con el traidor en él son: \n"+gremios);
+        // Recorrer miembros de cada gremio en busca de judas
+        for (String nombreGremio : gremios.keySet()) { // Recorre todas las claves de los gremios
+            for (String miembroGremio: gremios.get(nombreGremio)) { // Recorre todos los miembros de los valores de la clave
+                if (miembroGremio.equals("Judas")) {
+                    gremios.get(nombreGremio).remove("Judas"); // Elimina el miembro Judas que se encuentra dentro del gremio del hashmap de los gremios
+                    break;
+                }
+            }
         }
+        // Imprimir gremios despues de sacar al traidor
+        System.out.println("Los miembros despues de sacar al traidor son: \n"+gremios);
     }
 }
