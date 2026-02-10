@@ -43,18 +43,40 @@ public class Bloque3 {
         ciudades_stock.put("Murcia",ciudad3);
 
         // comprobar si tiene la ciudad un stock > 5
-        for () {
-
+        for (ArrayList<String> ciudad : ciudades_stock.values()) {
+            if (tieneQueSubirImpuestos(ciudad)) { // Si la ciudad tiene que subir los impuestos:
+                items = aplicarImpuestoDeLujo(items,ciudad); // Sobrescribimos en la lista de items-precio con los precios actuales
+            }
         }
     }
         // Ejercicio 11 pt2 (Reto): Aplicar impuesto de lujo
-        private void impuestoDeLujo(ArrayList<String> ciudad) {
-                // Aplicar un impuesto del 10% a los items
-                for (String item : ciudad) {
-
+        private HashMap<String, Double> aplicarImpuestoDeLujo(HashMap<String,Double> items, ArrayList<String> ciudad_que_aplica) { // Se le pasa la información de los items y la ciudad a la que tendremos que aplicar el descuento
+            // Creamos hashmap vacio para devolver despues el hashmap de los items tras el impuesto
+            HashMap<String, Double> objetos_actualizados = items;
+            // Recorremos todas las claves de los items (nombres)
+                for (String claveItem : items.keySet()) {
+                    // y recorremos para cada clave un item diferente del array para comprobar si ese item es uno de los que hay que subirles el impuesto o no
+                    for (String itemDeLaCiudad : ciudad_que_aplica) {
+                        // Si está la clave del item en la lista de los items de la ciudad:
+                        if (claveItem.equals(itemDeLaCiudad)) {
+                            // Cambiamos el valor correspondiente a la clave (precio) a un 10% más del valor actual.
+                            objetos_actualizados.remove(claveItem); // Si está eliminamos el item y precio actual
+                            // Y lo introducimos de nuevo pero esta vez con el precio actualizado
+                            objetos_actualizados.put(claveItem,(items.get(claveItem)*1.10));
+                        }
+                    }
                 }
+                // Devolvemos el HashMap objetos_actualizados; Por defecto devuelve la misma lista pero si se modifica algun precio se devolverá la lista con el precio actualizado
+                return objetos_actualizados;
         }
-        private boolean tieneQueSubirImpuestos() {
-        return false;
+        // Ejercicio 11 pt2: Funcion de ayuda para comprobar si se sube o no los impuestos en la ciudad
+        private boolean tieneQueSubirImpuestos(ArrayList<String> ciudad) {
+            // Si la ciudad tiene mas de 5 items devolvemos que si tiene q subir los impuestos.
+            if (ciudad.size()>5) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 }
