@@ -183,4 +183,28 @@ public class Bloque3 {
         }
         System.out.println("El personaje que más raids ha hecho es: "+nombre_mejor+" con un total de : "+veces);
     }
+
+    // Ejercicio 14: Sistema de Mensajeria Global (filtro de Spam)
+    public void sistemaDemensajeriaGlobal() {
+        // Crear hashmap que almacene los mensajes enviados por cada jugador
+        HashMap<String, List<String>> mensajesEnviados = new HashMap<>();
+        // Rellenar HashMap
+        List<String> mensajes_iker = new ArrayList<>();
+        mensajes_iker.add("Hola");
+        mensajes_iker.add("¿Qué tal?");
+        mensajes_iker.add("Nos vemos luego");
+
+        List<String> mensajes_juan = new ArrayList<>();
+        mensajes_juan.add("Buenos días");
+        mensajes_juan.add("¿Has hecho la tarea?");
+        mensajes_juan.add("Avísame después");
+        List<String> mensajes_roberto = new ArrayList<>();
+        mensajes_roberto.add("Hey");
+        mensajes_roberto.add("Estoy en camino");
+        mensajes_roberto.add("Llegaré en 10 minutos");
+
+        mensajesEnviados.put("Iker",mensajes_iker);
+        mensajesEnviados.put("Juan", mensajes_juan);
+        mensajesEnviados.put("Roberto",mensajes_roberto);
+    }
 }
