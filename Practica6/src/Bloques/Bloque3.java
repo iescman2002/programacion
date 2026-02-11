@@ -2,6 +2,8 @@ package Bloques;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 public class Bloque3 {
     // Ejericicio 11: Sistema de Comercio y Precios Dinámicos
@@ -120,4 +122,38 @@ public class Bloque3 {
                 else {System.out.println("Error: Enfoque no ha sido aprendido.");} // Si tiene desbloqueado Golpe Divino pero Enfoque no, imprime
             }
         }
+    // Ejercicio 13: Historial de Incursiones
+    public void historialDeIncursiones() {
+        System.out.println("Bloque 3 Ejercicio 13:");
+        // Crear hashmap de mazmorra con lista de total de inclusiones realizadas
+        HashMap<String, List<HashSet<String>>> mazmorrasCompletadas = new HashMap<>();
+        // Crear listas (raids) que contienen los nombres de la gente que ha participado en la mazmorra:
+        List<HashSet<String>> raid1 = new ArrayList<>();
+        List<HashSet<String>> raid2 = new ArrayList<>();
+        List<HashSet<String>> raid3 = new ArrayList<>();
+        // Rellenar los participantes de la lista
+        HashSet<String> participantes_raid1 = new HashSet<>();
+        participantes_raid1.add("Juan");
+        participantes_raid1.add("Alicia");
+        participantes_raid1.add("Manuel");
+
+        HashSet<String> participantes_raid2 = new HashSet<>();
+        participantes_raid1.add("Manuel");
+        participantes_raid1.add("Raul");
+        participantes_raid1.add("Jose");
+
+        HashSet<String> participantes_raid3 = new HashSet<>();
+        participantes_raid1.add("Manuel");
+        participantes_raid1.add("Alicia");
+        participantes_raid1.add("Elena");
+
+        // Añadir participantes a la raid
+        raid1.add(participantes_raid1);
+        raid2.add(participantes_raid2);
+        raid3.add(participantes_raid3);
+        // Crear mazmorra y asignarles raids
+        mazmorrasCompletadas.put("Mazmorra del duende", raid1);
+        mazmorrasCompletadas.put("Mazmorra infernal", raid2);
+        mazmorrasCompletadas.put("Mazmorra de los lamentos", raid3);
+    }
 }

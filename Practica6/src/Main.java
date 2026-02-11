@@ -20,5 +20,6 @@ public class Main {
         Bloque3 bloque3 = new Bloque3();
         bloque3.sistemaDeComercioYPreciosDinamicos();
         bloque3.gestionArbolesdeHabilidades();
+        bloque3.historialDeIncursiones();
     }
 }
