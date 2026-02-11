@@ -85,13 +85,14 @@ public class Bloque3 {
         }
     // Ejercicio 12: Gestión de Árboles de Habilidades
     public void gestionArbolesdeHabilidades() {
+        System.out.println("Bloque 3: Ejercicio 12: ");
         // Crear Hashmap de las clases y Hashmap de habilidades y estado
         HashMap<String, HashMap<String, Boolean>> clases = new HashMap<>();
         HashMap<String, Boolean> habilidadesSacerdote = new HashMap<>();
         HashMap<String, Boolean> habilidadesPaladin = new HashMap<>();
         HashMap<String, Boolean> habilidadesDruida = new HashMap<>();
         // Rellenar HashMap de habilidades
-        habilidadesSacerdote.put("Golpe Divino",false);
+        habilidadesSacerdote.put("Golpe Divino",true);
         habilidadesSacerdote.put("Enfoque",false);
         habilidadesSacerdote.put("Escudo de Luz", false);
         habilidadesPaladin.put("Sigilo", false);
@@ -105,5 +106,18 @@ public class Bloque3 {
         clases.put("Sacerdote",habilidadesSacerdote);
         clases.put("Paladin",habilidadesPaladin);
         clases.put("Druida", habilidadesDruida);
+        // LLamar a la funcion que verifica si tiene desbloqueada la Habilidad Enfoque al desbloquear Golpe Divino
+        verificarHabilidadDesbloqueada(habilidadesSacerdote);
     }
+        // Ejercicio 12 Reto:
+        private void verificarHabilidadDesbloqueada(HashMap<String, Boolean> habilidades) {
+            // Cuando se desbloquee la habilidad
+            if (habilidades.get("Golpe Divino").equals(true)) { // Si golpe divino pasa a ser true (desbloqueada):
+                // verificamos si el jugador tiene desbloqueado enfoque
+                if (habilidades.get("Enfoque").equals(true)) { // Si está desbloqueada ("Enfoque",true):
+                    System.out.println("El jugador tiene la habilidad Enfoque desbloqueada.");
+                }
+                else {System.out.println("Error: Enfoque no ha sido aprendido.");} // Si tiene desbloqueado Golpe Divino pero Enfoque no, imprime
+            }
+        }
 }

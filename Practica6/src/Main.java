@@ -19,5 +19,6 @@ public class Main {
         System.out.println("----------------------------------");
         Bloque3 bloque3 = new Bloque3();
         bloque3.sistemaDeComercioYPreciosDinamicos();
+        bloque3.gestionArbolesdeHabilidades();
     }
 }
