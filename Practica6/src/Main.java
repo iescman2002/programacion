@@ -23,5 +23,6 @@ public class Main {
         bloque3.historialDeIncursiones();
         bloque3.sistemaDemensajeriaGlobal();
         bloque3.simuladorEconomiadeSubastas();
+        System.out.println("----------------------------------");
     }
 }

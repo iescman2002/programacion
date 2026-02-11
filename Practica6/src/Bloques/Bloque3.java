@@ -186,6 +186,7 @@ public class Bloque3 {
 
     // Ejercicio 14: Sistema de Mensajeria Global (filtro de Spam)
     public void sistemaDemensajeriaGlobal() {
+        System.out.println("Bloque 3 Ejercicio 14: ");
         // Crear hashmap que almacene los mensajes enviados por cada jugador
         HashMap<String, List<String>> mensajesEnviados = new HashMap<>();
         // Rellenar HashMap
@@ -193,19 +194,51 @@ public class Bloque3 {
         mensajes_iker.add("Hola");
         mensajes_iker.add("¿Qué tal?");
         mensajes_iker.add("Nos vemos luego");
+        mensajes_iker.add("¿Sigues ahí?");
+        mensajes_iker.add("Hablamos mañana");
+        mensajesEnviados.put("Iker",mensajes_iker);
 
         List<String> mensajes_juan = new ArrayList<>();
         mensajes_juan.add("Buenos días");
         mensajes_juan.add("¿Has hecho la tarea?");
         mensajes_juan.add("Avísame después");
+        mensajes_juan.add("Estoy estudiando ahora");
+        mensajes_juan.add("Te llamo luego");
+        mensajesEnviados.put("Juan", mensajes_juan);
+
         List<String> mensajes_roberto = new ArrayList<>();
         mensajes_roberto.add("Hey");
         mensajes_roberto.add("Estoy en camino");
         mensajes_roberto.add("Llegaré en 10 minutos");
-
-        mensajesEnviados.put("Iker",mensajes_iker);
-        mensajesEnviados.put("Juan", mensajes_juan);
+        mensajes_roberto.add("Ya casi estoy");
+        mensajes_roberto.add("Ya casi estoy"); // Provocamos que Roberto entre en la lista de silenciados al añadir 2 mensajes repetidos
         mensajesEnviados.put("Roberto",mensajes_roberto);
+
+        // Imprimir resultado
+        System.out.println("Los mensajes enviados son:");
+        for (String clave : mensajesEnviados.keySet()) {
+            System.out.println(clave+":\n"+mensajesEnviados.get(clave));
+        }
+        // RETO:
+        // Crear lista de jugadores silenciados
+        HashSet<String> jugadoresSilenciados = new HashSet<>();
+
+        // Analizar los ultimos 3 mensajes de cada jugador, añadir al jugador a silenciados y eliminar el registro de mensajes
+        for (String jugador : mensajesEnviados.keySet()) { // Recorre todos los jugadores (clave) de los mensajes enviados
+            List<String> mensajes= mensajesEnviados.get(jugador); // Creamos una lista donde guardamos los mensajes totales de cada jugador
+            // Obtener los ultimos 3 mensajes
+            String ultimo_mensaje = mensajes.get(mensajes.size()-1); // El ultimo mensaje
+            String penultimo_mensaje = mensajes.get(mensajes.size()-2); // El penultimo mensaje
+            String antepenultimo_mensaje = mensajes.get(mensajes.size()-3); // El anteultimo mensaje
+            // comprobar que no haya mensajes iguales:
+            if (ultimo_mensaje.equals(penultimo_mensaje)||ultimo_mensaje.equals(antepenultimo_mensaje)||penultimo_mensaje.equals(antepenultimo_mensaje)) {
+                jugadoresSilenciados.add(jugador); // Añadimos al jugador al HashSet de jugadores eliminados
+                mensajesEnviados.remove(jugador,null); // Vaciamos los mensajes del jugador poniendo la lista como null
+            }
+        }
+
+        // Imprimir jugador silenciado:
+        System.out.println("El jugador: "+jugadoresSilenciados+" ha sido silenciado.");
     }
 
     // Ejercicio 15: Simulador de Economia de Subastas
