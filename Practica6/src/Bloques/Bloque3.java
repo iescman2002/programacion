@@ -42,17 +42,22 @@ public class Bloque3 {
         ciudades_stock.put("Granada",ciudad2);
         ciudades_stock.put("Murcia",ciudad3);
 
+        // Imprimir ciudades y el precio de los items
+        System.out.println("Bloque 3 Ejercicio 11:");
+        System.out.println("Ciudades: \n"+ciudades_stock);
+        System.out.println("Precios sin aumentar impuestos:\n"+items);
         // comprobar si tiene la ciudad un stock > 5
         for (ArrayList<String> ciudad : ciudades_stock.values()) {
             if (tieneQueSubirImpuestos(ciudad)) { // Si la ciudad tiene que subir los impuestos:
                 items = aplicarImpuestoDeLujo(items,ciudad); // Sobrescribimos en la lista de items-precio con los precios actuales
             }
         }
+        System.out.println("Precio tras los impuestos: "+items);
     }
         // Ejercicio 11 pt2 (Reto): Aplicar impuesto de lujo
         private HashMap<String, Double> aplicarImpuestoDeLujo(HashMap<String,Double> items, ArrayList<String> ciudad_que_aplica) { // Se le pasa la información de los items y la ciudad a la que tendremos que aplicar el descuento
             // Creamos hashmap vacio para devolver despues el hashmap de los items tras el impuesto
-            HashMap<String, Double> objetos_actualizados = items;
+            HashMap<String, Double> objetos_actualizados = new HashMap<>(items);
             // Recorremos todas las claves de los items (nombres)
                 for (String claveItem : items.keySet()) {
                     // y recorremos para cada clave un item diferente del array para comprobar si ese item es uno de los que hay que subirles el impuesto o no
@@ -60,9 +65,8 @@ public class Bloque3 {
                         // Si está la clave del item en la lista de los items de la ciudad:
                         if (claveItem.equals(itemDeLaCiudad)) {
                             // Cambiamos el valor correspondiente a la clave (precio) a un 10% más del valor actual.
-                            objetos_actualizados.remove(claveItem); // Si está eliminamos el item y precio actual
-                            // Y lo introducimos de nuevo pero esta vez con el precio actualizado
-                            objetos_actualizados.put(claveItem,(items.get(claveItem)*1.10));
+                            double precio_actualizado = items.get(claveItem)*1.10;
+                            objetos_actualizados.put(claveItem,precio_actualizado);
                         }
                     }
                 }
