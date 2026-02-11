@@ -21,5 +21,7 @@ public class Main {
         bloque3.sistemaDeComercioYPreciosDinamicos();
         bloque3.gestionArbolesdeHabilidades();
         bloque3.historialDeIncursiones();
+        bloque3.sistemaDemensajeriaGlobal();
+        bloque3.simuladorEconomiadeSubastas();
     }
 }
