@@ -83,4 +83,27 @@ public class Bloque3 {
                 return false;
             }
         }
+    // Ejercicio 12: Gestión de Árboles de Habilidades
+    public void gestionArbolesdeHabilidades() {
+        // Crear Hashmap de las clases y Hashmap de habilidades y estado
+        HashMap<String, HashMap<String, Boolean>> clases = new HashMap<>();
+        HashMap<String, Boolean> habilidadesSacerdote = new HashMap<>();
+        HashMap<String, Boolean> habilidadesPaladin = new HashMap<>();
+        HashMap<String, Boolean> habilidadesDruida = new HashMap<>();
+        // Rellenar HashMap de habilidades
+        habilidadesSacerdote.put("Golpe Divino",false);
+        habilidadesSacerdote.put("Enfoque",false);
+        habilidadesSacerdote.put("Escudo de Luz", false);
+        habilidadesPaladin.put("Sigilo", false);
+        habilidadesPaladin.put("Grito de Guerra", false);
+        habilidadesPaladin.put("Espadazo", true);
+        habilidadesDruida.put("Curación",true);
+        habilidadesDruida.put("Llamarada", true);
+        habilidadesDruida.put("Veneno", false);
+
+        // Asignar habilidades a la clase
+        clases.put("Sacerdote",habilidadesSacerdote);
+        clases.put("Paladin",habilidadesPaladin);
+        clases.put("Druida", habilidadesDruida);
+    }
 }
