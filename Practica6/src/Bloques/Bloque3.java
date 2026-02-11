@@ -207,4 +207,32 @@ public class Bloque3 {
         mensajesEnviados.put("Juan", mensajes_juan);
         mensajesEnviados.put("Roberto",mensajes_roberto);
     }
+
+    // Ejercicio 15: Simulador de Economia de Subastas
+    public void simuladorEconomiadeSubastas() {
+        // Crear hashmap del item y su puja
+        HashMap<String, PriorityQueue<Double>> subastas = new HashMap<>();
+
+        // Crear las pujas del objeto
+        PriorityQueue<Double> excalibur = new PriorityQueue<>();
+        excalibur.add(300.21);
+        excalibur.add(221.56);
+        excalibur.add(102.67);
+        subastas.put("Excalibur",excalibur);
+
+        PriorityQueue<Double> escudo = new PriorityQueue<>();
+        escudo.add(80.00);
+        escudo.add(95.60);
+        escudo.add(88.25);
+        subastas.put("Escudo", escudo);
+
+        PriorityQueue<Double> bastonArcano = new PriorityQueue<>();
+        bastonArcano.add(650.40);
+        bastonArcano.add(700.00);
+        bastonArcano.add(675.25);
+        subastas.put("Baston", bastonArcano);
+
+
+
+    }
 }
