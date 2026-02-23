@@ -3,11 +3,11 @@ package com.rpg.model;
 public class Ciudad {
     // Crear atributos
     private String nombre;
-    private String poblacion;
+    private Integer poblacion;
     private String clima;
-    private String riesgo;
+    private Integer riesgo;
     // Crear constructor
-    public Ciudad(String nombre, String poblacion, String clima, String riesgo) {
+    public Ciudad(String nombre, Integer poblacion, String clima, Integer riesgo) {
         this.nombre = nombre;
         this.poblacion = poblacion;
         this.clima = clima;
@@ -21,10 +21,10 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public String getPoblacion() {
+    public Integer getPoblacion() {
         return this.poblacion;
     }
-    public void setPoblacion(String poblacion) {
+    public void setPoblacion(Integer poblacion) {
         this.poblacion = poblacion;
     }
 
@@ -35,10 +35,10 @@ public class Ciudad {
         this.clima = clima;
     }
 
-    public String getRiesgo() {
+    public Integer getRiesgo() {
         return this.riesgo;
     }
-    public void setRiesgo(String riesgo) {
+    public void setRiesgo(Integer riesgo) {
         this.riesgo = riesgo;
     }
 }
