@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Aragorn",
+    "raza": "Humano",
+    "nivel": 20,
+    "equipoIds": ["E01"]
+  },
+  {
+    "nombre": "Legolas",
+    "raza": "Elfo",
+    "nivel": 18,
+    "equipoIds": ["E02"]
+  },
+  {
+    "nombre": "Gimli",
+    "raza": "Enano",
+    "nivel": 17,
+    "equipoIds": ["E03"]
+  },
+  {
+    "nombre": "Gandalf",
+    "raza": "Maia",
+    "nivel": 25,
+    "equipoIds": ["E04"]
+  },
+  {
+    "nombre": "Frodo",
+    "raza": "Hobbit",
+    "nivel": 12,
+    "equipoIds": ["E05"]
+  }
+]
