@@ -13,7 +13,7 @@ public class TxtHelper{
 
     // Constructor
     public TxtHelper() throws IOException {
-        this.file = new File("../../Ficheros/ciudades.txt"); // Crear fichero ciudades.txt
+        this.file = new File("Practica7/Ficheros/ciudades.txt"); // Indicar la ruta del fichero
         this.fr = new FileReader(file); // Para poder leer un fichero
         this.br = new BufferedReader(fr); // Para leer mas de un caracter
     }
