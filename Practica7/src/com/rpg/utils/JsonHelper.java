@@ -2,7 +2,7 @@ package com.rpg.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.rpg.model.Item;
+import com.rpg.model.Items;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,32 +14,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonHelper {
-    // Clases
-    private Reader reader;
-    private List<Item> lista;
+    private Gson gson; /* Creamos gson como atributo para trabajar con el*/
 
-    public JsonHelper() throws IOException {
-        this.reader= Files.newBufferedReader(Paths.get("Practica7/Ficheros/items.json")); // Indicamos de donde sacamos los items
-        this.lista = new Gson().fromJson(reader, new TypeToken<List<Item>>().getType()); // Le decimos a Gson que queremos una lista de tipo Item usando TypeToken
-        for (Item i: lista) {
-            System.out.println("\n Nombre: "+i.getNombre());
-        }
+    public JsonHelper() {
+        this.gson = new Gson(); /* Lo inicializamos en el constructor*/
     }
-
     // Metodos
+
     // Lee los datos del json
-    public <T> List<T> readList(String path, Class<T> clazz) {
-        try (Reader reader = new FileReader(path)) {
-            Type typeOfT = TypeToken.getParameterized(List.class, clazz).getType();
-            List<T> lista = gson.fromJson(reader, typeOfT);
+    public <T> List<T> leerFichero(String path, Class<T> clazz) { // Metodo generico que devuelve una lista de cualquier tipo (como Items o Personajes) al cual se le pasa la ruta del archivo json (String) y la clase a la que pertenece (Ej: Si es items.json la Clazz es Items.class
+        try (Reader reader = new FileReader(path)) {  /* Guardamos en el reader el archivo que le hemos indicado en la ruta*/
+            Type typeOfT = TypeToken.getParameterized(List.class, clazz).getType(); /*Usamos los Token para convertir el archivo en una List<T> del objeto que corresponda */
+            List<T> lista = gson.fromJson(reader, typeOfT); /* Crea la lista*/
+
+            return lista != null ? lista : new ArrayList<>(); /* Devolvemos la lista si es que existe y sino devolvemos una lista nueva vacia.*/
         }
-        catch (IOException e) {
+        catch (IOException e) { /* En caso de haber algun fallo leyendo los datos del archivo, se imprime este error*/
             System.err.println("Error al leer JSON: "+e.getMessage());
-            return new ArrayList<>;
+            return new ArrayList<>();
         }
     }
-    // Guarda la lista de personajes actualizada en el JSON
-    public <T> void writeList(String path, List<T> lista) {
-
-    }*/
 }

@@ -1,12 +1,12 @@
 package com.rpg.model;
 
-public class Item {
+public class Items {
     private String id;
     private String nombre;
     private String tipo;
     private Integer valor;
 
-    public Item(String id, String nombre, String tipo, Integer valor) {
+    public Items(String id, String nombre, String tipo, Integer valor) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -39,5 +39,15 @@ public class Item {
     }
     public void setValor(Integer valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return "Item {" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", valor=" + valor +
+                '}';
     }
 }

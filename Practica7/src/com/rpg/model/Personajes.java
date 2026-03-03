@@ -2,7 +2,7 @@ package com.rpg.model;
 
 import java.util.List;
 
-public class Personaje {
+public class Personajes {
     private String nombre;
     private String raza;
     private String nivel;
@@ -34,5 +34,15 @@ public class Personaje {
     }
     public void setEquipoIds(List<String> equipoIds) {
         this.equipoIds = equipoIds;
+    }
+
+    @Override
+    public String toString() {
+        return  "Personaje {"+
+                "nombre='" + nombre + '\'' +
+                ", raza='" + raza + '\'' +
+                ", nivel='" + nivel + '\'' +
+                ", equipoIds=" + equipoIds +
+                '}';
     }
 }

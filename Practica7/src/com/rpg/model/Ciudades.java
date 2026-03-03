@@ -1,13 +1,13 @@
 package com.rpg.model;
 
-public class Ciudad {
+public class Ciudades {
     // Crear atributos
     private String nombre;
     private Integer poblacion;
     private String clima;
     private Integer riesgo;
     // Crear constructor
-    public Ciudad(String nombre, Integer poblacion, String clima, Integer riesgo) {
+    public Ciudades(String nombre, Integer poblacion, String clima, Integer riesgo) {
         this.nombre = nombre;
         this.poblacion = poblacion;
         this.clima = clima;
