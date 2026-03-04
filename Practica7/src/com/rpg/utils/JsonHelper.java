@@ -20,7 +20,7 @@ public class JsonHelper {
     // Metodos
 
     // Lee los datos del json
-    public <T> List<T> leerFichero(String path, Class<T> clazz) { // Metodo generico que devuelve una lista de cualquier tipo (como Items o Personajes) al cual se le pasa la ruta del archivo json (String) y la clase a la que pertenece (Ej: Si es items.json la Clazz es Items.class
+    public <T> List<T> readList(String path, Class<T> clazz) { // Metodo generico que devuelve una lista de cualquier tipo (como Items o Personajes) al cual se le pasa la ruta del archivo json (String) y la clase a la que pertenece (Ej: Si es items.json la Clazz es Items.class
         try (Reader reader = new FileReader(path)) {  /* Guardamos en el reader el archivo que le hemos indicado en la ruta*/
             Type typeOfT = TypeToken.getParameterized(List.class, clazz).getType(); /*Usamos los Token para convertir el archivo en una List<T> del objeto que corresponda */
             List<T> lista = gson.fromJson(reader, typeOfT); /* Crea la lista*/

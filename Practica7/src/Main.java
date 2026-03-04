@@ -15,12 +15,12 @@ public class Main {
 
         /* Leer archivos json de forma temporal*/
         JsonHelper jsonHelper = new JsonHelper();
-        List<Personajes> personajes= jsonHelper.leerFichero("Practica7/Ficheros/personajes.json", Personajes.class);
+        List<Personajes> personajes= jsonHelper.readList("Practica7/Ficheros/personajes.json", Personajes.class);
         for (Personajes personaje : personajes) {
             System.out.println(personaje);
         }
 
-        List<Items> items = jsonHelper.leerFichero("Practica7/Ficheros/Items.json", Items.class);
+        List<Items> items = jsonHelper.readList("Practica7/Ficheros/Items.json", Items.class);
         for (Items item : items) {
             System.out.println(item);
         }
