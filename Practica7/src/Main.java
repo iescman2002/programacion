@@ -24,5 +24,8 @@ public class Main {
         for (Items item : items) {
             System.out.println(item);
         }
-    }
+
+        /*Escribir datos en el json
+        jsonHelper.writeList("Practica7/Ficheros/personajes.json",personajes);
+    */}
 }
