@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TxtHelper{
     // Leer ficheros
@@ -18,12 +20,14 @@ public class TxtHelper{
         this.br = new BufferedReader(fr); // Para leer mas de un caracter
     }
 
-    public void leerLineas() throws IOException {
+    public List<String> leerLineas() throws IOException {
         String linea = this.br.readLine();
+        List<String> lineas = new ArrayList<>();
         while (linea != null) {
-            System.out.println(linea);
-            linea = br.readLine();
+            lineas.add(linea); /* Añade la linea a la lista */
+            linea = br.readLine(); /* Salto de linea */
         }
         fr.close();
+        return lineas;
     }
 }
