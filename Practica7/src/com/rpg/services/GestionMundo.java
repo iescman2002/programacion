@@ -40,4 +40,9 @@ public class GestionMundo {
             this.ciudades.add(c); /* Añadimos la ciudad a la lista de ciudades*/
         }
     }
+    public void crearPersonaje(String nombre, String raza, List<String> idsItem) {
+        // Agregar nuevo personaje (igual que si crearamos un objeto)
+        Personajes personaje = new Personajes(nombre, raza, 1, idsItem); // Todos los personajes que creamos empiezan siendo nivel 1
+        this.personajes.add(personaje); // Lo añadimos a la lista
+    }
 }

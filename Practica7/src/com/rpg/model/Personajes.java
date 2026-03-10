@@ -5,8 +5,15 @@ import java.util.List;
 public class Personajes {
     private String nombre;
     private String raza;
-    private String nivel;
+    private Integer nivel;
     private List<String> equipoIds;
+
+    public Personajes(String nombre, String raza, Integer nivel, List<String> equipoIds) {
+        this.nombre = nombre;
+        this.raza = raza;
+        this.nivel= nivel;
+        this.equipoIds = equipoIds;
+    }
 
     public String getNombre() {
         return this.nombre;
@@ -22,10 +29,10 @@ public class Personajes {
         this.raza = raza;
     }
 
-    public String getNivel() {
+    public Integer getNivel() {
         return this.nivel;
     }
-    public void setNivel(String nivel) {
+    public void setNivel(Integer nivel) {
         this.nivel = nivel;
     }
 
