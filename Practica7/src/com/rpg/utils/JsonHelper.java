@@ -34,13 +34,11 @@ public class JsonHelper {
     }
 
     // Escribir en el json
-    /*public <T> void writeList(String path, List<T> lista) {
-        Scanner s = new Scanner(System.in);
-        try (T file = BufferedWriter(new FileWriter(path,true)) {
-            lista.add(new T(s.next()));
+    public <T> void writeList(String path, List<T> lista) { // Le pasamos a la funcion el archivo json y la lista con la que queremos que actualice el archivo
+        try (Writer writer = new FileWriter(path)) {    // Creamos un writer al cual donde le indicamos el archivo json del cual vamos a escribir (path)
+            gson.toJson(lista,writer);                  // Usamos el metodo de gson toJson para actualizar el archivo (writer) con la lista actualizada de objetos que le hayamos pasado (lista)
+        } catch (IOException e) {
+            System.err.println("Error al escribir el JSON: "+e.getMessage()); // Si no puede escribir lanza este mensaje de error
         }
-        catch {
-
-        }
-    }*/
+    }
 }

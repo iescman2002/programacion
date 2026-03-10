@@ -45,4 +45,7 @@ public class GestionMundo {
         Personajes personaje = new Personajes(nombre, raza, 1, idsItem); // Todos los personajes que creamos empiezan siendo nivel 1
         this.personajes.add(personaje); // Lo añadimos a la lista
     }
+    public void guardarCambios() {
+        new JsonHelper().writeList("Practica7/Ficheros/personajes.json",personajes);
+    }
 }
