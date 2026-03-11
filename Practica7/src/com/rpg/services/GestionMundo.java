@@ -8,6 +8,7 @@ import com.rpg.utils.TxtHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class GestionMundo {
     // Inicializar listas de objetos
@@ -31,11 +32,23 @@ public class GestionMundo {
             this.ciudades = new TxtHelper().leerLineas("Practica7/Ficheros/ciudades.txt");
         }
         catch (Exception e) { // Lanza el mensaje de error
-            throw new RecursoNoEncontradoException("Error: El fichero "+e.getMessage()+" no existe.");
+            throw new RecursoNoEncontradoException("Error: El fichero "+e.getMessage()+" no existe o no ha sido encontrado.");
         }
     }
-    public void crearPersonaje(String nombre, String raza,Integer nivel, List<String> idsItem) throws DatoInvalidoException {
-        try { // !!!!!! REVISAR EXCEPTION
+    public void crearPersonaje() throws DatoInvalidoException {
+        // Probar que se pueden agregar personajes
+        try {
+            Scanner s = new Scanner(System.in);
+            System.out.print("Introduzca el nombre del personaje: ");
+            String nombre = s.next();
+            System.out.print("Introduzca la raza del personaje: ");
+            String raza = s.next();
+            System.out.print("Introduzca el nivel del personaje: ");
+            Integer nivel = s.nextInt();
+            /*REVISAR ESTO*/
+            System.out.print("Introduzca el id del equipo del personaje: ");
+            List<String> idsItem = new ArrayList<>();
+            /*REVISAR ESTO*/
             // Agregar nuevo personaje (igual que si crearamos un objeto)
             Personajes personaje = new Personajes(nombre, raza, nivel, idsItem);
             this.personajes.add(personaje); // Lo añadimos a la lista
@@ -44,8 +57,13 @@ public class GestionMundo {
             throw new DatoInvalidoException("Error: El dato "+e.getMessage() +" no sigue un formato valido.");
         }
     }
-    public void guardarCambios() {
-        new JsonHelper().writeList("Practica7/Ficheros/personajes.json",personajes);
+    public void guardarCambios() throws RecursoNoEncontradoException {
+        try{
+            new JsonHelper().writeList("Practica7/Ficheros/personajes.json",personajes);
+        } catch (Exception e) {
+            throw new RecursoNoEncontradoException("Error: El fichero "+e.getMessage()+" no existe o no ha sido encontrado.");
+        }
+
     }
 
     // Metodo para imprimir el resultado final
