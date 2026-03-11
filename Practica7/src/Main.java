@@ -20,5 +20,6 @@ public class Main {
         id.add(s.next());
         gm.crearPersonaje(n,r,id);
         gm.guardarCambios();
+        gm.informeFinal();
     }
 }

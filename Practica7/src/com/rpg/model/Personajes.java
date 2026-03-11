@@ -45,8 +45,8 @@ public class Personajes {
 
     @Override
     public String toString() {
-        return  "Personaje {"+
-                "nombre='" + nombre + '\'' +
+        return
+                "{ nombre='" + nombre + '\'' +
                 ", raza='" + raza + '\'' +
                 ", nivel='" + nivel + '\'' +
                 ", equipoIds=" + equipoIds +

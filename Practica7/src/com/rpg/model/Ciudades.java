@@ -41,4 +41,13 @@ public class Ciudades {
     public void setRiesgo(Integer riesgo) {
         this.riesgo = riesgo;
     }
+
+    @Override
+    public String toString() {
+        return  "{nombre='" + nombre + '\'' +
+                ", poblacion=" + poblacion +
+                ", clima='" + clima + '\'' +
+                ", riesgo=" + riesgo +
+                '}';
+    }
 }

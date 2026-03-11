@@ -48,4 +48,31 @@ public class GestionMundo {
     public void guardarCambios() {
         new JsonHelper().writeList("Practica7/Ficheros/personajes.json",personajes);
     }
+
+    // Metodo para imprimir el resultado final
+    public void informeFinal() {
+        int contador=1;
+        System.out.println("Resultado final: ");
+        System.out.println("------------------");
+        System.out.println("Ciudades: ");
+        for (Ciudades ciudad : ciudades) {
+            System.out.println("Ciudad "+contador+" : "+ciudad.toString());
+            contador++;
+        }
+        System.out.println("------------------");
+        System.out.println("Items: ");
+        contador=1;
+        for (Items item : items) {
+            System.out.println("Item "+contador+" : "+item.toString());
+            contador++;
+        }
+        System.out.println("------------------");
+        System.out.println("Personajes: ");
+        contador=1;
+        for (Personajes personaje : personajes) {
+            System.out.println("Personaje "+contador+" : "+personaje.toString());
+            contador++;
+        }
+        System.out.println("------------------");
+    }
 }
