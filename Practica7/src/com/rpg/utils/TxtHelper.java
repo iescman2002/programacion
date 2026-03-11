@@ -1,33 +1,28 @@
 package com.rpg.utils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import com.rpg.model.Ciudades;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TxtHelper{
-    // Leer ficheros
-    private File file;
-    private FileReader fr;
-    private BufferedReader br;
 
-    // Constructor
-    public TxtHelper() throws IOException {
-        this.file = new File("Practica7/Ficheros/ciudades.txt"); // Indicar la ruta del fichero
-        this.fr = new FileReader(file); // Para poder leer un fichero
-        this.br = new BufferedReader(fr); // Para leer mas de un caracter
-    }
 
-    public List<String> leerLineas() throws IOException {
-        String linea = this.br.readLine();
-        List<String> lineas = new ArrayList<>();
-        while (linea != null) {
-            lineas.add(linea); /* Añade la linea a la lista */
-            linea = br.readLine(); /* Salto de linea */
+    public List<Ciudades> leerLineas(String path) throws IOException {
+        List<String> lineas = Files.readAllLines(Paths.get(path)); /* Se crea una lista donde se guarda el contenido del fichero*/
+        List<Ciudades> ciudades = new ArrayList<>();
+        for (String linea : lineas) {
+            String[] s = linea.split(";"); /* Indicamos el separador de los campos que es ; y guardamos los correspondientes atributos en el array */
+            Ciudades c = new Ciudades( /* Creamos una nueva ciudad para cada linea del fichero */
+            s[0],                       /* Atributo nombre */
+            Integer.parseInt(s[1]),     /* Atributo poblacion (pasamos el dato String que es como lo teniamos guardado a Integer)*/
+            s[2],                       /* Atributo clima */
+            Integer.parseInt(s[3])      /* Atributo riesgo (pasamos el dato String que es como lo teniamos guardado a Integer)*/
+            );
+            ciudades.add(c);
         }
-        fr.close();
-        return lineas;
+        return ciudades;
     }
 }
