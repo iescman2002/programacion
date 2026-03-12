@@ -3,30 +3,64 @@
     "nombre": "Aragorn",
     "raza": "Humano",
     "nivel": 20,
-    "equipoIds": ["E01"]
+    "equipoIds": [
+      "E01"
+    ]
   },
   {
     "nombre": "Legolas",
     "raza": "Elfo",
     "nivel": 18,
-    "equipoIds": ["E02"]
+    "equipoIds": [
+      "E02"
+    ]
   },
   {
     "nombre": "Gimli",
     "raza": "Enano",
     "nivel": 17,
-    "equipoIds": ["E03"]
+    "equipoIds": [
+      "E03"
+    ]
   },
   {
     "nombre": "Gandalf",
     "raza": "Maia",
     "nivel": 25,
-    "equipoIds": ["E04"]
+    "equipoIds": [
+      "E04"
+    ]
   },
   {
     "nombre": "Frodo",
     "raza": "Hobbit",
     "nivel": 12,
-    "equipoIds": ["E05"]
+    "equipoIds": [
+      "E05"
+    ]
+  },
+  {
+    "nombre": "Iker",
+    "raza": "prueba",
+    "nivel": 500,
+    "equipoIds": []
+  },
+  {
+    "nombre": "Maria",
+    "raza": "Humano",
+    "nivel": 50,
+    "equipoIds": []
+  },
+  {
+    "nombre": "Juan",
+    "raza": "Enano",
+    "nivel": 1,
+    "equipoIds": []
+  },
+  {
+    "nombre": "Test",
+    "raza": "Prueba",
+    "nivel": 1,
+    "equipoIds": []
   }
 ]

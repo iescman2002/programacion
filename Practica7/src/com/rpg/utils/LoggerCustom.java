@@ -13,8 +13,7 @@ public class LoggerCustom {
     }
 
     public void escribirLog(String mensaje) throws RecursoNoEncontradoException, DatoInvalidoException {
-        try { // Leer el fichero
-            BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(path, true))) { // Leer el fichero
             writer.write(mensaje);
             writer.newLine();
         }

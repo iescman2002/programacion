@@ -1,0 +1,63 @@
+[2026-03-12] INFO: Lista de personajes leida con exito.
+[2026-03-12] INFO: Lista de Items leida con exito.
+[2026-03-12] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:21:56.907171600] INFO: Lista de personajes leida con exito.
+[2026-03-12] INFO: Lista de Items leida con exito.
+[2026-03-12] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:22:41.479070200] INFO: Lista de personajes leida con exito.
+[2026-03-12T20:22:41.485074800] INFO: Lista de Items leida con exito.
+[2026-03-12T20:22:41.487591700] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:28:25.841138500] INFO: Lista de personajes leida con exito.
+[2026-03-12T20:28:25.847150300] INFO: Lista de Items leida con exito.
+[2026-03-12T20:28:25.849145800] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:31:07.949482500] INFO: Lista de personajes leida con exito.
+[2026-03-12T20:31:07.954485700] INFO: Lista de Items leida con exito.
+[2026-03-12T20:31:07.956486600] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:52:02.340976900] INFO: Lista de personajes leida con exito.
+[2026-03-12T20:52:02.345490500] INFO: Lista de Items leida con exito.
+[2026-03-12T20:52:02.347497600] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:52:14.470526800] ERROR: El dato null no sigue un formato válido.
+[2026-03-12T20:52:23.214806600] INFO: Lista de personajes leida con exito.
+[2026-03-12T20:52:23.220311500] INFO: Lista de Items leida con exito.
+[2026-03-12T20:52:23.222317600] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:52:41.311002600] INFO: El personaje Iker ha sido creado.
+[2026-03-12T20:52:41.320561700] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-12T20:52:41.321562200] INFO: Se han impreso correctamente todos los items.
+[2026-03-12T20:52:41.322562700] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-12T20:53:44.849402] INFO: Lista de personajes leida con exito.
+[2026-03-12T20:53:44.854930200] INFO: Lista de Items leida con exito.
+[2026-03-12T20:53:44.855930700] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T20:53:58.085668700] INFO: El personaje Maria ha sido creado.
+[2026-03-12T20:53:58.095262] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-12T20:53:58.096233400] INFO: Se han impreso correctamente todos los items.
+[2026-03-12T20:53:58.096233400] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-12T20:54:53.913440100] ERROR: No se ha podido leer el json Practica7\Ficheros\personaje.json (El sistema no puede encontrar el archivo especificado)
+[2026-03-12T20:54:53.921572100] ERROR: El fichero Error al leer JSON: Practica7\Ficheros\personaje.json (El sistema no puede encontrar el archivo especificado) no ha sido encontrado.
+[2026-03-12T21:00:18.595073] ERROR: No se ha podido leer el json Practica7\Ficheros\personaje.json (El sistema no puede encontrar el archivo especificado)
+[2026-03-12T21:00:44.523825900] INFO: Lista de personajes leida con exito.
+[2026-03-12T21:00:44.528831400] INFO: Lista de Items leida con exito.
+[2026-03-12T21:00:44.529831600] ERROR: No se ha podido leer el fichero: Practica7\Ficheros\ciudade.txt
+[2026-03-12T21:01:12.985866500] INFO: Lista de personajes leida con exito.
+[2026-03-12T21:01:12.990867100] INFO: Lista de Items leida con exito.
+[2026-03-12T21:01:12.991869] ERROR: No se ha podido leer el fichero: Practica7\Ficheros\ciudade.txt
+[2026-03-12T21:01:19.962858800] INFO: Lista de personajes leida con exito.
+[2026-03-12T21:01:19.969865900] INFO: Lista de Items leida con exito.
+[2026-03-12T21:01:19.971864500] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T21:01:39.206721900] INFO: El personaje Juan ha sido creado.
+[2026-03-12T21:01:39.217294700] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-12T21:01:39.218269400] INFO: Se han impreso correctamente todos los items.
+[2026-03-12T21:01:39.219269700] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-12T21:05:54.489964700] INFO: Lista de personajes leida con exito.
+[2026-03-12T21:05:54.495304700] INFO: Lista de Items leida con exito.
+[2026-03-12T21:05:54.497305600] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T21:10:36.580592100] INFO: Lista de personajes leida con exito.
+[2026-03-12T21:10:36.589112700] INFO: Lista de Items leida con exito.
+[2026-03-12T21:10:36.591112400] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T21:10:54.838662200] ERROR: El dato null no sigue un formato válido.
+[2026-03-12T21:10:59.169834300] INFO: Lista de personajes leida con exito.
+[2026-03-12T21:10:59.176339500] INFO: Lista de Items leida con exito.
+[2026-03-12T21:10:59.178352800] INFO: Lista de Ciudades leida con exito.
+[2026-03-12T21:11:16.342849900] INFO: El personaje Test ha sido creado.
+[2026-03-12T21:11:16.354098] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-12T21:11:16.354098] INFO: Se han impreso correctamente todos los items.
+[2026-03-12T21:11:16.355618300] INFO: Se han impreso correctamente todos los personajes.

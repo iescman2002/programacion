@@ -6,13 +6,15 @@ import com.rpg.model.Ciudades;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TxtHelper{
 
 
-    public List<Ciudades> leerLineas(String path) throws DatoInvalidoException {
+    public List<Ciudades> leerLineas(String path) throws DatoInvalidoException, RecursoNoEncontradoException {
         try {
         List<String> lineas = Files.readAllLines(Paths.get(path)); /* Se crea una lista donde se guarda el contenido del fichero*/
         List<Ciudades> ciudades = new ArrayList<>();
@@ -28,7 +30,8 @@ public class TxtHelper{
         }
         return ciudades;}
         catch (IOException e) {
-            throw new DatoInvalidoException("El dato +"+e.getMessage()+" es incorrecto.");
+            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] ERROR: No se ha podido leer el fichero: "+e.getMessage());
+            throw new DatoInvalidoException("El fichero +"+e.getMessage()+" no se ha podido leer.");
         }
     }
 }
