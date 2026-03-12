@@ -61,3 +61,23 @@
 [2026-03-12T21:11:16.354098] INFO: Se han impreso correctamente todas las ciudades.
 [2026-03-12T21:11:16.354098] INFO: Se han impreso correctamente todos los items.
 [2026-03-12T21:11:16.355618300] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-12T22:08:33.837712500] INFO: Lista de personajes cargada con exito.
+[2026-03-12T22:08:33.843026800] INFO: Lista de Items cargada con exito.
+[2026-03-12T22:08:33.845027700] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:08:33.848024900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:08:33.848024900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:08:33.848024900] INFO: Ciudad 4 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:08:33.849024200] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:08:33.849024200] INFO: Lista de Ciudades cargada con exito.
+[2026-03-12T22:09:34.951365900] INFO: Lista de personajes cargada con exito.
+[2026-03-12T22:09:34.957446800] INFO: Lista de Items cargada con exito.
+[2026-03-12T22:09:34.959446500] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:09:34.962495500] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:09:34.963494700] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:09:34.963494700] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-12T22:09:34.964494600] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T22:09:34.964494600] INFO: Lista de Ciudades cargada con exito.
+[2026-03-12T22:09:46.484425200] INFO: El personaje hola ha sido creado.
+[2026-03-12T22:09:46.494041600] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-12T22:09:46.495023400] INFO: Se han impreso correctamente todos los items.
+[2026-03-12T22:09:46.495987] INFO: Se han impreso correctamente todos los personajes.

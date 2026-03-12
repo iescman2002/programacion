@@ -30,11 +30,11 @@ public class GestionMundo {
         // Rellenar las listas de objetos
         /*try { */ // Eliminamos el try catch porque la función readList y leerLineas ya tiene un try catch incorporado entonces meter otro seria duplicar el error
             this.personajes= new JsonHelper().readList("Practica7/Ficheros/personajes.json", Personajes.class);
-            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de personajes leida con exito.");
+            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de personajes cargada con exito.");
             this.items = new JsonHelper().readList("Practica7/Ficheros/Items.json", Items.class);
-            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Items leida con exito.");
+            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Items cargada con exito.");
             this.ciudades = new TxtHelper().leerLineas("Practica7/Ficheros/ciudades.txt");
-            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Ciudades leida con exito.");
+            new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Ciudades cargada con exito.");
         /*}
         catch (Exception e) { // Lanza el mensaje de error
             new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] ERROR: El fichero "+e.getMessage()+" no ha sido encontrado.");
