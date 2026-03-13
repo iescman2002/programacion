@@ -41,6 +41,7 @@ public class GestionMundo {
 
         // Validar los idItems de los personajes (Asegurarse que los idItems existan)
         validacion(); // Metido en una función aparte para poder validar despues de crear un personaje tambien sin copiar codigo.
+        validacionBiomas();
     }
 
     public void crearPersonaje() throws DatoInvalidoException, RecursoNoEncontradoException {
@@ -88,8 +89,22 @@ public class GestionMundo {
                     listaDeItems.add(idEscogido); // Añadimos a la lista el item escogido
                 }
             }
+            // Elegir la ciudad para el usuario
+            String ciudad = "";
+            // Bucle para elegir una ciudad correcta.
+                for (Ciudades ciud : this.ciudades) {
+                    System.out.print("Introduzca el nombre de la ciudad: ");
+                    ciudad = s.next();
+                    if (ciud.getNombre().equals(ciudad)) {
+                        break;
+                    }
+                    else {
+                        System.out.println("Ha introducido una ciudad invalida.");
+                        new LoggerCustom().escribirLog("[" + LocalDateTime.now() + "] ERROR: El usuario ha introducido la ciudad " + ciudad + " y no existe.");
+                    }
+                }
             // Agregar nuevo personaje (igual que si crearamos un objeto)
-            Personajes personaje = new Personajes(nombre, raza, nivel, listaDeItems);
+            Personajes personaje = new Personajes(nombre, raza, nivel, listaDeItems, ciudad);
             this.personajes.add(personaje); // Lo añadimos a la lista
             validacion(); // y lo validamos para asegurarnos que lo hayamos creado bien
             new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] INFO: El personaje "+personaje.getNombre()+" ha sido creado.");
@@ -150,5 +165,41 @@ public class GestionMundo {
                 }
             }
         }
+    }
+
+    // Metodo para validar los biomas
+    private void validacionBiomas() throws RecursoNoEncontradoException, DatoInvalidoException {
+        // La clave es el nombre de la ciudad y el valor el clima
+        HashMap<String, String> coleccionCiudades = new HashMap<>();
+        for (Ciudades ciudad : this.ciudades) {
+            coleccionCiudades.put(ciudad.getNombre(),ciudad.getClima());
+        }
+
+        List<Personajes> personajesAEliminar = new ArrayList<>(); // Creamos una lista de personajes que vamos a eliminar para no eliminar los personajes directamente en media ejecucion del bucle.
+
+        for (Personajes personaje : this.personajes) {
+            // validacion de Personaje con Raza = "Enano" y con el Clima de la Ciudad= "Desertico".
+            if ((coleccionCiudades.get(personaje.getNombreCiudad()).equalsIgnoreCase("Desertico"))&&(personaje.getRaza().equalsIgnoreCase("Enano"))) { // Si el nombre de la ciudad del personaje (clave) es igual que Desertico (valor = Desertico) Y la raza del personaje es igual a Enano, manda error.
+                personajesAEliminar.add(personaje); // Añade el personaje a la lista de personajes a eliminar.
+                new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] ERROR: El personaje "+personaje.getNombre() +" tiene la raza "+personaje.getRaza()+" y el clima de su ciudad es "+coleccionCiudades.get(personaje.getNombreCiudad())+". Eliminando Personaje.");
+            }
+            else {
+                new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] INFO: El personaje "+ personaje.getNombre() +" tiene su ciudad"+personaje.getNombreCiudad()+" validada correctamente.");
+            }
+            // validacion de Item con Tipo = "Hielo" y con el Clima de la Ciudad del Personaje = "Volcanica".
+            for(String idItem : personaje.getEquipoIds()) { // Recorro los items del cada personaje
+                if (this.coleccionDeItems.containsKey(idItem)) { // Si se encuentra el item (idItem) en la lista de items (clave del HashMap)
+                    if(this.coleccionDeItems.get(idItem).getTipo().equalsIgnoreCase("Hielo")&&(coleccionCiudades.get(personaje.getNombreCiudad()).equalsIgnoreCase("Volcanico"))) { // Y el tipo del item es igual a hielo Y el Clima de la ciudad del personaje es "Volcanico"
+                        personajesAEliminar.add(personaje); // Añade el personaje a la lista de personajes a eliminar.
+                        new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] ERROR: El personaje "+ personaje.getNombre()+ " tiene el objeto "+this.coleccionDeItems.get(idItem).getNombre()+" y el clima de su ciudad es "+coleccionCiudades.get(personaje.getNombreCiudad())+". Eliminando Personaje.");
+                    }
+                    else {
+                        new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] INFO: El item "+ this.coleccionDeItems.get(idItem).getNombre() +" del personaje "+personaje.getNombre()+" ha sido validado correctamente.");
+                    }
+                }
+            }
+        }
+        // Eliminar personajes de la lista
+        this.personajes.removeAll(personajesAEliminar);
     }
 }

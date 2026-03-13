@@ -1,5 +1,5 @@
 Minas Tirith;20000;Soleado;3
-Isengard;5000;Nublado;8
+Isengard;5000;Desertico;8
 Gondor;25000;Soleado;4
-Bree;8000;Nublado;Provocando fallo
+Bree;8000;Volcanica;5
 HelmsDeep;6000;Lluvioso;7

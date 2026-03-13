@@ -5,7 +5,8 @@
     "nivel": 20,
     "equipoIds": [
       "E01"
-    ]
+    ],
+    "nombreCiudad": "HelmsDeep"
   },
   {
     "nombre": "Legolas",
@@ -13,7 +14,8 @@
     "nivel": 18,
     "equipoIds": [
       "E02"
-    ]
+    ],
+    "nombreCiudad": "Isengard"
   },
   {
     "nombre": "Gimli",
@@ -21,7 +23,8 @@
     "nivel": 17,
     "equipoIds": [
       "E03"
-    ]
+    ],
+    "nombreCiudad": "Minas Tirith"
   },
   {
     "nombre": "Iker",
@@ -31,6 +34,16 @@
       "P04",
       "W01",
       "E03"
-    ]
+    ],
+    "nombreCiudad": "Gondor"
+  },
+  {
+    "nombre": "Nombre",
+    "raza": "Raza",
+    "nivel": 2,
+    "equipoIds": [
+      ""
+    ],
+    "nombreCiudad": "Bree"
   }
 ]

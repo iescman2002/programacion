@@ -229,3 +229,818 @@
 [2026-03-13T01:52:46.494473200] INFO: Se han impreso correctamente todas las ciudades.
 [2026-03-13T01:52:46.494473200] INFO: Se han impreso correctamente todos los items.
 [2026-03-13T01:52:46.496480500] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T10:15:22.474924600] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:15:22.491556400] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:15:22.495686400] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:15:22.502492600] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:15:22.503597400] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:15:22.504281500] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:15:22.505258200] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:15:22.505258200] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:15:22.506278500] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:15:22.508350300] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:15:22.508350300] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:15:22.508350300] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:15:22.509387900] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:15:22.509387900] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:18:06.109867800] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:18:06.126108600] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:18:06.132899200] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:18:06.136001] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:18:06.136001] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:18:06.137038800] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:18:06.137038800] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:18:06.138081400] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:18:06.139117800] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:18:06.141223600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:18:06.142267900] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:18:06.142804600] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:18:06.142804600] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:18:06.142804600] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:18:06.143859100] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:18:06.144886100] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:18:06.144886100] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:18:06.145935500] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:18:06.145935500] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:18:06.145935500] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:18:06.146960200] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:18:06.147996900] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:18:06.147996900] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:18:06.148546] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:18:21.057942400] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:18:31.239096500] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:20:07.245658] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:20:07.257293100] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:20:07.261921500] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:07.265015200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:07.267133700] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:07.268189500] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:07.269741100] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:07.269741100] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:20:07.269741100] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:20:07.272830600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:20:07.272830600] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:20:07.273881100] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:20:07.273881100] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:20:07.273881100] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:20:07.273881100] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:20:07.274903600] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:20:07.274903600] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:20:07.275956700] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:20:07.275956700] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:20:07.275956700] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:20:07.276977900] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:20:07.276977900] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:20:07.276977900] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:20:07.276977900] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:20:14.134907200] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:20:14.138827600] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:20:22.992117900] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:20:23.009864100] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:20:23.014702200] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:23.018489800] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:23.019581200] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:23.019581200] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:23.020643500] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:20:23.020643500] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:20:23.021707600] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:20:23.023365500] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:20:23.024423600] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:20:23.028222900] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:20:23.029327] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:20:23.030366400] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:20:23.030366400] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:20:23.033354800] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:20:23.034410500] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:20:23.036114700] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:20:23.036114700] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:20:23.037209200] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:20:23.037209200] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:20:23.038289500] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:20:23.039402] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:20:23.039967700] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:20:25.663203900] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:20:32.390169200] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:20:36.285486100] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T10:20:37.950134500] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:21:04.963988700] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:21:04.980746800] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:21:04.985392] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:21:04.988483100] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:21:04.988483100] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:21:04.989521] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:21:04.990076300] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:21:04.990076300] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:21:04.990076300] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:21:04.993212800] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:21:04.994235300] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:21:04.995258900] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:21:04.995258900] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:21:04.995258900] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:21:04.996312100] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:21:04.997350500] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:21:04.997885500] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:21:04.997885500] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:21:04.997885500] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:21:04.997885500] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:21:04.998919300] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:21:04.998919300] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:21:04.998919300] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:21:04.999966600] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:21:11.275000500] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:21:13.161500200] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:21:16.057827300] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T10:21:17.879190400] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:21:26.710611800] ERROR: El idItem 1 introducido no existe en el sistema.
+[2026-03-13T10:21:30.263942200] ERROR: El idItem 2 introducido no existe en el sistema.
+[2026-03-13T10:21:32.118574100] ERROR: El idItem 3 introducido no existe en el sistema.
+[2026-03-13T10:21:56.008468200] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:21:56.010623900] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:21:56.015466400] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:21:56.016487200] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:21:56.016487200] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:21:56.017686700] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:21:56.018234100] INFO: El personaje Juan1 ha sido creado.
+[2026-03-13T10:21:56.030877700] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T10:21:56.033038700] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T10:21:56.039939100] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T10:27:39.721118900] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:27:39.735524300] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:27:39.738650400] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:27:39.742449] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:27:39.742449] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:27:39.743495400] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:27:39.743495400] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:27:39.744522100] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:27:39.744522100] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:27:39.747144] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:27:39.748213500] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:27:39.748213500] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:27:39.749242] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:27:39.749242] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:27:39.749242] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:27:39.750277600] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:27:39.750277600] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:27:39.751305800] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:27:39.751305800] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:27:39.752344100] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:27:39.752344100] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:27:39.752344100] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:27:39.752344100] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:27:39.753377600] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:27:39.753923900] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:27:49.343532] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:28:18.350703700] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:28:18.364637900] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:28:18.369417700] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:28:18.373500600] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:28:18.374574900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:28:18.375155500] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:28:18.376228900] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:28:18.376228900] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:28:18.377300800] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:28:18.379430400] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:28:18.380002300] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:28:18.380002300] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:28:18.380002300] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:28:18.381079200] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:28:18.381079200] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:28:18.382154200] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:28:18.383230500] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:28:18.383230500] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:28:18.383230500] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:28:18.384296300] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:28:18.384296300] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:28:18.384906600] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:28:18.384906600] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:28:18.385979600] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:28:18.385979600] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:28:24.931448800] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:28:27.950657] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:28:30.002518500] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T10:28:31.676120300] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:28:55.387698700] ERROR: El idItem fallo introducido no existe en el sistema.
+[2026-03-13T10:29:01.943944200] ERROR: El idItem A02 introducido no existe en el sistema.
+[2026-03-13T10:29:12.224591900] ERROR: El usuario ha introducido la ciudad gkjrg y no existe.
+[2026-03-13T10:29:20.783352100] ERROR: El usuario ha introducido la ciudad Isengard y no existe.
+[2026-03-13T10:29:29.311134600] ERROR: El usuario ha introducido la ciudad Isengard y no existe.
+[2026-03-13T10:33:43.548303] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:33:43.561782600] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:33:43.567476400] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:33:43.571598200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:33:43.572641800] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:33:43.573205700] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:33:43.573205700] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:33:43.574229] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:33:43.575265900] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:33:43.577337] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:33:43.578384800] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:33:43.578384800] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:33:43.578384800] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:33:43.579416600] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:33:43.579416600] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:33:43.580456800] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:33:43.581004100] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:33:43.581004100] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:33:43.581004100] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:33:43.582040900] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:33:43.582040900] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:33:43.582040900] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:33:43.583083200] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:33:43.583083200] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:33:43.583083200] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:33:47.834731200] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:33:49.823863900] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:33:51.777121700] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T10:33:53.998391100] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:34:06.449952400] ERROR: El usuario ha introducido la ciudad grlgk y no existe.
+[2026-03-13T10:34:18.256647900] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:34:18.263446500] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:34:18.264482900] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:34:18.267605200] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:34:18.268641100] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:34:18.269210200] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:34:18.269210200] INFO: El itemP04 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:34:18.269210200] INFO: El itemW01 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:34:18.269210200] INFO: El personaje Error1 ha sido creado.
+[2026-03-13T10:34:18.281153500] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T10:34:18.283302500] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T10:34:18.290107600] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T10:36:47.217427300] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:36:47.229073] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:36:47.233679100] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:36:47.236763800] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:36:47.237793600] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:36:47.237793600] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:36:47.238822300] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:36:47.238822300] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:36:47.239882800] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:36:47.243500400] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:36:47.243500400] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:36:47.243500400] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:36:47.244524300] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:36:47.245560800] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:36:47.245560800] INFO: El itemP04 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:36:47.245560800] INFO: El itemW01 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:36:47.246600600] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:36:47.246600600] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:36:47.247644] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:36:47.248667200] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:36:47.248667200] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:36:47.248667200] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:36:47.249681300] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:36:47.249681300] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:36:47.250745100] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:36:47.251271600] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:36:47.251271600] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:36:47.252309300] INFO: El personaje Error1 tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:36:47.252309300] INFO: El item Antidoto del personaje Error1 ha sido validado correctamente.
+[2026-03-13T10:36:47.252309300] INFO: El item Hacha Doble del personaje Error1 ha sido validado correctamente.
+[2026-03-13T10:36:54.639506200] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:36:56.880675300] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:36:59.664962] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T10:37:02.255560900] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:37:15.049373100] ERROR: El usuario ha introducido la ciudad sgse y no existe.
+[2026-03-13T10:37:24.792132300] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:37:24.797868800] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:37:24.798897] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:37:24.798897] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:37:24.798897] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:37:24.798897] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:37:24.798897] INFO: El itemP04 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:37:24.799935200] INFO: El itemW01 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:37:24.799935200] INFO: El itemE02 del personaje Final1 se ha validado correctamente.
+[2026-03-13T10:37:24.799935200] INFO: El itemP04 del personaje Final1 se ha validado correctamente.
+[2026-03-13T10:37:24.799935200] INFO: El personaje Final1 ha sido creado.
+[2026-03-13T10:37:24.811778100] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T10:37:24.813363400] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T10:37:24.818804] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T10:38:39.920806600] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:38:39.939084900] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:38:39.945130200] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:38:39.950082500] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:38:39.950082500] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:38:39.951176300] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:38:39.951775] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:38:39.951775] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:38:39.952877500] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:38:39.955046600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:38:39.956129700] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:38:39.956719300] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:38:39.956719300] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:38:39.956719300] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:38:39.957836800] INFO: El itemP04 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:38:39.957836800] INFO: El itemW01 del personaje Error1 se ha validado correctamente.
+[2026-03-13T10:38:39.958915100] INFO: El itemE02 del personaje Final1 se ha validado correctamente.
+[2026-03-13T10:38:39.958915100] INFO: El itemP04 del personaje Final1 se ha validado correctamente.
+[2026-03-13T10:38:39.958915100] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:38:39.960622100] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:38:39.960622100] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:38:39.960622100] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:38:39.961718900] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:38:39.961718900] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:38:39.962828400] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:38:39.962828400] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:38:39.963923300] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:38:39.963923300] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:38:39.964540100] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:38:39.964540100] ERROR: El personaje Error1 tiene la raza Enano y el clima de su ciudad es Desertico. Eliminando Personaje.
+[2026-03-13T10:38:39.967830500] INFO: El item Antidoto del personaje Error1 ha sido validado correctamente.
+[2026-03-13T10:38:39.968422500] INFO: El item Hacha Doble del personaje Error1 ha sido validado correctamente.
+[2026-03-13T10:38:39.968422500] ERROR: El personaje Final1 tiene la raza Enano y el clima de su ciudad es Desertico. Eliminando Personaje.
+[2026-03-13T10:38:39.969525500] INFO: El item Pocion Mayor del personaje Final1 ha sido validado correctamente.
+[2026-03-13T10:38:39.969525500] INFO: El item Antidoto del personaje Final1 ha sido validado correctamente.
+[2026-03-13T10:38:44.243658700] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:38:46.919205400] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:38:48.983605700] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T10:38:49.886962800] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:38:58.663709700] ERROR: El usuario ha introducido la ciudad rreg y no existe.
+[2026-03-13T10:39:06.127121200] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:39:06.133906600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:39:06.133906600] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:39:06.133906600] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:39:06.134943] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:39:06.134943] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:39:06.134943] INFO: El itemP04 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:39:06.135968400] INFO: El itemE02 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:39:06.135968400] INFO: El personaje FinalizacionReal ha sido creado.
+[2026-03-13T10:39:06.146364100] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T10:39:06.147384800] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T10:39:06.152539] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T10:42:32.668398100] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:42:32.692813500] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:42:32.696583400] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:32.699733400] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:32.700752100] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:32.700752100] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:32.701790] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:32.701790] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:42:32.703163800] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:42:32.705777500] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:42:32.706297800] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:42:32.706297800] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:42:32.706297800] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:42:32.706297800] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:42:32.707342200] INFO: El itemP04 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:42:32.707342200] INFO: El itemE02 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:42:32.707342200] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:42:32.708381400] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:42:32.709432200] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:42:32.709432200] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:42:32.709432200] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:42:32.709432200] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:42:32.710454800] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:42:32.710454800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:42:32.711493500] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:42:32.711493500] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:42:32.711493500] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:42:32.712528700] ERROR: El personaje FinalizacionReal tiene la raza Enano y el clima de su ciudad es Desertico. Eliminando Personaje.
+[2026-03-13T10:42:32.717210600] INFO: El item Antidoto del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:42:32.718227300] INFO: El item Pocion Mayor del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:42:35.132231] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:42:35.133252800] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:42:35.140093700] ERROR: El dato null no sigue un formato válido.
+[2026-03-13T10:42:40.506994600] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:42:40.527494300] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:42:40.529670200] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:40.532334200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:40.533403500] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:40.533403500] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:40.534452500] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:42:40.534452500] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:42:40.535545700] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:42:40.538232300] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:42:40.538232300] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:42:40.539312] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:42:40.539312] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:42:40.539312] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:42:40.540399] INFO: El itemP04 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:42:40.540399] INFO: El itemE02 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:42:40.541492300] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:42:40.542057700] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:42:40.542057700] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:42:40.543125200] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:42:40.543125200] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:42:40.543125200] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:42:40.544214] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:42:40.544214] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:42:40.544214] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:42:40.545309900] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:42:40.545309900] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:42:40.545309900] ERROR: El personaje FinalizacionReal tiene la raza Enano y el clima de su ciudad es Desertico. Eliminando Personaje.
+[2026-03-13T10:42:40.549080300] INFO: El item Antidoto del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:42:40.549080300] INFO: El item Pocion Mayor del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:42:47.160166500] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:42:54.018114600] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:42:57.032381800] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:43:06.224201100] ERROR: El idItem w01 introducido no existe en el sistema.
+[2026-03-13T10:43:19.873651500] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:43:29.858649] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:47:10.065793] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:47:10.081259800] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:47:10.087090100] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:47:10.091907800] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:47:10.091907800] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:47:10.092982600] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:47:10.092982600] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:47:10.094033600] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:47:10.094033600] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:47:10.096745200] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:47:10.097821700] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:47:10.097821700] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:47:10.097821700] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:47:10.098896200] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:47:10.098896200] INFO: El itemP04 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:47:10.099976800] INFO: El itemE02 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:47:10.099976800] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:47:10.101049800] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:47:10.101643600] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:47:10.101643600] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:47:10.102714200] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:47:10.103773500] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:47:10.103773500] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:47:10.103773500] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:47:10.104857400] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:47:10.104857400] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:47:10.105949700] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:47:10.106548600] ERROR: El personaje FinalizacionReal tiene la raza Enano y el clima de su ciudad es Desertico. Eliminando Personaje.
+[2026-03-13T10:47:10.109762400] INFO: El item Antidoto del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:47:10.109762400] INFO: El item Pocion Mayor del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:47:15.599531800] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:47:18.583708900] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:47:20.367920700] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:47:34.360998600] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:47:37.850004200] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:47:39.175874300] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:48:53.325033700] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:48:53.337703700] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:48:53.343343800] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:48:53.348471200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:48:53.348471200] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:48:53.348471200] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:48:53.349507800] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:48:53.349507800] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:48:53.350544300] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:48:53.353153500] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:48:53.354196700] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:48:53.354196700] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:48:53.354196700] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:48:53.355229700] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:48:53.355229700] INFO: El itemP04 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:48:53.356267600] INFO: El itemE02 del personaje FinalizacionReal se ha validado correctamente.
+[2026-03-13T10:48:53.356267600] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:48:53.357313300] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:48:53.357313300] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:48:53.358343600] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:48:53.358343600] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:48:53.358343600] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:48:53.358343600] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:48:53.359386700] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:48:53.359944300] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:48:53.359944300] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:48:53.360970500] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:48:53.360970500] ERROR: El personaje FinalizacionReal tiene la raza Enano y el clima de su ciudad es Desertico. Eliminando Personaje.
+[2026-03-13T10:48:53.363053] INFO: El item Antidoto del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:48:53.364080600] INFO: El item Pocion Mayor del personaje FinalizacionReal ha sido validado correctamente.
+[2026-03-13T10:48:56.919495700] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:49:00.054981900] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:49:01.295042300] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:49:07.912001700] ERROR: El idItem slair introducido no existe en el sistema.
+[2026-03-13T10:49:35.838767300] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:49:35.840830900] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:49:35.840830900] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:49:35.841896200] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:49:35.841896200] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:49:35.841896200] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:49:35.842910500] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:49:35.842910500] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:49:35.842910500] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:49:35.842910500] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:49:35.842910500] INFO: El itemE01 del personaje Manuel se ha validado correctamente.
+[2026-03-13T10:49:35.843960] INFO: El personaje Manuel ha sido creado.
+[2026-03-13T10:49:35.859493] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T10:49:35.860509700] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T10:49:35.865127200] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T10:53:12.974545800] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:53:12.993763300] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:53:13.000757200] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:13.004560500] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:13.004560500] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:13.005631700] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:13.006701600] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:13.006701600] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:53:13.007775200] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:53:13.010493700] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:53:13.010493700] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:53:13.011554300] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:53:13.011554300] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:53:13.013203900] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:53:13.015398500] INFO: El itemE01 del personaje Manuel se ha validado correctamente.
+[2026-03-13T10:53:13.015398500] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:53:13.017171400] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:53:13.018206200] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:53:13.019271700] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:53:13.019271700] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:53:13.019271700] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:53:13.020361100] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:53:13.020361100] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:53:13.021430] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:53:13.022004700] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:53:13.022004700] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:53:37.853482500] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:53:37.866288700] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:53:37.873065] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:37.877339600] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:37.877339600] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:37.877910700] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:37.878973300] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:53:37.878973300] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:53:37.880044200] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:53:37.883220100] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:53:37.883220100] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:53:37.883784400] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:53:37.883784400] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:53:37.884838900] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:53:37.884838900] INFO: El itemE01 del personaje Manuel se ha validado correctamente.
+[2026-03-13T10:53:37.886309100] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:53:37.886870] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:53:37.887939800] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:53:37.887939800] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:53:37.887939800] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:53:37.889015900] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:53:37.889015900] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:53:37.890085800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:53:37.890689600] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:53:37.890689600] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:53:37.891771300] INFO: El personaje Juan1 tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:54:20.235183400] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:54:20.255342700] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:54:20.263169] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:54:20.268357400] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:54:20.269395100] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:54:20.269951600] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:54:20.270978300] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:54:20.273330900] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:54:20.274991900] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:54:20.278740100] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:54:20.278740100] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:54:20.278740100] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:54:20.278740100] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:54:20.279764400] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:54:20.279764400] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:54:20.280806900] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:54:20.281866800] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:54:20.281866800] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:54:20.281866800] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:54:20.282886800] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:54:20.282886800] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:54:20.282886800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:54:20.283927800] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:54:20.283927800] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:56:39.792584800] INFO: Lista de personajes cargada con exito.
+[2026-03-13T10:56:39.809916900] INFO: Lista de Items cargada con exito.
+[2026-03-13T10:56:39.814201300] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:56:39.819155200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:56:39.819155200] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:56:39.819755500] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T10:56:39.820837100] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T10:56:39.820837100] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T10:56:39.821933300] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:56:39.824649100] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:56:39.824649100] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:56:39.825734400] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:56:39.825734400] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:56:39.826819400] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:56:39.826819400] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T10:56:39.827903900] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T10:56:39.828990600] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T10:56:39.828990600] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T10:56:39.829576300] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T10:56:39.829576300] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T10:56:39.829576300] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T10:56:39.829576300] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:56:39.831751700] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:56:39.832874600] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T10:56:45.441748800] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T10:56:47.584109100] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T10:56:49.312393800] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T10:57:07.600545] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:57:07.613969600] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:57:07.615179200] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:57:07.615179200] ERROR: El usuario ha introducido la ciudad Bree y no existe.
+[2026-03-13T10:57:07.615179200] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T10:57:07.616227300] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T10:57:07.616227300] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T10:57:07.616842500] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:57:07.616842500] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:57:07.617948600] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T10:57:07.617948600] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T10:57:07.617948600] INFO: El personaje Nombre ha sido creado.
+[2026-03-13T10:57:07.626899800] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T10:57:07.628559200] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T10:57:07.634417200] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T11:04:21.044761700] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:04:21.063060600] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:04:21.069848700] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:21.073977300] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:21.073977300] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:21.074998700] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:21.076028900] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:21.076028900] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:04:21.077621600] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:04:21.082909200] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:04:21.082909200] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:04:21.083459500] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:04:21.083459500] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:04:21.084484900] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:04:21.084484900] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:04:21.084484900] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:04:21.085524200] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:04:21.086559700] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:04:21.086559700] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:04:21.087602100] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:04:21.087602100] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:04:21.087602100] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:04:21.088640100] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:04:21.089675400] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:04:21.089675400] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:04:41.864491200] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:04:41.880028100] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:04:41.883138900] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:41.886773700] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:41.886773700] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:41.887813600] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:41.888853500] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:04:41.888853500] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:04:41.889889400] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:04:41.891962600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:04:41.893004500] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:04:41.893004500] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:04:41.893004500] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:04:41.894042] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:04:41.894589800] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:04:41.894589800] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:04:41.894589800] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:04:41.896536700] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:04:41.896536700] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:04:41.896536700] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:04:41.897580100] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:04:41.898631300] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:04:41.900692800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:04:41.900692800] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:04:41.901728400] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:05:44.512678700] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:05:44.527262400] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:05:44.531406900] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:05:44.535056700] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:05:44.536091100] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:05:44.536091100] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T11:05:44.537133100] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:05:44.537133100] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:05:44.538169800] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:05:44.542860200] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:05:44.542860200] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:05:44.542860200] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:05:44.543919300] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:05:44.543919300] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:05:44.543919300] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:05:44.543919300] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:05:44.546056800] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:05:44.547117300] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:05:44.548147800] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:05:44.548708800] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:05:44.549721300] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:05:44.549721300] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:05:44.550740800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:05:44.550740800] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:05:44.551797300] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:07:38.515198200] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:07:38.529556700] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:07:38.533661500] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:07:38.538465900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:07:38.538465900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:07:38.538465900] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T11:07:38.539564500] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:07:38.539564500] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:07:38.540653500] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:07:38.544517] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:07:38.544517] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:07:38.545608600] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:07:38.545608600] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:07:38.545608600] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:07:38.546705] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:07:38.547309900] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:07:38.547309900] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:07:38.548385400] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:07:38.548385400] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:07:38.549479700] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:07:38.549479700] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:07:38.549479700] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:07:38.550584200] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:07:38.550584200] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:07:38.551202200] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:08:25.313834900] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:08:25.326357700] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:08:25.331052400] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:25.335187200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:25.335187200] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:25.336239700] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:25.336239700] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:25.337278900] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:08:25.337809] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:08:25.339881600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:08:25.340928200] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:08:25.340928200] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:08:25.340928200] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:08:25.341960400] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:08:25.341960400] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:08:25.341960400] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:08:25.343001600] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:08:25.344026500] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:08:25.344026500] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:08:25.345074100] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:08:25.345620700] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:08:25.345620700] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:08:25.345620700] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:08:25.346670400] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:08:25.346670400] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:08:51.942991500] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:08:51.981682] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:08:52.004304100] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:52.013102200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:52.013102200] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:52.014211100] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:52.015889400] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:08:52.015889400] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:08:52.016954800] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:08:52.021882600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:08:52.021882600] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:08:52.022976200] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:08:52.022976200] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:08:52.024068900] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:08:52.024664500] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:10:37.468286700] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:10:40.420135100] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:10:46.685258800] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:10:49.277871200] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:10:53.939712400] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:11:02.745103600] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:11:06.331470500] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:11:08.763326800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:11:11.756008600] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:11:14.331075500] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:12:20.953336] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:12:20.973632] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:12:20.978840100] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:12:20.986482900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:12:20.987546] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:12:20.987546] INFO: Ciudad 4 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:12:20.988560700] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:12:20.989105100] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:12:20.990146700] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:12:20.994375200] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:12:20.998110100] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:12:20.999158100] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:12:20.999158100] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:12:21.000201200] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:12:21.000201200] INFO: El itemE01 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:12:21.001240300] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:12:21.001240300] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:12:21.002274400] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:12:21.002842900] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:12:21.002842900] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:12:21.003855800] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:12:21.003855800] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:12:21.003855800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:12:21.004887] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:12:21.004887] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:12:21.004887] INFO: El personaje Nombre tiene su ciudadBree validada correctamente.
+[2026-03-13T11:12:21.005925500] INFO: El item Pocion del personaje Nombre ha sido validado correctamente.
+[2026-03-13T11:12:32.029642400] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T11:13:37.614453400] INFO: Lista de personajes cargada con exito.
+[2026-03-13T11:13:37.633692700] INFO: Lista de Items cargada con exito.
+[2026-03-13T11:13:37.639826500] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:13:37.644148200] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:13:37.644687900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:13:37.644687900] INFO: Ciudad 4 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:13:37.645744800] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T11:13:37.646760900] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T11:13:37.647817500] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T11:13:37.650389800] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T11:13:37.653500300] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T11:13:37.654558800] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:13:37.654558800] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:13:37.655575400] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T11:13:37.656124700] INFO: El itemE03 del personaje Nombre se ha validado correctamente.
+[2026-03-13T11:13:37.656124700] INFO: El personaje Aragorn tiene su ciudadHelmsDeep validada correctamente.
+[2026-03-13T11:13:37.657178200] INFO: El item Pocion del personaje Aragorn ha sido validado correctamente.
+[2026-03-13T11:13:37.657178200] INFO: El personaje Legolas tiene su ciudadIsengard validada correctamente.
+[2026-03-13T11:13:37.658201200] INFO: El item Pocion Mayor del personaje Legolas ha sido validado correctamente.
+[2026-03-13T11:13:37.658201200] INFO: El personaje Gimli tiene su ciudadMinas Tirith validada correctamente.
+[2026-03-13T11:13:37.659243800] INFO: El item Elixir de Mana del personaje Gimli ha sido validado correctamente.
+[2026-03-13T11:13:37.659243800] INFO: El personaje Iker tiene su ciudadGondor validada correctamente.
+[2026-03-13T11:13:37.659243800] INFO: El item Antidoto del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:13:37.660273900] INFO: El item Hacha Doble del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:13:37.661312] INFO: El item Elixir de Mana del personaje Iker ha sido validado correctamente.
+[2026-03-13T11:13:37.661312] INFO: El personaje Nombre tiene su ciudadBree validada correctamente.
+[2026-03-13T11:13:37.661312] INFO: El item Elixir de Mana del personaje Nombre ha sido validado correctamente.

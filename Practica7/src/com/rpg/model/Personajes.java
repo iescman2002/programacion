@@ -7,12 +7,14 @@ public class Personajes {
     private String raza;
     private Integer nivel;
     private List<String> equipoIds;
+    private String nombreCiudad;
 
-    public Personajes(String nombre, String raza, Integer nivel, List<String> equipoIds) {
+    public Personajes(String nombre, String raza, Integer nivel, List<String> equipoIds, String nombreCiudad) {
         this.nombre = nombre;
         this.raza = raza;
         this.nivel= nivel;
         this.equipoIds = equipoIds;
+        this.nombreCiudad = nombreCiudad;
     }
 
     public String getNombre() {
@@ -43,6 +45,13 @@ public class Personajes {
         this.equipoIds = equipoIds;
     }
 
+    public String getNombreCiudad() {
+        return this.nombreCiudad;
+    }
+    public void setNombreCiudad(String nombreCiudad) {
+        this.nombreCiudad = nombreCiudad;
+    }
+
     @Override
     public String toString() {
         return
@@ -50,6 +59,7 @@ public class Personajes {
                 ", raza='" + this.raza + '\'' +
                 ", nivel='" + this.nivel + '\'' +
                 ", equipoIds=" + this.equipoIds +
+                ", nombreCiudad=" + this.nombreCiudad +
                 '}';
     }
 }
