@@ -1,7 +1,7 @@
 [
   { "id": "W01", "nombre": "Hacha Doble", "tipo": "ARMA", "valor": 100 },
-  { "id": "P01", "nombre": "Pocion", "tipo": "CONSUMIBLE", "valor": 25 },
-  { "id": "P02", "nombre": "Pocion Mayor", "tipo": "CONSUMIBLE", "valor": 50 },
-  { "id": "P03", "nombre": "Elixir de Mana", "tipo": "CONSUMIBLE", "valor": 40 },
+  { "id": "E01", "nombre": "Pocion", "tipo": "CONSUMIBLE", "valor": 25 },
+  { "id": "E02", "nombre": "Pocion Mayor", "tipo": "CONSUMIBLE", "valor": 50 },
+  { "id": "E03", "nombre": "Elixir de Mana", "tipo": "CONSUMIBLE", "valor": 40 },
   { "id": "P04", "nombre": "Antidoto", "tipo": "CONSUMIBLE", "valor": 30 }
 ]

@@ -24,49 +24,13 @@
     ]
   },
   {
-    "nombre": "Gandalf",
-    "raza": "Maia",
-    "nivel": 25,
-    "equipoIds": [
-      "E04"
-    ]
-  },
-  {
-    "nombre": "Frodo",
-    "raza": "Hobbit",
-    "nivel": 12,
-    "equipoIds": [
-      "E05"
-    ]
-  },
-  {
     "nombre": "Iker",
-    "raza": "prueba",
-    "nivel": 500,
-    "equipoIds": []
-  },
-  {
-    "nombre": "Maria",
-    "raza": "Humano",
-    "nivel": 50,
-    "equipoIds": []
-  },
-  {
-    "nombre": "Juan",
     "raza": "Enano",
-    "nivel": 1,
-    "equipoIds": []
-  },
-  {
-    "nombre": "Test",
-    "raza": "Prueba",
-    "nivel": 1,
-    "equipoIds": []
-  },
-  {
-    "nombre": "hola",
-    "raza": "no",
-    "nivel": 6,
-    "equipoIds": []
+    "nivel": 999,
+    "equipoIds": [
+      "P04",
+      "W01",
+      "E03"
+    ]
   }
 ]

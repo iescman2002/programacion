@@ -81,3 +81,151 @@
 [2026-03-12T22:09:46.494041600] INFO: Se han impreso correctamente todas las ciudades.
 [2026-03-12T22:09:46.495023400] INFO: Se han impreso correctamente todos los items.
 [2026-03-12T22:09:46.495987] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-12T23:17:04.149916] INFO: Lista de personajes cargada con exito.
+[2026-03-12T23:17:04.175458] INFO: Lista de Items cargada con exito.
+[2026-03-12T23:17:04.187690700] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:17:04.190690400] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:17:04.190690400] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:17:04.191690600] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-12T23:17:04.191690600] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:17:04.191690600] INFO: Lista de Ciudades cargada con exito.
+[2026-03-12T23:37:30.126528100] INFO: Lista de personajes cargada con exito.
+[2026-03-12T23:37:30.132527800] INFO: Lista de Items cargada con exito.
+[2026-03-12T23:37:30.135037500] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:37:30.138051600] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:37:30.138051600] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:37:30.138051600] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-12T23:37:30.139049200] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-12T23:37:30.139049200] INFO: Lista de Ciudades cargada con exito.
+[2026-03-12T23:37:30.149205100] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-12T23:37:30.150206300] INFO: Se han impreso correctamente todos los items.
+[2026-03-12T23:37:30.151207100] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T01:01:33.734461900] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:01:33.743559200] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:01:33.745555600] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:01:33.749068500] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:01:33.749068500] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:01:33.750080900] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:01:33.751081800] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:01:33.751081800] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:01:33.752081100] ERROR: El item E01 del personaje { nombre='Aragorn', raza='Humano', nivel='20', equipoIds=[E01]} no existe.
+[2026-03-13T01:02:22.809178] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:02:22.816185900] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:02:22.818185800] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:02:22.820701500] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:02:22.820701500] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:02:22.821710900] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:02:22.821710900] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:02:22.822709] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:02:22.822709] INFO: El item{ id='E01', nombre='Pocion', tipo='CONSUMIBLE', valor=25} del personaje { nombre='Aragorn', raza='Humano', nivel='20', equipoIds=[E01]} se ha validado correctamente.
+[2026-03-13T01:02:22.826707800] INFO: El item{ id='E02', nombre='Pocion Mayor', tipo='CONSUMIBLE', valor=50} del personaje { nombre='Legolas', raza='Elfo', nivel='18', equipoIds=[E02]} se ha validado correctamente.
+[2026-03-13T01:02:22.826707800] INFO: El item{ id='E03', nombre='Elixir de Mana', tipo='CONSUMIBLE', valor=40} del personaje { nombre='Gimli', raza='Enano', nivel='17', equipoIds=[E03]} se ha validado correctamente.
+[2026-03-13T01:02:38.777068700] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T01:02:38.778076300] INFO: El personaje Iker ha sido creado.
+[2026-03-13T01:02:38.787599500] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T01:02:38.789122200] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T01:02:38.789122200] INFO: Se han impreso correctamente todos los personajes.
+[2026-03-13T01:19:36.439819500] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:19:36.445334600] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:19:36.446331900] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:19:36.448332900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:19:36.449335100] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:19:36.449335100] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:19:36.450334600] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:19:36.450334600] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:19:36.450334600] INFO: El item{ id='E01', nombre='Pocion', tipo='CONSUMIBLE', valor=25} del personaje { nombre='Aragorn', raza='Humano', nivel='20', equipoIds=[E01]} se ha validado correctamente.
+[2026-03-13T01:19:36.453332600] INFO: El item{ id='E02', nombre='Pocion Mayor', tipo='CONSUMIBLE', valor=50} del personaje { nombre='Legolas', raza='Elfo', nivel='18', equipoIds=[E02]} se ha validado correctamente.
+[2026-03-13T01:19:36.453837600] INFO: El item{ id='E03', nombre='Elixir de Mana', tipo='CONSUMIBLE', valor=40} del personaje { nombre='Gimli', raza='Enano', nivel='17', equipoIds=[E03]} se ha validado correctamente.
+[2026-03-13T01:21:56.347243300] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:21:56.353245700] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:21:56.354482800] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:21:56.356482600] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:21:56.357479800] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:21:56.357479800] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:21:56.357479800] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:21:56.357479800] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:21:56.358479500] INFO: El itemE01 del personaje { nombre='Aragorn', raza='Humano', nivel='20', equipoIds=[E01]} se ha validado correctamente.
+[2026-03-13T01:21:56.360478400] INFO: El itemE02 del personaje { nombre='Legolas', raza='Elfo', nivel='18', equipoIds=[E02]} se ha validado correctamente.
+[2026-03-13T01:21:56.361478] INFO: El itemE03 del personaje { nombre='Gimli', raza='Enano', nivel='17', equipoIds=[E03]} se ha validado correctamente.
+[2026-03-13T01:22:16.370505100] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T01:22:22.066272900] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T01:22:24.090893900] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T01:22:51.394196300] INFO: El itemE01 del personaje { nombre='Aragorn', raza='Humano', nivel='20', equipoIds=[E01]} se ha validado correctamente.
+[2026-03-13T01:22:51.395205] INFO: El itemE02 del personaje { nombre='Legolas', raza='Elfo', nivel='18', equipoIds=[E02]} se ha validado correctamente.
+[2026-03-13T01:22:51.396199600] INFO: El itemE03 del personaje { nombre='Gimli', raza='Enano', nivel='17', equipoIds=[E03]} se ha validado correctamente.
+[2026-03-13T01:22:51.396199600] INFO: El itemE02 del personaje { nombre='Iker', raza='Humano', nivel='1', equipoIds=[E02, E03, W01, sali]} se ha validado correctamente.
+[2026-03-13T01:22:51.396199600] INFO: El itemE03 del personaje { nombre='Iker', raza='Humano', nivel='1', equipoIds=[E02, E03, W01, sali]} se ha validado correctamente.
+[2026-03-13T01:22:51.397199400] INFO: El itemW01 del personaje { nombre='Iker', raza='Humano', nivel='1', equipoIds=[E02, E03, W01, sali]} se ha validado correctamente.
+[2026-03-13T01:22:51.397199400] ERROR: El item sali del personaje { nombre='Iker', raza='Humano', nivel='1', equipoIds=[E02, E03, W01, sali]} no existe.
+[2026-03-13T01:22:51.397199400] ERROR: El dato Error: El item asociado al personaje no existe. no sigue un formato válido.
+[2026-03-13T01:39:33.689191800] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:39:33.695198400] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:39:33.696197500] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:39:33.700245900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:39:33.700245900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:39:33.701247900] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:39:33.702257500] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:39:33.702257500] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:39:33.703257400] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T01:39:33.705254400] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T01:39:33.706253200] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T01:40:07.036445600] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T01:40:17.443677] ERROR: El usuario ha intentado introducir un idItem inexistente.
+[2026-03-13T01:40:17.444638600] ERROR: El dato Error: El usuario ha intentado introducir un idItem que no existe. no sigue un formato válido.
+[2026-03-13T01:43:17.627494700] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:43:17.633019400] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:43:17.634018] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:43:17.637017900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:43:17.637017900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:43:17.638012300] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:43:17.638012300] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:43:17.638012300] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:43:17.639017300] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T01:43:17.640191600] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T01:43:17.640191600] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T01:43:21.020075200] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T01:43:24.724576500] ERROR: El dato Error: El usuario ha intentado introducir un idItem que no existe. no sigue un formato válido.
+[2026-03-13T01:50:25.401718100] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:50:25.407230200] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:50:25.408230100] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:50:25.411234900] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:50:25.411234900] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:50:25.412230900] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:50:25.412230900] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:50:25.412230900] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:50:25.413230700] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T01:50:25.414492] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T01:50:25.415493400] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T01:50:26.965617200] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T01:50:29.364633200] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T01:50:31.492177200] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T01:50:34.948989900] INFO: El usuario ha introducido un nivel negativo, volviendolo a intentar.
+[2026-03-13T01:50:39.605023700] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T01:50:45.381426800] ERROR: El idItem item introducido no existe en el sistema.
+[2026-03-13T01:50:45.383410900] ERROR: El idItem mal introducido no existe en el sistema.
+[2026-03-13T01:52:10.463523900] INFO: Lista de personajes cargada con exito.
+[2026-03-13T01:52:10.469039100] INFO: Lista de Items cargada con exito.
+[2026-03-13T01:52:10.470039900] INFO: Ciudad 1 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:52:10.472041] INFO: Ciudad 2 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:52:10.472041] INFO: Ciudad 3 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:52:10.473042400] ERROR: Linea 4 corrupta. Pasando a la siguiente ciudad.
+[2026-03-13T01:52:10.473042400] INFO: Ciudad 5 Añadida. Pasando a la siguiente ciudad.
+[2026-03-13T01:52:10.473042400] INFO: Lista de Ciudades cargada con exito.
+[2026-03-13T01:52:10.473042400] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T01:52:10.475559800] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T01:52:10.475559800] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T01:52:12.485880300] INFO: El usuario ha introducido correctamente el nombre.
+[2026-03-13T01:52:17.204471300] INFO: El usuario ha introducido correctamente la raza.
+[2026-03-13T01:52:20.484776800] INFO: El usuario ha introducido correctamente el nivel.
+[2026-03-13T01:52:24.084409300] ERROR: El idItem prueba introducido no existe en el sistema.
+[2026-03-13T01:52:29.372408100] ERROR: El idItem error introducido no existe en el sistema.
+[2026-03-13T01:52:46.484928700] INFO: El itemE01 del personaje Aragorn se ha validado correctamente.
+[2026-03-13T01:52:46.485932200] INFO: El itemE02 del personaje Legolas se ha validado correctamente.
+[2026-03-13T01:52:46.485932200] INFO: El itemE03 del personaje Gimli se ha validado correctamente.
+[2026-03-13T01:52:46.486931100] INFO: El itemP04 del personaje Iker se ha validado correctamente.
+[2026-03-13T01:52:46.486931100] INFO: El itemW01 del personaje Iker se ha validado correctamente.
+[2026-03-13T01:52:46.487930700] INFO: El itemE03 del personaje Iker se ha validado correctamente.
+[2026-03-13T01:52:46.487930700] INFO: El personaje Iker ha sido creado.
+[2026-03-13T01:52:46.494473200] INFO: Se han impreso correctamente todas las ciudades.
+[2026-03-13T01:52:46.494473200] INFO: Se han impreso correctamente todos los items.
+[2026-03-13T01:52:46.496480500] INFO: Se han impreso correctamente todos los personajes.
