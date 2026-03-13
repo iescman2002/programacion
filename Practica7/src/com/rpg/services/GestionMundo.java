@@ -30,7 +30,7 @@ public class GestionMundo {
         // Rellenar las listas de objetos
         this.personajes= new JsonHelper().readList("Practica7/Ficheros/personajes.json", Personajes.class);
         new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de personajes cargada con exito.");
-        this.items = new JsonHelper().readList("Practica7/Ficheros/Items.json", Items.class);
+        this.items = new JsonHelper().readList("Practica7/Ficheros/items.json", Items.class);
         new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Items cargada con exito.");
         this.ciudades = new TxtHelper().leerLineas("Practica7/Ficheros/ciudades.txt");
         new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Ciudades cargada con exito.");
