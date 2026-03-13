@@ -12,11 +12,11 @@ import java.util.*;
 
 public class GestionMundo {
     // Inicializar listas de objetos
-    List<Personajes> personajes;
-    List<Items> items;
-    List<Ciudades> ciudades;
+    private List<Personajes> personajes;
+    private List<Items> items;
+    private List<Ciudades> ciudades;
     // Crear Hashmap para buscar items por id de forma eficiente
-    HashMap<String, Items> coleccionDeItems; // La clave String será el idItem y el valor será el propio item
+    private HashMap<String, Items> coleccionDeItems; // La clave String será el idItem y el valor será el propio item
 
     public GestionMundo() throws RecursoNoEncontradoException, DatoInvalidoException {
         this.personajes = new ArrayList<>();
@@ -36,7 +36,7 @@ public class GestionMundo {
         new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] INFO: Lista de Ciudades cargada con exito.");
         // Rellenar el HashMap con los items
         for (Items item : this.items) {
-            coleccionDeItems.put(item.getId(),item);
+            this.coleccionDeItems.put(item.getId(),item);
         }
 
         // Validar los idItems de los personajes (Asegurarse que los idItems existan)
@@ -71,7 +71,7 @@ public class GestionMundo {
             List<String> listaDeItems = new ArrayList<>();
             // Los muestra
             System.out.println("De estos siguientes items: ");
-            for (Items item : coleccionDeItems.values()) {
+            for (Items item : this.coleccionDeItems.values()) {
                 System.out.println(item.toString());
             }
             // Bucle para escoger un item correcto
@@ -81,7 +81,7 @@ public class GestionMundo {
                 if (idEscogido.equalsIgnoreCase("Salir")) { // Si lo que hemos introducido es igual a salir (da igual las mayusculas o minusculas lo que mira son los caracteres) se sale
                     break;
                 }
-                if (!coleccionDeItems.containsKey(idEscogido)) { // Si el usuario ha introducido un id que NO existe en la coleccion de items
+                if (!this.coleccionDeItems.containsKey(idEscogido)) { // Si el usuario ha introducido un id que NO existe en la coleccion de items
                     new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] ERROR: El idItem "+idEscogido+" introducido no existe en el sistema.");
                 }
                 else {
@@ -113,7 +113,7 @@ public class GestionMundo {
         System.out.println("Resultado final: ");
         System.out.println("------------------");
         System.out.println("Ciudades: ");
-        for (Ciudades ciudad : ciudades) {
+        for (Ciudades ciudad : this.ciudades) {
             System.out.println("Ciudad "+contador+" : "+ciudad.toString());
             contador++;
         }
@@ -121,7 +121,7 @@ public class GestionMundo {
         System.out.println("------------------");
         System.out.println("Items: ");
         contador=1;
-        for (Items item : items) {
+        for (Items item : this.items) {
             System.out.println("Item "+contador+" : "+item.toString());
             contador++;
         }
@@ -129,7 +129,7 @@ public class GestionMundo {
         System.out.println("------------------");
         System.out.println("Personajes: ");
         contador=1;
-        for (Personajes personaje : personajes) {
+        for (Personajes personaje : this.personajes) {
             System.out.println("Personaje "+contador+" : "+personaje.toString());
             contador++;
         }
@@ -139,10 +139,10 @@ public class GestionMundo {
 
     // Metodo para validar que los items de la lista de cada personaje exista.
     private void validacion() throws RecursoNoEncontradoException, DatoInvalidoException {
-        for (Personajes personaje : personajes) { // Recorro los personajes
+        for (Personajes personaje : this.personajes) { // Recorro los personajes
             for (String idPersonaje : personaje.getEquipoIds()) {
-                if (coleccionDeItems.containsKey(idPersonaje)) { // Si la clave es igual al idPersonaje (es decir que existe el item)
-                    new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] INFO: El item"+ coleccionDeItems.get(idPersonaje).getId() +" del personaje "+personaje.getNombre() +" se ha validado correctamente.");
+                if (this.coleccionDeItems.containsKey(idPersonaje)) { // Si la clave es igual al idPersonaje (es decir que existe el item)
+                    new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] INFO: El item"+ this.coleccionDeItems.get(idPersonaje).getId() +" del personaje "+personaje.getNombre() +" se ha validado correctamente.");
                 }
                 else { // Si el item que busca no se encuentra
                     new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] ERROR: El item "+idPersonaje+ " del personaje "+personaje+" no existe.");

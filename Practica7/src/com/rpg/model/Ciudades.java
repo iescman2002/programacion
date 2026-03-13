@@ -44,10 +44,10 @@ public class Ciudades {
 
     @Override
     public String toString() {
-        return  "{nombre='" + nombre + '\'' +
-                ", poblacion=" + poblacion +
-                ", clima='" + clima + '\'' +
-                ", riesgo=" + riesgo +
+        return  "{nombre='" + this.nombre + '\'' +
+                ", poblacion=" + this.poblacion +
+                ", clima='" + this.clima + '\'' +
+                ", riesgo=" + this.riesgo +
                 '}';
     }
 }

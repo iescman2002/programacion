@@ -6,7 +6,6 @@ import com.rpg.model.Ciudades;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +34,9 @@ public class TxtHelper{
                     new LoggerCustom().escribirLog("["+LocalDateTime.now()+"] ERROR: Linea "+numlinea +" corrupta. Pasando a la siguiente ciudad.");
                 }
                 numlinea++;
+            }
+        return ciudades;
         }
-        return ciudades;}
         catch (IOException e) {
             new LoggerCustom().escribirLog("["+ LocalDateTime.now()+"] ERROR: No se ha podido leer el fichero: "+e.getMessage());
             throw new DatoInvalidoException("El fichero +"+e.getMessage()+" no se ha podido leer.");

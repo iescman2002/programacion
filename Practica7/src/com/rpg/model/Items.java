@@ -44,10 +44,10 @@ public class Items {
     @Override
     public String toString() {
         return
-                "{ id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", valor=" + valor +
+                "{ id='" + this.id + '\'' +
+                ", nombre='" + this.nombre + '\'' +
+                ", tipo='" + this.tipo + '\'' +
+                ", valor=" + this.valor +
                 '}';
     }
 }

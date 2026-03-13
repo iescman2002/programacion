@@ -46,10 +46,10 @@ public class Personajes {
     @Override
     public String toString() {
         return
-                "{ nombre='" + nombre + '\'' +
-                ", raza='" + raza + '\'' +
-                ", nivel='" + nivel + '\'' +
-                ", equipoIds=" + equipoIds +
+                "{ nombre='" + this.nombre + '\'' +
+                ", raza='" + this.raza + '\'' +
+                ", nivel='" + this.nivel + '\'' +
+                ", equipoIds=" + this.equipoIds +
                 '}';
     }
 }
