@@ -1,0 +1,36 @@
+[
+  {
+    "nombre": "Aragorn",
+    "raza": "Humano",
+    "nivel": 20,
+    "equipoIds": [
+      "E01"
+    ]
+  },
+  {
+    "nombre": "Legolas",
+    "raza": "Elfo",
+    "nivel": 18,
+    "equipoIds": [
+      "E02"
+    ]
+  },
+  {
+    "nombre": "Gimli",
+    "raza": "Enano",
+    "nivel": 17,
+    "equipoIds": [
+      "E03"
+    ]
+  },
+  {
+    "nombre": "Iker",
+    "raza": "Enano",
+    "nivel": 999,
+    "equipoIds": [
+      "P04",
+      "W01",
+      "E03"
+    ]
+  }
+]
