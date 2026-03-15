@@ -1,2 +1,1 @@
-# Nombre, Horas, Temas
 Matematicas;130;9
