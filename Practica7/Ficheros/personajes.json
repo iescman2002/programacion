@@ -35,14 +35,14 @@
       "W01",
       "E03"
     ],
-    "nombreCiudad": "Gondor"
+    "nombreCiudad": "Isengard"
   },
   {
     "nombre": "Nombre",
     "raza": "Raza",
     "nivel": 2,
     "equipoIds": [
-      ""
+      "E03"
     ],
     "nombreCiudad": "Bree"
   }
