@@ -1,0 +1,2 @@
+# Asignatura, DNI_Alumno, Nota_Trimestre1, Nota_Trimestre2, Nota_Trimestre3, Nota_Final
+Matematicas;32906281C;7.6;8.1;9.3;8.3
