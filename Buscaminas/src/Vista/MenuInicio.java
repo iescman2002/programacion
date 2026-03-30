@@ -17,10 +17,13 @@ public class MenuInicio {
         switch(eleccion) {
             case 1:
                 new ModoFacil();
+                break;
             case 2:
                 new ModoIntermedio();
+                break;
             case 3:
                 new ModoDificil();
+                 break;
             default: System.out.print("Saliendo...");
         }
     }
