@@ -20,7 +20,7 @@ public class Menus {
         int opcion = s.nextInt();
         switch (opcion) {
             case 1:
-                new crearPersonaje();
+                //new crearPersonaje();
                 break;
             default:
                 System.out.print("Saliendo...");
