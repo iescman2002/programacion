@@ -49,4 +49,15 @@ public class Habilidad {
     public void setId_clase(Integer id_clase) {
         this.id_clase = id_clase;
     }
+
+    @Override
+    public String toString() {
+        return "Habilidad {" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", danio_base=" + danio_base +
+                ", usos_maximos=" + usos_maximos +
+                ", id_clase=" + id_clase +
+                '}';
+    }
 }

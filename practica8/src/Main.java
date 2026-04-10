@@ -25,5 +25,10 @@ public class Main {
         for (Clase clase : claseDAO.getClases()) {
             System.out.println(clase.toString());
         }
+        System.out.println("---------------------------------------------------------");
+        HabilidadDAO habilidadDAO = new HabilidadDAO();
+        for (Habilidad habilidad : habilidadDAO.getHabilidades()) {
+            System.out.println(habilidad.toString());
+        }
     }
 }
