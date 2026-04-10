@@ -1,7 +1,6 @@
-import rpg.dao.CiudadDAO;
-import rpg.dao.ItemDAO;
-import rpg.model.Ciudad;
-import rpg.model.Item;
+import rpg.dao.*;
+
+import rpg.model.*;
 
 import java.sql.*;
 
@@ -15,6 +14,11 @@ public class Main {
         CiudadDAO ciudadDAO = new CiudadDAO();
         for (Ciudad ciudad : ciudadDAO.getCiudades()) {
             System.out.println(ciudad.toString());
+        }
+        System.out.println("---------------------------------------------------------");
+        RazaDAO razaDAO = new RazaDAO();
+        for (Raza raza : razaDAO.getRazas()) {
+            System.out.println(raza.toString());
         }
     }
 }
