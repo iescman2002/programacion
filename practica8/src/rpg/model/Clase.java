@@ -1,10 +1,10 @@
 package rpg.model;
 
-public class Clases_RPG {
+public class Clase {
     Integer id; // PK
     String nombre;
 
-    public Clases_RPG(Integer id, String nombre) {
+    public Clase(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -21,5 +21,13 @@ public class Clases_RPG {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Clase {" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }

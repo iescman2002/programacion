@@ -20,5 +20,10 @@ public class Main {
         for (Raza raza : razaDAO.getRazas()) {
             System.out.println(raza.toString());
         }
+        System.out.println("---------------------------------------------------------");
+        ClaseDAO claseDAO = new ClaseDAO();
+        for (Clase clase : claseDAO.getClases()) {
+            System.out.println(clase.toString());
+        }
     }
 }
