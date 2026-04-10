@@ -22,7 +22,7 @@ public class ClaseDAO extends ConexionBaseDatos {
     }
 
     private void precargaClases() throws SQLException {
-        this.resultSet = statement.executeQuery("SELECT * FROM RAZAS"); // Hacemos una consulta de TODAS las columnas de la tabla Items.
+        this.resultSet = statement.executeQuery("SELECT * FROM CLASES_RPG"); // Hacemos una consulta de TODAS las columnas de la tabla Clases.
 
         while(resultSet.next()) {
             Integer id = resultSet.getInt("id");
