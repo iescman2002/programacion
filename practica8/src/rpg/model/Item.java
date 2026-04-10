@@ -1,12 +1,12 @@
 package rpg.model;
 
 public class Item {
-    Integer id; // PK
-    String nombre;
-    String tipo;
-    Integer precio_oro;
-    Integer bonificador_ataque;
-    Integer bonificador_defensa;
+    private Integer id; // PK
+    private String nombre;
+    private String tipo;
+    private Integer precio_oro;
+    private Integer bonificador_ataque;
+    private Integer bonificador_defensa;
 
     public Item(Integer id, String nombre, String tipo, Integer precio_oro, Integer bonificador_ataque, Integer bonificador_defensa) {
         this.id = id;
@@ -57,5 +57,17 @@ public class Item {
     }
     public void setBonificador_defensa(Integer bonificador_defensa) {
         this.bonificador_defensa = bonificador_defensa;
+    }
+
+    @Override
+    public String toString() {
+        return "Item {" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", precio_oro=" + precio_oro +
+                ", bonificador_ataque=" + bonificador_ataque +
+                ", bonificador_defensa=" + bonificador_defensa +
+                '}';
     }
 }
