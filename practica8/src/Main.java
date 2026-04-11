@@ -35,5 +35,10 @@ public class Main {
         for (Personaje personaje : personajeDAO.getPersonajes()) {
             System.out.println(personaje.toString());
         }
+        System.out.println("---------------------------------------------------------");
+        InventarioDAO inventarioDAO = new InventarioDAO();
+        for (Inventario inventario : inventarioDAO.getInventarios()) {
+            System.out.println(inventario.toString());
+        }
     }
 }

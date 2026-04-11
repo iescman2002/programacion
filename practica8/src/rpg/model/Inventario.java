@@ -31,4 +31,13 @@ public class Inventario {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "Inventario {" +
+                "id_personaje=" + id_personaje +
+                ", id_item=" + id_item +
+                ", cantidad=" + cantidad +
+                '}';
+    }
 }
