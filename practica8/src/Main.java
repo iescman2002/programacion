@@ -30,5 +30,10 @@ public class Main {
         for (Habilidad habilidad : habilidadDAO.getHabilidades()) {
             System.out.println(habilidad.toString());
         }
+        System.out.println("---------------------------------------------------------");
+        PersonajeDAO personajeDAO = new PersonajeDAO();
+        for (Personaje personaje : personajeDAO.getPersonajes()) {
+            System.out.println(personaje.toString());
+        }
     }
 }

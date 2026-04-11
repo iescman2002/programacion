@@ -76,4 +76,18 @@ public class Personaje {
     public void setId_ciudad_actual(Integer id_ciudad_actual) {
         this.id_ciudad_actual = id_ciudad_actual;
     }
+
+    @Override
+    public String toString() {
+        return "Personaje {" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", nivel=" + nivel +
+                ", oro=" + oro +
+                ", vida_actual=" + vida_actual +
+                ", id_raza=" + id_raza +
+                ", id_clase=" + id_clase +
+                ", id_ciudad_actual=" + id_ciudad_actual +
+                '}';
+    }
 }
