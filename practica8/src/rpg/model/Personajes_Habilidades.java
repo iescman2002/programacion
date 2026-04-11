@@ -31,4 +31,13 @@ public class Personajes_Habilidades {
     public void setEquipada_combate(Boolean equipada_combate) {
         this.equipada_combate = equipada_combate;
     }
+
+    @Override
+    public String toString() {
+        return "Personajes_Habilidades {" +
+                "id_personaje=" + id_personaje +
+                ", id_habilidad=" + id_habilidad +
+                ", equipada_combate=" + equipada_combate +
+                '}';
+    }
 }

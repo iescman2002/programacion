@@ -40,5 +40,10 @@ public class Main {
         for (Inventario inventario : inventarioDAO.getInventarios()) {
             System.out.println(inventario.toString());
         }
+        System.out.println("---------------------------------------------------------");
+        Personajes_HabilidadesDAO personajesHabilidadesDAO = new Personajes_HabilidadesDAO();
+        for (Personajes_Habilidades personaje_habilidades : personajesHabilidadesDAO.getPersonajes_habilidades()) {
+            System.out.println(personaje_habilidades.toString());
+        }
     }
 }
