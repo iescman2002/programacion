@@ -1,11 +1,15 @@
 import rpg.dao.*;
 
 import rpg.model.*;
+import rpg.ui.Menus;
 
 import java.sql.*;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
+
+        new Menus();
+        /* PROBAR QUE CARGAN BIEN LOS ITEMS
         ItemDAO itemDAO = new ItemDAO();
         for (Item item : itemDAO.getItems()) {
             System.out.println(item.toString());
@@ -45,5 +49,6 @@ public class Main {
         for (Personajes_Habilidades personaje_habilidades : personajesHabilidadesDAO.getPersonajes_habilidades()) {
             System.out.println(personaje_habilidades.toString());
         }
+         */
     }
 }
