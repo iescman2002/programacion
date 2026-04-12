@@ -7,7 +7,7 @@ public class ConexionBaseDatos {
     private String user; // El usuario con el que se accede a la base de datos
     private String passwd; // La contraseña del usuario
 
-    private Connection connection;
+    Connection connection;
     Statement statement;
     ResultSet resultSet;
 
