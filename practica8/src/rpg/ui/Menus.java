@@ -29,7 +29,7 @@ public class Menus {
         s.nextLine(); // Para limpiar la entrada de texto anterior que sino provoca fallos despues
         switch (opcion) {
             case 1:
-                crearPersonaje();
+                MenucrearPersonaje();
                 break;
             default:
                 System.out.print("Saliendo...");
@@ -37,35 +37,27 @@ public class Menus {
         }
     }
 
-    private void crearPersonaje() throws SQLException {
+    private void MenucrearPersonaje() throws SQLException {
         System.out.println("Ha seleccionado crear personaje.");
         System.out.print("Indique el nombre del personaje: ");
         String nombre = s.nextLine();
         System.out.println("De las siguientes razas:");
-        RazaDAO razas = new RazaDAO();
-        ClaseDAO clases = new ClaseDAO();
 
+        RazaDAO razas = new RazaDAO();
         for (Raza raza : razas.getRazas()) {
             System.out.println(raza.getId()+". Raza "+raza.getNombre()+", Bonificador de vida: "+raza.getBonificado_vida()+", Bonificador de fuerza: "+raza.getBonificado_fuerza());
         }
         System.out.println("Seleccione la que quiera que tenga el personaje: ");
-        int raza = s.nextInt();
+        int id_raza = s.nextInt();
+
+        ClaseDAO clases = new ClaseDAO();
         System.out.println("Y de las siguientes clases:");
         for (Clase clase : clases.getClases()) {
             System.out.println(clase.getId()+". Clase "+clase.getNombre());
         }
         System.out.print("Seleccione la que quiera que tenga el personaje: ");
-        int clase =  s.nextInt();
+        int id_clase =  s.nextInt();
 
-        Integer id_personaje = 0; // Pongo primero el id del personaje que voy a crear en 0
-        PersonajeDAO personajes = new PersonajeDAO();
-        for (Personaje personaje : personajes.getPersonajes()) { // Recorro todos los personajes para actualizar el id del personaje cada vez que haya uno
-            id_personaje = personaje.getId(); // cuando no hayan más personajes detras el id_personaje será el id del último personaje introducido (que es lo que buscamos)
-        }
-        // Ahora le sumo 1 al id_personaje (que tiene el id del último personaje introducido) para que asi tenga de valor el id que le corresponderia
-        id_personaje++;
-
-        PersonajeDAO personajeDAO = new PersonajeDAO();
-        //personajeDAO.getPersonajes().add(new Personaje(id_personaje,nombre,1,100,));
+        new PersonajeDAO().crearPersonaje(nombre,id_raza,id_clase);
     }
 }
