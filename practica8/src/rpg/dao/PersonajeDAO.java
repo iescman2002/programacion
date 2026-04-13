@@ -1,6 +1,7 @@
 package rpg.dao;
 
 import rpg.model.Personaje;
+import rpg.model.Raza;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -52,7 +53,12 @@ public class PersonajeDAO extends ConexionBaseDatos {
         id_personaje++;
 
         // El personaje lo creamos con el idCiudad 1 por defecto porque es al único al que podrá acceder con su nivel.
-        Personaje personaje = new Personaje(id_personaje,nombre,1,100,0,id_raza,id_clase,1);
+        RazaDAO razaDAO = new RazaDAO();
+        Integer vida = 100; // La vida por defecto sera 100 + el bonificador de la vida que tenga la raza que ha seleccionado.
+        for (Raza raza : razaDAO.getRazas()) {
+            vida += raza.getBonificado_vida();
+        }
+        Personaje personaje = new Personaje(id_personaje,nombre,1,100,vida,id_raza,id_clase,1);
         this.personajes.add(personaje);
 
         // Insertar en la base de datos el personaje creado:
@@ -60,7 +66,7 @@ public class PersonajeDAO extends ConexionBaseDatos {
     }
 
     private void insertarPersonaje(Personaje personaje) throws SQLException {
-        String sql = "INSERT INTO PERSONAJES (id, nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES(?,)";
+        String sql = "INSERT INTO PERSONAJES (id, nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES(?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
 
         preparedStatement.setInt(1,personaje.getId());
