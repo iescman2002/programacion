@@ -8,7 +8,8 @@ import java.sql.*;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-        new Menus();
+        Menus menu = new Menus();
+        menu.cargarMenuPrincipal();
         /* PROBAR QUE CARGAN BIEN LOS ITEMS
         ItemDAO itemDAO = new ItemDAO();
         for (Item item : itemDAO.getItems()) {

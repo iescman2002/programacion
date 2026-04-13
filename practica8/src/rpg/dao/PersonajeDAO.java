@@ -2,6 +2,7 @@ package rpg.dao;
 
 import rpg.model.Personaje;
 import rpg.model.Raza;
+import rpg.ui.Menus;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -63,6 +64,11 @@ public class PersonajeDAO extends ConexionBaseDatos {
 
         // Insertar en la base de datos el personaje creado:
         insertarPersonaje(personaje);
+        // Actualizar personajes_habilidades con las habilidades correspondientes del nuevo personaje creado:
+        Personajes_HabilidadesDAO personajesHabilidadesDAO = new Personajes_HabilidadesDAO();
+        personajesHabilidadesDAO.actualizarPersonajeHabilidades(personaje);
+        // Elegir las habilidades que quiere tener el personaje
+        new Menus().MenuElegirHabilidades(personaje);
     }
 
     private void insertarPersonaje(Personaje personaje) throws SQLException {

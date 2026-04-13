@@ -1,7 +1,10 @@
 package rpg.dao;
 
+import rpg.model.Habilidad;
+import rpg.model.Personaje;
 import rpg.model.Personajes_Habilidades;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +34,38 @@ public class Personajes_HabilidadesDAO extends ConexionBaseDatos {
 
             personajes_habilidades.add(new Personajes_Habilidades(id_personaje,id_habilidad,equipada_combate));
         }
+    }
+    public void actualizarPersonajeHabilidades(Personaje personaje) throws SQLException {
+
+        HabilidadDAO habilidadDAO = new HabilidadDAO();
+        List<Integer> habilidades_personaje= new ArrayList<>(); // Lista que contendrá las id de las habilidades del personaje
+        // Obtener el id de las habilidades que tiene el personaje (en base a la clase)
+        for (Habilidad habilidad : habilidadDAO.getHabilidades()) {
+            if (personaje.getId_clase().equals(habilidad.getId_clase())) { // Si el id de la clase del personaje es igual al de la clase de la habilidad entonces el personaje esa habilidad puede usarla el personaje
+                habilidades_personaje.add(habilidad.getId());
+            }
+        }
+
+        // Insertar las habilidades del personaje y el personaje en la tabla:
+        for (Integer idHabilidad : habilidades_personaje) { // Recorro los id de la habilidades
+            String sql = "INSERT INTO PERSONAJES_HABILIDADES(id_personaje,id_habilidad,equipada_combate) VALUES(?,?,?)";
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1,personaje.getId());  // Introduzco el campo del id del personaje
+            preparedStatement.setInt(2,idHabilidad);        // Introduzco el campo del id de la habilidad que usara el personaje
+            preparedStatement.setBoolean(3,false);        // Por defecto todas las habilidades estan falsas y despues las actualizo
+
+            int rowsAffected = preparedStatement.executeUpdate();
+        }
+    }
+
+    // Funcion que se encargará de pasar equipada_combate de false a true en la tabla personajes_habilidades
+    public void equiparHabilidad(Integer id_personaje, Integer id_habilidad) throws SQLException {
+        String sql = "UPDATE PERSONAJES_HABILIDADES SET EQUIPADA_COMBATE='TRUE' WHERE id_personaje=? AND id_habilidad=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setInt(1,id_personaje);
+        preparedStatement.setInt(2,id_habilidad);
+        Integer rowsAffected = preparedStatement.executeUpdate();
     }
 }
