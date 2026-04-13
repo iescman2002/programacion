@@ -1,6 +1,7 @@
 package rpg.ui;
 
 import rpg.dao.*;
+import rpg.exception.NivelInsuficienteException;
 import rpg.model.*;
 
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class Menus {
         System.out.println("¡Bienvenido al XPG Guild Master!");
         System.out.println("A continuación, indique que opción deseas acceder:");
         System.out.println("1. Crear personaje.");
-        System.out.println("2. [SOON].");
+        System.out.println("2. Viajar de ciudad.");
         System.out.println("3. [SOON].");
         System.out.println("--------------------------------");
 
@@ -28,15 +29,17 @@ public class Menus {
         s.nextLine(); // Para limpiar la entrada de texto anterior que sino provoca fallos despues
         switch (opcion) {
             case 1:
-                MenucrearPersonaje();
+                menuCrearPersonaje();
                 break;
+            case 2:
+                menuCambiarDeCiudad();
             default:
                 System.out.print("Saliendo...");
                 break;
         }
     }
 
-    private void MenucrearPersonaje() throws SQLException {
+    private void menuCrearPersonaje() throws SQLException {
         System.out.println("Ha seleccionado crear personaje.");
         System.out.print("Indique el nombre del personaje: ");
         String nombre = s.nextLine();
@@ -59,7 +62,7 @@ public class Menus {
 
         new PersonajeDAO().crearPersonaje(nombre,id_raza,id_clase);
     }
-    public void MenuElegirHabilidades(Personaje personaje) throws SQLException {
+    public void menuElegirHabilidades(Personaje personaje) throws SQLException {
         // Elegir las habilidades que quiere tener el personaje
         System.out.println("Su personaje ha sido creado con exito, eliga a continuación las habilidades que quiere que tenga el personaje: ");
         // Mostrar las habilidades del personaje
@@ -98,6 +101,68 @@ public class Menus {
             else {
                 elegirHabilidad = false;
             }
+        }
+    }
+    private void menuCambiarDeCiudad() throws SQLException {
+        System.out.println("Ha seleccionado cambiar al personaje de ciudad.");
+        System.out.println("De los siguientes jugadores:");
+        // Imprimir los posibles personajes:
+        PersonajeDAO personajeDAO = new PersonajeDAO();
+
+        List<Personaje> personajes = personajeDAO.getPersonajes();
+        for (Personaje personaje : personajes) {
+            System.out.println(personaje.getId()+". Personaje "+personaje.getNombre()+". Nivel: "+personaje.getNivel());
+        }
+
+        System.out.print("elija el personaje que quiera cambiar de ciudad: ");
+        Integer id_personaje_escogido = s.nextInt();
+        // Guardamos el personaje que va a cambiar de ciudad
+        Personaje personaje_escogido = null;
+
+        for (Personaje personaje : personajes) {
+            if (personaje.getId().equals(id_personaje_escogido)) {
+                personaje_escogido = personaje;
+                break;
+            }
+        }
+        // Obtener ciudad actual
+        String ciudad_actual = "";
+        List<Ciudad> ciudades = new CiudadDAO().getCiudades();
+        for (Ciudad ciudad : ciudades) {
+            if (ciudad.getId().equals(personaje_escogido.getId_ciudad_actual())) {
+                ciudad_actual = ciudad.getNombre();
+            }
+        }
+        // Imprimir las ciudades disponibles
+        System.out.println("Ha seleccionado cambiar al personaje de ciudad.\nSu ciudad actual es: "+ciudad_actual);
+        System.out.println("---------------------------------");
+
+        System.out.println("De las siguientes ciudades: ");
+        for (Ciudad ciudad : ciudades) {
+            System.out.println(ciudad.getId()+". Ciudad "+ciudad.getNombre()+". Nivel minimo para acceder: "+ciudad.getNivel_minimo_acceso());
+        }
+        System.out.print("Por favor, escoga la ciudad a la que desea irse: ");
+
+        Integer id_ciudad_escogida = s.nextInt();
+
+        // Convertir a ciudad la ciudad escogida
+        Ciudad nuevaCiudad = null;
+
+        for (Ciudad ciudad : ciudades) {
+            if (ciudad.getId().equals(id_ciudad_escogida)) {
+                nuevaCiudad = ciudad;
+                break;
+            }
+        }
+        // Verificar si tiene el nivel suficiente el jugador para cambiar de ciudad
+        try {
+            Boolean puedeCambiarseDeCiudad = personajeDAO.verificarNivelCiudad(personaje_escogido,nuevaCiudad);
+            if (puedeCambiarseDeCiudad) { // El jugador cumple con el nivel de la ciudad
+                personajeDAO.actualizarCiudad(personaje_escogido,nuevaCiudad);
+            }
+        }
+        catch (NivelInsuficienteException e) {
+            System.out.println("No puede cambiar de ciudad. No cumple el nivel minimo.");
         }
     }
 }

@@ -1,5 +1,7 @@
 package rpg.dao;
 
+import rpg.exception.NivelInsuficienteException;
+import rpg.model.Ciudad;
 import rpg.model.Personaje;
 import rpg.model.Raza;
 import rpg.ui.Menus;
@@ -62,7 +64,7 @@ public class PersonajeDAO extends ConexionBaseDatos {
         Personajes_HabilidadesDAO personajesHabilidadesDAO = new Personajes_HabilidadesDAO();
         personajesHabilidadesDAO.actualizarPersonajeHabilidades(personaje);
         // Elegir las habilidades que quiere tener el personaje
-        new Menus().MenuElegirHabilidades(personaje);
+        new Menus().menuElegirHabilidades(personaje);
     }
 
     private void insertarPersonaje(Personaje personaje) throws SQLException {
@@ -84,5 +86,23 @@ public class PersonajeDAO extends ConexionBaseDatos {
         if (resultSet.next()) {
             personaje.setId(resultSet.getInt("id"));
         }
+    }
+
+    public Boolean verificarNivelCiudad(Personaje personaje, Ciudad ciudad) throws NivelInsuficienteException {
+        if (personaje.getNivel() >= ciudad.getNivel_minimo_acceso()) {
+            return true;
+        }
+        else {
+            throw new NivelInsuficienteException("Nivel insuficiente para acceder a la ciudad");
+        }
+    }
+
+    public void actualizarCiudad(Personaje personaje, Ciudad ciudad) throws SQLException {
+        String sql = "UPDATE PERSONAJES SET ID_CIUDAD_ACTUAL=? WHERE ID=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,ciudad.getId());
+        preparedStatement.setInt(2,personaje.getId());
+
+        int rowsAffected = preparedStatement.executeUpdate();
     }
 }
