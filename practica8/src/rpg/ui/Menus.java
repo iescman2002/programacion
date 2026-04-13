@@ -73,6 +73,7 @@ public class Menus {
 
         Boolean elegirHabilidad = true;
         while(elegirHabilidad) {
+            ids_habilidades_posibles.clear(); // Limpio el hasmap cada ve que se vuelve a llamar al bucle
             Integer contador = 1;
             for (Personajes_Habilidades personaje_habilidades : personajes_habilidades) { // Recorro las filas de la tabla personajes_habilidades (porque cada personajes_habilidades es lo mismo que una fila)
                 if (personaje.getId().equals(personaje_habilidades.getId_personaje())) { // Si el id del personaje que le pasamos es igual al id de personajes_habilidad
@@ -80,8 +81,8 @@ public class Menus {
                     for (Habilidad habilidad : habilidades) {
                         if (personaje_habilidades.getId_habilidad().equals(habilidad.getId())) {
                             System.out.println(contador + ". Habilidad: " + habilidad.getNombre() + ". Daño: " + habilidad.getDanio_base() + ". Usos maximos: " + habilidad.getUsos_maximos());
-                            contador++;
                             ids_habilidades_posibles.put(contador, personaje_habilidades.getId_habilidad());
+                            contador++;
                         }
                     }
                 }
