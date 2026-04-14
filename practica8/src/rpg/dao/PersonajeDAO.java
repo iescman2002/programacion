@@ -168,7 +168,14 @@ public class PersonajeDAO extends ConexionBaseDatos {
         int rowsAffected = preparedStatement.executeUpdate();
     }
 
-    public void actualizarPersonaje(Personaje personaje) throws SQLException {
+    public void actualizarOroPersonaje(Personaje personaje) throws SQLException {
+        String sql = "UPDATE PERSONAJES SET ORO=? WHERE ID=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        // Actualizamos solo el oro del jugador porque es el unico valor que cambiamos (-20)
+        // No actualizamos la columna id_ciudad_actual porque la actualizamos ya cuando la desterramos
+        preparedStatement.setInt(1,personaje.getOro());
+        preparedStatement.setInt(2,personaje.getId());
 
+        int rowsAffected = preparedStatement.executeUpdate();
     }
 }

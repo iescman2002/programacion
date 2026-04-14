@@ -36,7 +36,7 @@ public class Iteradores {
                 personajeDAO.desterrarPersonaje(personaje);
             }
             // Actualizamos en cada iteracion la tabla de personajes con el nuevo oro
-            personajeDAO.actualizarPersonaje(personaje);
+            personajeDAO.actualizarOroPersonaje(personaje);
         }
     }
 }
