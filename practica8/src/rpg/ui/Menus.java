@@ -18,7 +18,7 @@ public class Menus {
 
     }
 
-    public void cargarMenuPrincipal() throws SQLException {
+    public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException {
         System.out.println("¡Bienvenido al XPG Guild Master!");
         System.out.println("A continuación, indique que opción deseas acceder:");
         System.out.println("1. Crear personaje.");
@@ -118,7 +118,7 @@ public class Menus {
             System.out.println(personaje.getId()+". Personaje "+personaje.getNombre()+". Nivel: "+personaje.getNivel());
         }
 
-        System.out.print("elija el personaje que quiera cambiar de ciudad: ");
+        System.out.print("Elija el personaje que quiera cambiar de ciudad: ");
         Integer id_personaje_escogido = s.nextInt();
         // Guardamos el personaje que va a cambiar de ciudad
         Personaje personaje_escogido = null;
@@ -171,7 +171,7 @@ public class Menus {
     }
     private void menuComprarItems() throws SQLException, FondosInsuficientesException {
         // Elegir el personaje que vaya a comprar el item:
-        System.out.println("Ha seleccionado la opción  para comprar items.");
+        System.out.println("Ha seleccionado la opción para comprar items.");
         System.out.println("De los siguientes jugadores:");
         // Imprimir los posibles personajes:
         PersonajeDAO personajeDAO = new PersonajeDAO();
@@ -196,9 +196,9 @@ public class Menus {
         System.out.println("--------------------------------");
         System.out.println("Items disponibles:");
         for (Item item : items) {
-            System.out.println(item.getId()+". "+item.getNombre()+". Precio: "+item.getPrecio_oro()+". Bono Daño: "+item.getBonificador_ataque()+".  Bono Defensa: "+item.getBonificador_defensa());
+            System.out.println(item.getId()+". "+item.getNombre()+". Precio: "+item.getPrecio_oro()+" de Oro. Bono Daño: "+item.getBonificador_ataque()+".  Bono Defensa: "+item.getBonificador_defensa());
         }
-        System.out.println("Introduzca el item que desea comprar: ");
+        System.out.print("Introduzca el item que desea comprar: ");
         Integer id_item_escogido = s.nextInt();
         // Guardamos el item que quiere a comprar
         Item item_escogido = null;

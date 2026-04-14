@@ -5,6 +5,7 @@ import rpg.model.*;
 import rpg.ui.Menus;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -109,9 +110,55 @@ public class PersonajeDAO extends ConexionBaseDatos {
         return personaje.getOro()>=item.getPrecio_oro();
     }
 
-    public void comprarItem(Personaje personaje, Item item) {
+    public void comprarItem(Personaje personaje, Item item) throws SQLException {
         // Primero le resto el precio del item al personaje
+        Integer oroTrasCompra= personaje.getOro()-item.getPrecio_oro();
+        personaje.setOro(oroTrasCompra);
 
+        // Actualizo en la base de datos el nuevo oro del personaje:
+        String sql = "UPDATE PERSONAJES SET ORO=? WHERE ID=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setInt(1,personaje.getOro());
+        preparedStatement.setInt(2,personaje.getId());
+
+        int rowsAffected = preparedStatement.executeUpdate();
         // Despues inserto el personaje y el item comprado en inventario
+        InventarioDAO inventarioDAO = new InventarioDAO();
+        List<Inventario> inventarios = inventarioDAO.getInventarios();
+        // Busco si el id_personaje con el id_idem ya está en el inventario (si el personaje tiene ya este item)
+        Boolean registradoAnteriormente = false;
+        Inventario inventario_donde_se_encuentra = null;
+        for (Inventario inventario : inventarios) {
+            // Si id_personaje y id_item estan en la lista (==true), actualizo la cantidad de estos a la actual +1
+            if ((inventario.getId_personaje().equals(personaje.getId())&&(inventario.getId_item().equals(item.getId())))) {
+                inventario_donde_se_encuentra = inventario;
+                registradoAnteriormente = true;
+                inventario.setCantidad(inventario.getCantidad()+1); // Le sumo 1 a la cantidad del personaje
+                break;
+            }
+        }
+        // Actualizar la cantidad del item del personaje en la tabla Inventarios de la BD
+        if (registradoAnteriormente) {
+            sql = "UPDATE INVENTARIOS SET CANTIDAD =? WHERE ID_PERSONAJE=? AND ID_ITEM=?";
+            preparedStatement = connection.prepareStatement(sql); // actualizar la query sql
+
+            preparedStatement.setInt(1,inventario_donde_se_encuentra.getCantidad());
+            preparedStatement.setInt(2,personaje.getId());
+            preparedStatement.setInt(3,item.getId());
+            rowsAffected = preparedStatement.executeUpdate();
+        }
+        // Si id_personaje y id_item no estan en la lista (!=true), inserto un nuevo inventario con el id_personaje, id_item y cantidad en 1
+        // Insertar el nuevo item del personaje en la tabla Inventarios de la BD
+        else {
+            sql = "INSERT INTO INVENTARIOS(ID_PERSONAJE,ID_ITEM,CANTIDAD) VALUES (?,?,?)";
+            preparedStatement = connection.prepareStatement(sql); // actualizar la query sql
+
+            preparedStatement.setInt(1,personaje.getId());
+            preparedStatement.setInt(2,item.getId());
+            preparedStatement.setInt(3,1);
+
+            rowsAffected = preparedStatement.executeUpdate();
+        }
     }
 }
