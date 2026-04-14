@@ -161,4 +161,12 @@ public class PersonajeDAO extends ConexionBaseDatos {
             rowsAffected = preparedStatement.executeUpdate();
         }
     }
+
+    public void desterrarPersonaje(Personaje personaje) {
+
+    }
+
+    public void actualizarPersonaje(Personaje personaje) throws SQLException {
+
+    }
 }

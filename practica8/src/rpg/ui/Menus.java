@@ -3,6 +3,7 @@ package rpg.ui;
 import rpg.dao.*;
 import rpg.exception.FondosInsuficientesException;
 import rpg.exception.NivelInsuficienteException;
+import rpg.logic.Iteradores;
 import rpg.model.*;
 
 import java.sql.SQLException;
@@ -24,7 +25,8 @@ public class Menus {
         System.out.println("1. Crear personaje.");
         System.out.println("2. Viajar de ciudad.");
         System.out.println("3. Comprar Items.");
-        System.out.println("4. [SOON].");
+        System.out.println("4. Cobro de Impuestos.");
+        System.out.println("5. [SOON].");
         System.out.println("--------------------------------");
 
         int opcion = s.nextInt();
@@ -37,6 +39,8 @@ public class Menus {
                 menuCambiarDeCiudad();
             case 3:
                 menuComprarItems();
+            case 4:
+                new Iteradores().cobroDeImpuestos(new PersonajeDAO().getPersonajes());
             default:
                 System.out.print("Saliendo...");
                 break;
