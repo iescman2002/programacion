@@ -4,10 +4,7 @@ import rpg.exception.NivelInsuficienteException;
 import rpg.model.*;
 import rpg.ui.Menus;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,8 +159,13 @@ public class PersonajeDAO extends ConexionBaseDatos {
         }
     }
 
-    public void desterrarPersonaje(Personaje personaje) {
+    public void desterrarPersonaje(Personaje personaje) throws SQLException {
+        String sql = "UPDATE PERSONAJES SET ID_CIUDAD_ACTUAL=? WHERE ID=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setNull(1, Types.INTEGER); // Establecemos el parametro 1 (id_ciudad_actual) como null especificando el tipo de dato de la base de datos con Types (INTEGER)
+        preparedStatement.setInt(2,personaje.getId());
 
+        int rowsAffected = preparedStatement.executeUpdate();
     }
 
     public void actualizarPersonaje(Personaje personaje) throws SQLException {

@@ -15,7 +15,7 @@ public class Iteradores {
         // Crear lista de personajes que SI tengan ciudad
         List<Personaje> personajes_con_ciudad = new ArrayList<>();
         for (Personaje personaje : listaPersonajes) {
-            if (personaje.getId_ciudad_actual().equals(null)) {
+            if (personaje.getId_ciudad_actual() != null) {
                 personajes_con_ciudad.add(personaje);
             }
         }
@@ -30,7 +30,9 @@ public class Iteradores {
             if (personaje.getOro()<0) {
                 // Lo eliminamos de la lista de iteracciones
                 iteradorPersonajes.remove();
-                // Y ponemos su ciudad a null
+                // Ponemos su ciudad a null
+                personaje.setId_ciudad_actual(null);
+                // Y actualizamos la ciudad del personaje de la BD a null (desterrar)
                 personajeDAO.desterrarPersonaje(personaje);
             }
             // Actualizamos en cada iteracion la tabla de personajes con el nuevo oro
