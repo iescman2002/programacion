@@ -1,12 +1,16 @@
 package rpg.ui;
 
 import rpg.dao.*;
+import rpg.exception.DatoInvalidoException;
 import rpg.exception.FondosInsuficientesException;
 import rpg.exception.NivelInsuficienteException;
+import rpg.exception.RecursoNoEncontradoException;
 import rpg.logic.Iteradores;
 import rpg.model.*;
+import rpg.utils.Logger;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,12 +18,15 @@ import java.util.Scanner;
 
 public class Menus {
 
-    Scanner s = new Scanner(System.in);
-    public Menus() throws SQLException {
+    private Scanner s;
+    private Logger logger;
 
+    public Menus() throws SQLException {
+        this.logger = new Logger();
+        this.s = new Scanner(System.in);
     }
 
-    public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException {
+    public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException {
         System.out.println("¡Bienvenido al XPG Guild Master!");
         System.out.println("A continuación, indique que opción deseas acceder:");
         System.out.println("1. Crear personaje.");
@@ -29,6 +36,7 @@ public class Menus {
         System.out.println("5. [SOON].");
         System.out.println("--------------------------------");
 
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: MenuPrincipal cargado con exito.");
         int opcion = s.nextInt();
         s.nextLine(); // Para limpiar la entrada de texto anterior que sino provoca fallos despues
         switch (opcion) {
