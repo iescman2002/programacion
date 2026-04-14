@@ -1,6 +1,7 @@
 package rpg.ui;
 
 import rpg.dao.*;
+import rpg.exception.FondosInsuficientesException;
 import rpg.exception.NivelInsuficienteException;
 import rpg.model.*;
 
@@ -22,7 +23,8 @@ public class Menus {
         System.out.println("A continuación, indique que opción deseas acceder:");
         System.out.println("1. Crear personaje.");
         System.out.println("2. Viajar de ciudad.");
-        System.out.println("3. [SOON].");
+        System.out.println("3. Comprar Items.");
+        System.out.println("4. [SOON].");
         System.out.println("--------------------------------");
 
         int opcion = s.nextInt();
@@ -33,6 +35,8 @@ public class Menus {
                 break;
             case 2:
                 menuCambiarDeCiudad();
+            case 3:
+                menuComprarItems();
             default:
                 System.out.print("Saliendo...");
                 break;
@@ -163,6 +167,55 @@ public class Menus {
         }
         catch (NivelInsuficienteException e) {
             System.out.println("No puede cambiar de ciudad. No cumple el nivel minimo.");
+        }
+    }
+    private void menuComprarItems() throws SQLException, FondosInsuficientesException {
+        // Elegir el personaje que vaya a comprar el item:
+        System.out.println("Ha seleccionado la opción  para comprar items.");
+        System.out.println("De los siguientes jugadores:");
+        // Imprimir los posibles personajes:
+        PersonajeDAO personajeDAO = new PersonajeDAO();
+        List<Personaje> personajes = personajeDAO.getPersonajes();
+        for (Personaje personaje : personajes) {
+            System.out.println(personaje.getId()+". Personaje "+personaje.getNombre()+". Oro: "+personaje.getOro());
+        }
+
+        System.out.print("elija el personaje con el que quiera comprar el/los items: ");
+        Integer id_personaje_escogido = s.nextInt();
+        // Guardamos el personaje que va a comprar
+        Personaje personaje_escogido = null;
+        for (Personaje personaje : personajes) {
+            if (personaje.getId().equals(id_personaje_escogido)) {
+                personaje_escogido = personaje;
+                break;
+            }
+        }
+        // Imprimimos todos los items disponibles:
+        ItemDAO itemDAO  = new ItemDAO();
+        List<Item> items = itemDAO.getItems();
+        System.out.println("--------------------------------");
+        System.out.println("Items disponibles:");
+        for (Item item : items) {
+            System.out.println(item.getId()+". "+item.getNombre()+". Precio: "+item.getPrecio_oro()+". Bono Daño: "+item.getBonificador_ataque()+".  Bono Defensa: "+item.getBonificador_defensa());
+        }
+        System.out.println("Introduzca el item que desea comprar: ");
+        Integer id_item_escogido = s.nextInt();
+        // Guardamos el item que quiere a comprar
+        Item item_escogido = null;
+        for (Item item : items) {
+            if (item.getId().equals(id_item_escogido)) {
+                item_escogido = item;
+            }
+        }
+        // Verificar si el personaje tiene Oro suficiente para comprar el item
+        Boolean puede_comprar = personajeDAO.verificarCompraItem(personaje_escogido,item_escogido);
+        // Si puede comprar el item lo compramos
+        if (puede_comprar) {
+            personajeDAO.comprarItem(personaje_escogido,item_escogido);
+        }
+        // Y sino podemos lanzamos excepcion
+        else {
+            throw new FondosInsuficientesException("No se ha podido comprar el item, fondos insuficientes.");
         }
     }
 }

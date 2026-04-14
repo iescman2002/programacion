@@ -1,9 +1,7 @@
 package rpg.dao;
 
 import rpg.exception.NivelInsuficienteException;
-import rpg.model.Ciudad;
-import rpg.model.Personaje;
-import rpg.model.Raza;
+import rpg.model.*;
 import rpg.ui.Menus;
 
 import java.sql.PreparedStatement;
@@ -104,5 +102,16 @@ public class PersonajeDAO extends ConexionBaseDatos {
         preparedStatement.setInt(2,personaje.getId());
 
         int rowsAffected = preparedStatement.executeUpdate();
+    }
+
+    public Boolean verificarCompraItem(Personaje personaje, Item item)  {
+        // Devuelve true si el personaje tiene oro suficiente para comprar el item y false si no
+        return personaje.getOro()>=item.getPrecio_oro();
+    }
+
+    public void comprarItem(Personaje personaje, Item item) {
+        // Primero le resto el precio del item al personaje
+
+        // Despues inserto el personaje y el item comprado en inventario
     }
 }
