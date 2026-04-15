@@ -1,16 +1,26 @@
 package rpg.logic;
 
 import rpg.dao.PersonajeDAO;
+import rpg.exception.DatoInvalidoException;
+import rpg.exception.NivelInsuficienteException;
+import rpg.exception.RecursoNoEncontradoException;
 import rpg.model.Personaje;
+import rpg.utils.Logger;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class Iteradores {
+    private Logger logger;
 
-    public void cobroDeImpuestos(List<Personaje> listaPersonajes) throws SQLException {
+    public Iteradores() {
+        this.logger = new Logger();
+    }
+
+    public void cobroDeImpuestos(List<Personaje> listaPersonajes) throws SQLException, DatoInvalidoException, RecursoNoEncontradoException {
         PersonajeDAO personajeDAO = new PersonajeDAO();
         // Crear lista de personajes que SI tengan ciudad
         List<Personaje> personajes_con_ciudad = new ArrayList<>();
@@ -37,6 +47,7 @@ public class Iteradores {
             }
             // Actualizamos en cada iteracion la tabla de personajes con el nuevo oro
             personajeDAO.actualizarOroPersonaje(personaje);
+            logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Impuesto aplicado al Personaje "+personaje.getId()+". Oro actualizado a: "+personaje.getOro()+". (-20)");
         }
     }
 }

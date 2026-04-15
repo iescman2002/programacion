@@ -1,20 +1,26 @@
 package rpg.dao;
 
+import rpg.exception.DatoInvalidoException;
+import rpg.exception.RecursoNoEncontradoException;
 import rpg.model.Habilidad;
 import rpg.model.Personaje;
 import rpg.model.Personajes_Habilidades;
+import rpg.utils.Logger;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Personajes_HabilidadesDAO extends ConexionBaseDatos {
     private List<Personajes_Habilidades> personajes_habilidades;
+    private Logger logger;
 
     public Personajes_HabilidadesDAO() throws SQLException {
         this.personajes_habilidades = new ArrayList<>();
         precargarPersonajes_Habilidades();
+        this.logger = new Logger();
     }
 
     public List<Personajes_Habilidades> getPersonajes_habilidades() {
@@ -35,7 +41,7 @@ public class Personajes_HabilidadesDAO extends ConexionBaseDatos {
             personajes_habilidades.add(new Personajes_Habilidades(id_personaje,id_habilidad,equipada_combate));
         }
     }
-    public void actualizarPersonajeHabilidades(Personaje personaje) throws SQLException {
+    public void actualizarPersonajeHabilidades(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
 
         HabilidadDAO habilidadDAO = new HabilidadDAO();
         List<Integer> habilidades_personaje= new ArrayList<>(); // Lista que contendrá las id de las habilidades del personaje
@@ -57,15 +63,17 @@ public class Personajes_HabilidadesDAO extends ConexionBaseDatos {
 
             int rowsAffected = preparedStatement.executeUpdate();
         }
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Habilidades del personaje creado cargadas con exito.");
     }
 
     // Funcion que se encargará de pasar equipada_combate de false a true en la tabla personajes_habilidades
-    public void equiparHabilidad(Integer id_personaje, Integer id_habilidad) throws SQLException {
+    public void equiparHabilidad(Integer id_personaje, Integer id_habilidad) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         String sql = "UPDATE PERSONAJES_HABILIDADES SET EQUIPADA_COMBATE='TRUE' WHERE id_personaje=? AND id_habilidad=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         preparedStatement.setInt(1,id_personaje);
         preparedStatement.setInt(2,id_habilidad);
         Integer rowsAffected = preparedStatement.executeUpdate();
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Habilidad "+id_habilidad+" del personaje "+id_personaje+" equipada.");
     }
 }

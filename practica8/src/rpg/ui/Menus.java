@@ -45,17 +45,20 @@ public class Menus {
                 break;
             case 2:
                 menuCambiarDeCiudad();
+                break;
             case 3:
                 menuComprarItems();
+                break;
             case 4:
                 new Iteradores().cobroDeImpuestos(new PersonajeDAO().getPersonajes());
+                break;
             default:
                 System.out.print("Saliendo...");
                 break;
         }
     }
 
-    private void menuCrearPersonaje() throws SQLException {
+    private void menuCrearPersonaje() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         System.out.println("Ha seleccionado crear personaje.");
         System.out.print("Indique el nombre del personaje: ");
         String nombre = s.nextLine();
@@ -78,7 +81,7 @@ public class Menus {
 
         new PersonajeDAO().crearPersonaje(nombre,id_raza,id_clase);
     }
-    public void menuElegirHabilidades(Personaje personaje) throws SQLException {
+    public void menuElegirHabilidades(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         // Elegir las habilidades que quiere tener el personaje
         System.out.println("Su personaje ha sido creado con exito, eliga a continuación las habilidades que quiere que tenga el personaje: ");
         // Mostrar las habilidades del personaje
@@ -119,7 +122,7 @@ public class Menus {
             }
         }
     }
-    private void menuCambiarDeCiudad() throws SQLException {
+    private void menuCambiarDeCiudad() throws SQLException, RecursoNoEncontradoException,DatoInvalidoException {
         System.out.println("Ha seleccionado cambiar al personaje de ciudad.");
         System.out.println("De los siguientes jugadores:");
         // Imprimir los posibles personajes:
@@ -142,46 +145,54 @@ public class Menus {
             }
         }
         // Obtener ciudad actual
-        String ciudad_actual = "";
+        String ciudad_actual = null;
         List<Ciudad> ciudades = new CiudadDAO().getCiudades();
         for (Ciudad ciudad : ciudades) {
             if (ciudad.getId().equals(personaje_escogido.getId_ciudad_actual())) {
                 ciudad_actual = ciudad.getNombre();
             }
+            /*if (personaje_escogido.getId_ciudad_actual() == null) {
+                ciudad_actual = null;
+            }*/
         }
-        // Imprimir las ciudades disponibles
-        System.out.println("Ha seleccionado cambiar al personaje de ciudad.\nSu ciudad actual es: "+ciudad_actual);
-        System.out.println("---------------------------------");
+        if (ciudad_actual != null) {
+            // Imprimir las ciudades disponibles
+            System.out.println("Ha seleccionado cambiar al personaje de ciudad.\nSu ciudad actual es: " + ciudad_actual);
+            System.out.println("---------------------------------");
 
-        System.out.println("De las siguientes ciudades: ");
-        for (Ciudad ciudad : ciudades) {
-            System.out.println(ciudad.getId()+". Ciudad "+ciudad.getNombre()+". Nivel minimo para acceder: "+ciudad.getNivel_minimo_acceso());
-        }
-        System.out.print("Por favor, escoga la ciudad a la que desea irse: ");
+            System.out.println("De las siguientes ciudades: ");
+            for (Ciudad ciudad : ciudades) {
+                System.out.println(ciudad.getId() + ". Ciudad " + ciudad.getNombre() + ". Nivel minimo para acceder: " + ciudad.getNivel_minimo_acceso());
+            }
+            System.out.print("Por favor, escoga la ciudad a la que desea irse: ");
 
-        Integer id_ciudad_escogida = s.nextInt();
+            Integer id_ciudad_escogida = s.nextInt();
 
-        // Convertir a ciudad la ciudad escogida
-        Ciudad nuevaCiudad = null;
+            // Convertir a ciudad la ciudad escogida
+            Ciudad nuevaCiudad = null;
 
-        for (Ciudad ciudad : ciudades) {
-            if (ciudad.getId().equals(id_ciudad_escogida)) {
-                nuevaCiudad = ciudad;
-                break;
+            for (Ciudad ciudad : ciudades) {
+                if (ciudad.getId().equals(id_ciudad_escogida)) {
+                    nuevaCiudad = ciudad;
+                    break;
+                }
+            }
+            // Verificar si tiene el nivel suficiente el jugador para cambiar de ciudad
+            try {
+                Boolean puedeCambiarseDeCiudad = personajeDAO.verificarNivelCiudad(personaje_escogido, nuevaCiudad);
+                if (puedeCambiarseDeCiudad) { // El jugador cumple con el nivel de la ciudad
+                    personajeDAO.actualizarCiudad(personaje_escogido, nuevaCiudad);
+                }
+            } catch (NivelInsuficienteException e) {
+                System.out.println("No puede cambiar de ciudad. No cumple el nivel minimo.");
             }
         }
-        // Verificar si tiene el nivel suficiente el jugador para cambiar de ciudad
-        try {
-            Boolean puedeCambiarseDeCiudad = personajeDAO.verificarNivelCiudad(personaje_escogido,nuevaCiudad);
-            if (puedeCambiarseDeCiudad) { // El jugador cumple con el nivel de la ciudad
-                personajeDAO.actualizarCiudad(personaje_escogido,nuevaCiudad);
-            }
-        }
-        catch (NivelInsuficienteException e) {
-            System.out.println("No puede cambiar de ciudad. No cumple el nivel minimo.");
+        else {
+            System.out.println("El personaje seleccionado está desterrado porque su oro es negativo. Ni tiene ciudad ni puede entrar a ninguna.");
+            logger.escribirLog("["+LocalDateTime.now()+"] ERROR: Se ha intentado cambiar la ciudad del personaje "+personaje_escogido.getId()+". El personaje se encuentra actualmente desterrado (Oro: "+personaje_escogido.getOro()+").");
         }
     }
-    private void menuComprarItems() throws SQLException, FondosInsuficientesException {
+    private void menuComprarItems() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException {
         // Elegir el personaje que vaya a comprar el item:
         System.out.println("Ha seleccionado la opción para comprar items.");
         System.out.println("De los siguientes jugadores:");
@@ -227,6 +238,7 @@ public class Menus {
         }
         // Y sino podemos lanzamos excepcion
         else {
+            logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: El personaje "+personaje_escogido.getId()+". No tiene fondos suficientes para comprar el item "+item_escogido.getId()+". Oro del jugador: "+ personaje_escogido.getOro()+". Precio Item: "+ item_escogido.getPrecio_oro()+".");
             throw new FondosInsuficientesException("No se ha podido comprar el item, fondos insuficientes.");
         }
     }

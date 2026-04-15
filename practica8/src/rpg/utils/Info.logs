@@ -1,1 +1,54 @@
 [2026-04-15T08:12:43.790560726] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:27:23.703132907] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:27:43.852367722] INFO: Personaje 3. pj prueba creado con exito.
+[2026-04-15T08:27:43.890086867] INFO: Habilidades del personaje creado cargadas con exito.
+[2026-04-15T08:27:47.691132826] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T08:27:48.914143005] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T08:32:03.331309933] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:32:43.263894530] ERROR: Personaje 3. pj prueba no tiene nivel suficiente par accede a la ciudad.Nivel del jugador: 1. Nivel de acceso a la ciudad: 20
+[2026-04-15T08:35:44.714079073] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:35:52.915867415] ERROR: Personaje 3. pj prueba no tiene nivel suficiente par accede a la ciudad.Nivel del jugador: 1. Nivel de acceso a la ciudad: 20
+[2026-04-15T08:40:47.588522403] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:41:32.672208741] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:41:47.394918734] ERROR: Personaje 3. pj prueba no tiene nivel suficiente par accede a la ciudad.Nivel del jugador: 1. Nivel de acceso a la ciudad: 5
+[2026-04-15T08:46:17.716606243] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T08:49:02.428789432] INFO: Personaje 3. pj prueba. Ciudad actualizada a: 3
+[2026-04-15T09:01:45.670081300] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:02:03.001826795] ERROR: El personaje 3. No tiene fondos suficientes para comprar el item 7. Oro del jugador: 100. Precio Item: 500.
+[2026-04-15T09:03:45.055000617] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:05:07.535951444] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:05:20.373233750] INFO: El personaje 3 ha comprado el item 1. 
+[2026-04-15T09:18:49.794643255] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:19:49.656050329] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:19:51.283627106] INFO: Impuesto aplicado al Personaje 2. Oro actualizado a: 780. (-20)
+[2026-04-15T09:19:51.288356634] INFO: Personaje 3 Desterrado. Su ciudad se ha establecido a null porque su oro tras los impuestos es: -10.
+[2026-04-15T09:19:51.291535631] INFO: Impuesto aplicado al Personaje 3. Oro actualizado a: -10. (-20)
+[2026-04-15T09:19:51.294117962] INFO: Impuesto aplicado al Personaje 1. Oro actualizado a: 110. (-20)
+[2026-04-15T09:20:41.233719898] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:20:56.983951684] INFO: Personaje 3: pj prueba. Ciudad actualizada a: 4
+[2026-04-15T09:22:21.994929915] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:23:17.885691122] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:23:19.632669186] INFO: Impuesto aplicado al Personaje 2. Oro actualizado a: 780. (-20)
+[2026-04-15T09:23:19.637480027] INFO: Impuesto aplicado al Personaje 1. Oro actualizado a: 130. (-20)
+[2026-04-15T09:23:19.639831240] ERROR: Personaje 3 Desterrado. Su ciudad se ha establecido a null porque su oro tras los impuestos es: -5.
+[2026-04-15T09:23:19.642226175] INFO: Impuesto aplicado al Personaje 3. Oro actualizado a: -5. (-20)
+[2026-04-15T09:23:47.459626402] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:24:20.972817831] INFO: Personaje 3: pj prueba. Ciudad actualizada a: 4
+[2026-04-15T09:26:06.629031064] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:26:09.908643587] INFO: Impuesto aplicado al Personaje 2. Oro actualizado a: 780. (-20)
+[2026-04-15T09:26:09.913548229] INFO: Impuesto aplicado al Personaje 1. Oro actualizado a: 130. (-20)
+[2026-04-15T09:26:09.915605795] ERROR: Personaje 3 Desterrado. Su ciudad se ha establecido a null porque su oro tras los impuestos es: -5.
+[2026-04-15T09:26:09.917619098] INFO: Impuesto aplicado al Personaje 3. Oro actualizado a: -5. (-20)
+[2026-04-15T09:26:22.623552850] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:31:32.946151903] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:31:59.270057717] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:32:38.564913313] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:34:47.834564097] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:40:09.520246246] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:40:18.341985543] ERROR: Se ha intentado cambiar la ciudad del personaje 3. El personaje se encuentra actualmente desterrado. (Oro: -5
+[2026-04-15T09:41:46.532510272] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:42:32.439896845] INFO: Personaje 2: Eldara Sabia. Ciudad actualizada a: 1
+[2026-04-15T09:42:48.078929664] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:42:55.533156289] INFO: Personaje 2: Eldara Sabia. Ciudad actualizada a: 2
+[2026-04-15T09:43:00.021470293] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T09:43:29.287178408] ERROR: Se ha intentado cambiar la ciudad del personaje 3. El personaje se encuentra actualmente desterrado (Oro: -5).

@@ -1,20 +1,25 @@
 package rpg.dao;
 
+import rpg.exception.DatoInvalidoException;
 import rpg.exception.NivelInsuficienteException;
+import rpg.exception.RecursoNoEncontradoException;
 import rpg.model.*;
 import rpg.ui.Menus;
+import rpg.utils.Logger;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonajeDAO extends ConexionBaseDatos {
 
     private List<Personaje> personajes;
-
+    private Logger logger;
     public PersonajeDAO() throws SQLException {
         this.personajes = new ArrayList<>();
         precargaPersonajes();
+        this.logger = new Logger();
     }
 
     public List<Personaje> getPersonajes() {
@@ -42,7 +47,7 @@ public class PersonajeDAO extends ConexionBaseDatos {
         }
     }
 
-    public void crearPersonaje(String nombre,Integer id_raza, Integer id_clase) throws SQLException {
+    public void crearPersonaje(String nombre,Integer id_raza, Integer id_clase) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         RazaDAO razaDAO = new RazaDAO();
         Integer vida = 100; // La vida por defecto sera 100 + el bonificador de la vida que tenga la raza que ha seleccionado.
         for (Raza raza : razaDAO.getRazas()) {
@@ -63,7 +68,7 @@ public class PersonajeDAO extends ConexionBaseDatos {
         new Menus().menuElegirHabilidades(personaje);
     }
 
-    private void insertarPersonaje(Personaje personaje) throws SQLException {
+    private void insertarPersonaje(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         String sql = "INSERT INTO PERSONAJES (nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES(?,?,?,?,?,?,?) RETURNING ID";
         PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
 
@@ -82,24 +87,27 @@ public class PersonajeDAO extends ConexionBaseDatos {
         if (resultSet.next()) {
             personaje.setId(resultSet.getInt("id"));
         }
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Personaje "+personaje.getId()+". "+personaje.getNombre()+" creado con exito.");
     }
 
-    public Boolean verificarNivelCiudad(Personaje personaje, Ciudad ciudad) throws NivelInsuficienteException {
+    public Boolean verificarNivelCiudad(Personaje personaje, Ciudad ciudad) throws NivelInsuficienteException, RecursoNoEncontradoException, DatoInvalidoException {
         if (personaje.getNivel() >= ciudad.getNivel_minimo_acceso()) {
             return true;
         }
         else {
+            logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: Personaje "+personaje.getId()+". "+personaje.getNombre()+" no tiene nivel suficiente par accede a la ciudad."+" Nivel del jugador: "+personaje.getNivel()+". Nivel de acceso a la ciudad: "+ciudad.getNivel_minimo_acceso());
             throw new NivelInsuficienteException("Nivel insuficiente para acceder a la ciudad");
         }
     }
 
-    public void actualizarCiudad(Personaje personaje, Ciudad ciudad) throws SQLException {
+    public void actualizarCiudad(Personaje personaje, Ciudad ciudad) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         String sql = "UPDATE PERSONAJES SET ID_CIUDAD_ACTUAL=? WHERE ID=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1,ciudad.getId());
         preparedStatement.setInt(2,personaje.getId());
 
         int rowsAffected = preparedStatement.executeUpdate();
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Personaje "+personaje.getId()+": "+personaje.getNombre()+". Ciudad actualizada a: "+ciudad.getId());
     }
 
     public Boolean verificarCompraItem(Personaje personaje, Item item)  {
@@ -107,7 +115,7 @@ public class PersonajeDAO extends ConexionBaseDatos {
         return personaje.getOro()>=item.getPrecio_oro();
     }
 
-    public void comprarItem(Personaje personaje, Item item) throws SQLException {
+    public void comprarItem(Personaje personaje, Item item) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         // Primero le resto el precio del item al personaje
         Integer oroTrasCompra= personaje.getOro()-item.getPrecio_oro();
         personaje.setOro(oroTrasCompra);
@@ -157,15 +165,17 @@ public class PersonajeDAO extends ConexionBaseDatos {
 
             rowsAffected = preparedStatement.executeUpdate();
         }
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje "+personaje.getId()+" ha comprado el item "+item.getId()+". ");
     }
 
-    public void desterrarPersonaje(Personaje personaje) throws SQLException {
+    public void desterrarPersonaje(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         String sql = "UPDATE PERSONAJES SET ID_CIUDAD_ACTUAL=? WHERE ID=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setNull(1, Types.INTEGER); // Establecemos el parametro 1 (id_ciudad_actual) como null especificando el tipo de dato de la base de datos con Types (INTEGER)
         preparedStatement.setInt(2,personaje.getId());
 
         int rowsAffected = preparedStatement.executeUpdate();
+        logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: Personaje "+personaje.getId()+" Desterrado. Su ciudad se ha establecido a null porque su oro tras los impuestos es: "+personaje.getOro()+".");
     }
 
     public void actualizarOroPersonaje(Personaje personaje) throws SQLException {
