@@ -52,3 +52,88 @@
 [2026-04-15T09:42:55.533156289] INFO: Personaje 2: Eldara Sabia. Ciudad actualizada a: 2
 [2026-04-15T09:43:00.021470293] INFO: MenuPrincipal cargado con exito.
 [2026-04-15T09:43:29.287178408] ERROR: Se ha intentado cambiar la ciudad del personaje 3. El personaje se encuentra actualmente desterrado (Oro: -5).
+[2026-04-15T13:50:28.507494287] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T13:51:22.124773142] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T13:51:40.580325447] INFO: Habilidad 1 del personaje 3 equipada.
+[2026-04-15T13:51:40.582851956] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T13:51:40.585168702] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T13:51:40.586718903] INFO: Habilidad 4 del personaje 3 equipada.
+[2026-04-15T13:51:40.588330780] INFO: Habilidad 5 del personaje 3 equipada.
+[2026-04-15T13:51:40.590064454] INFO: Habilidad 6 del personaje 3 equipada.
+[2026-04-15T13:51:40.591147330] INFO: Habilidad 7 del personaje 3 equipada.
+[2026-04-15T13:51:40.592891575] INFO: Habilidad 8 del personaje 3 equipada.
+[2026-04-15T13:51:40.594327773] INFO: Habilidad 9 del personaje 3 equipada.
+[2026-04-15T13:51:40.596137279] INFO: Habilidad 10 del personaje 3 equipada.
+[2026-04-15T13:51:40.597316336] INFO: Habilidad 11 del personaje 3 equipada.
+[2026-04-15T13:51:40.598857229] INFO: Habilidad 12 del personaje 3 equipada.
+[2026-04-15T13:53:58.454923582] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T13:54:10.245206439] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T13:55:25.802920500] INFO: Habilidad 1 del personaje 3 equipada.
+[2026-04-15T13:55:25.805482785] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T13:55:25.807755397] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T13:55:25.808769464] INFO: Habilidad 4 del personaje 3 equipada.
+[2026-04-15T13:55:25.810089935] INFO: Habilidad 5 del personaje 3 equipada.
+[2026-04-15T13:55:25.811163593] INFO: Habilidad 6 del personaje 3 equipada.
+[2026-04-15T13:55:25.812193831] INFO: Habilidad 7 del personaje 3 equipada.
+[2026-04-15T13:55:25.813260968] INFO: Habilidad 8 del personaje 3 equipada.
+[2026-04-15T13:55:25.814438040] INFO: Habilidad 9 del personaje 3 equipada.
+[2026-04-15T13:55:25.815601026] INFO: Habilidad 10 del personaje 3 equipada.
+[2026-04-15T13:55:25.816540404] INFO: Habilidad 11 del personaje 3 equipada.
+[2026-04-15T13:55:25.817758704] INFO: Habilidad 12 del personaje 3 equipada.
+[2026-04-15T13:55:36.885251431] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T13:55:43.212052352] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T13:55:47.745107485] INFO: Habilidad 1 del personaje 1 equipada.
+[2026-04-15T13:55:47.747048767] INFO: Habilidad 2 del personaje 1 equipada.
+[2026-04-15T13:55:47.748701019] INFO: Habilidad 3 del personaje 1 equipada.
+[2026-04-15T13:55:47.749673288] INFO: Habilidad 4 del personaje 1 equipada.
+[2026-04-15T13:55:47.750575135] INFO: Habilidad 5 del personaje 1 equipada.
+[2026-04-15T13:55:47.752238878] INFO: Habilidad 6 del personaje 1 equipada.
+[2026-04-15T13:55:47.754146457] INFO: Habilidad 7 del personaje 1 equipada.
+[2026-04-15T13:55:47.755515198] INFO: Habilidad 8 del personaje 1 equipada.
+[2026-04-15T13:55:47.756595319] INFO: Habilidad 9 del personaje 1 equipada.
+[2026-04-15T13:55:47.758109372] INFO: Habilidad 10 del personaje 1 equipada.
+[2026-04-15T13:55:47.759041817] INFO: Habilidad 11 del personaje 1 equipada.
+[2026-04-15T13:55:47.759994199] INFO: Habilidad 12 del personaje 1 equipada.
+[2026-04-15T13:57:08.162956184] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T13:57:20.694648501] INFO: Habilidad 1 del personaje 3 equipada.
+[2026-04-15T13:57:20.697277619] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T13:57:20.699516168] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T13:57:20.700827221] INFO: Habilidad 4 del personaje 3 equipada.
+[2026-04-15T13:57:20.701917631] INFO: Habilidad 5 del personaje 3 equipada.
+[2026-04-15T13:57:20.704040042] INFO: Habilidad 6 del personaje 3 equipada.
+[2026-04-15T13:57:20.705672396] INFO: Habilidad 7 del personaje 3 equipada.
+[2026-04-15T13:57:20.707339294] INFO: Habilidad 8 del personaje 3 equipada.
+[2026-04-15T13:57:20.708906056] INFO: Habilidad 9 del personaje 3 equipada.
+[2026-04-15T13:57:20.710275668] INFO: Habilidad 10 del personaje 3 equipada.
+[2026-04-15T13:57:20.711912710] INFO: Habilidad 11 del personaje 3 equipada.
+[2026-04-15T13:57:20.713259450] INFO: Habilidad 12 del personaje 3 equipada.
+[2026-04-15T13:57:29.620541772] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T13:57:34.314205559] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T14:01:49.840880379] INFO: MenuPrincipal cargado con exito.
+[2026-04-15T14:02:08.381619498] INFO: Habilidad 1 del personaje 2 equipada.
+[2026-04-15T14:02:08.384071025] INFO: Habilidad 2 del personaje 2 equipada.
+[2026-04-15T14:02:08.385470532] INFO: Habilidad 3 del personaje 2 equipada.
+[2026-04-15T14:02:08.389808387] INFO: Habilidad 4 del personaje 2 equipada.
+[2026-04-15T14:02:08.392199720] INFO: Habilidad 5 del personaje 2 equipada.
+[2026-04-15T14:02:08.394712200] INFO: Habilidad 6 del personaje 2 equipada.
+[2026-04-15T14:02:08.395971235] INFO: Habilidad 7 del personaje 2 equipada.
+[2026-04-15T14:02:08.397457134] INFO: Habilidad 8 del personaje 2 equipada.
+[2026-04-15T14:02:08.398916294] INFO: Habilidad 9 del personaje 2 equipada.
+[2026-04-15T14:02:08.400855301] INFO: Habilidad 10 del personaje 2 equipada.
+[2026-04-15T14:02:08.402009180] INFO: Habilidad 11 del personaje 2 equipada.
+[2026-04-15T14:02:08.403140246] INFO: Habilidad 12 del personaje 2 equipada.
+[2026-04-15T14:03:21.339616108] INFO: Habilidad 5 del personaje 2 equipada.
+[2026-04-15T14:03:25.969681524] INFO: Habilidad 6 del personaje 2 equipada.
+[2026-04-15T14:06:45.775803165] INFO: Habilidad 1 del personaje 3 equipada.
+[2026-04-15T14:06:45.777829485] INFO: Habilidad 2 del personaje 3 equipada.
+[2026-04-15T14:06:45.780063264] INFO: Habilidad 3 del personaje 3 equipada.
+[2026-04-15T14:06:45.781412737] INFO: Habilidad 4 del personaje 3 equipada.
+[2026-04-15T14:06:45.782375499] INFO: Habilidad 5 del personaje 3 equipada.
+[2026-04-15T14:06:45.783358818] INFO: Habilidad 6 del personaje 3 equipada.
+[2026-04-15T14:06:45.784329403] INFO: Habilidad 7 del personaje 3 equipada.
+[2026-04-15T14:06:45.785264853] INFO: Habilidad 8 del personaje 3 equipada.
+[2026-04-15T14:06:45.786239055] INFO: Habilidad 9 del personaje 3 equipada.
+[2026-04-15T14:06:45.787277538] INFO: Habilidad 10 del personaje 3 equipada.
+[2026-04-15T14:06:45.788304919] INFO: Habilidad 11 del personaje 3 equipada.
+[2026-04-15T14:06:45.789697293] INFO: Habilidad 12 del personaje 3 equipada.
+[2026-04-15T14:07:20.642045562] INFO: Habilidad 1 del personaje 3 equipada.

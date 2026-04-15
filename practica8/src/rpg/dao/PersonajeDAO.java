@@ -1,6 +1,7 @@
 package rpg.dao;
 
 import rpg.exception.DatoInvalidoException;
+import rpg.exception.LimiteHabilidadesException;
 import rpg.exception.NivelInsuficienteException;
 import rpg.exception.RecursoNoEncontradoException;
 import rpg.model.*;
@@ -47,7 +48,7 @@ public class PersonajeDAO extends ConexionBaseDatos {
         }
     }
 
-    public void crearPersonaje(String nombre,Integer id_raza, Integer id_clase) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    public void crearPersonaje(String nombre,Integer id_raza, Integer id_clase) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         RazaDAO razaDAO = new RazaDAO();
         Integer vida = 100; // La vida por defecto sera 100 + el bonificador de la vida que tenga la raza que ha seleccionado.
         for (Raza raza : razaDAO.getRazas()) {
@@ -65,7 +66,8 @@ public class PersonajeDAO extends ConexionBaseDatos {
         Personajes_HabilidadesDAO personajesHabilidadesDAO = new Personajes_HabilidadesDAO();
         personajesHabilidadesDAO.actualizarPersonajeHabilidades(personaje);
         // Elegir las habilidades que quiere tener el personaje
-        new Menus().menuElegirHabilidades(personaje);
+        new Menus().menuElegirHabilidades(personaje,null);
+        System.out.println("Su personaje ha sido creado con exito.");
     }
 
     private void insertarPersonaje(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {

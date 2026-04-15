@@ -76,4 +76,14 @@ public class Personajes_HabilidadesDAO extends ConexionBaseDatos {
         Integer rowsAffected = preparedStatement.executeUpdate();
         logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Habilidad "+id_habilidad+" del personaje "+id_personaje+" equipada.");
     }
+    // Funcion que se encargará de pasar equipada_combate de true a false en la tabla personajes_habilidades
+    public void desequiparHabilidad(Integer id_personaje, Integer id_habilidad) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+        String sql = "UPDATE PERSONAJES_HABILIDADES SET EQUIPADA_COMBATE='FALSE' WHERE id_personaje=? AND id_habilidad=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setInt(1,id_personaje);
+        preparedStatement.setInt(2,id_habilidad);
+        Integer rowsAffected = preparedStatement.executeUpdate();
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Habilidad "+id_habilidad+" del personaje "+id_personaje+" equipada.");
+    }
 }

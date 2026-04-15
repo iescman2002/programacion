@@ -1,11 +1,9 @@
 package rpg.ui;
 
 import rpg.dao.*;
-import rpg.exception.DatoInvalidoException;
-import rpg.exception.FondosInsuficientesException;
-import rpg.exception.NivelInsuficienteException;
-import rpg.exception.RecursoNoEncontradoException;
+import rpg.exception.*;
 import rpg.logic.Iteradores;
+import rpg.logic.MotorCombate;
 import rpg.model.*;
 import rpg.utils.Logger;
 
@@ -28,14 +26,14 @@ public class Menus {
         this.personajeDAO = new PersonajeDAO();
     }
 
-    public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException {
+    public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         System.out.println("¡Bienvenido al XPG Guild Master!");
         System.out.println("A continuación, indique que opción deseas acceder:");
         System.out.println("1. Crear personaje.");
         System.out.println("2. Viajar de ciudad.");
         System.out.println("3. Comprar Items.");
         System.out.println("4. Cobro de Impuestos.");
-        System.out.println("5. [SOON].");
+        System.out.println("5. Iniciar Combate.");
         System.out.println("--------------------------------");
 
         logger.escribirLog("["+ LocalDateTime.now()+"] INFO: MenuPrincipal cargado con exito.");
@@ -54,13 +52,16 @@ public class Menus {
             case 4:
                 new Iteradores().cobroDeImpuestos(personajeDAO.getPersonajes());
                 break;
+            case 5:
+                new MotorCombate();
+                break;
             default:
                 System.out.print("Saliendo...");
                 break;
         }
     }
 
-    private void menuCrearPersonaje() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    private void menuCrearPersonaje() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         System.out.println("Ha seleccionado crear personaje.");
         System.out.print("Indique el nombre del personaje: ");
         String nombre = s.nextLine();
@@ -83,9 +84,10 @@ public class Menus {
 
         personajeDAO.crearPersonaje(nombre,id_raza,id_clase);
     }
-    public void menuElegirHabilidades(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    public void menuElegirHabilidades(Personaje personaje, Integer valor) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         // Elegir las habilidades que quiere tener el personaje
-        System.out.println("Su personaje ha sido creado con exito, eliga a continuación las habilidades que quiere que tenga el personaje: ");
+        System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("Elija a continuación las habilidades que quiere que tenga el personaje "+valor);
         // Mostrar las habilidades del personaje
         Personajes_HabilidadesDAO personajesHabilidadesDAO = new Personajes_HabilidadesDAO();
         List<Personajes_Habilidades> personajes_habilidades= personajesHabilidadesDAO.getPersonajes_habilidades();
@@ -94,11 +96,17 @@ public class Menus {
         List<Habilidad> habilidades = habilidadDAO.getHabilidades();
 
         HashMap<Integer, Integer> ids_habilidades_posibles = new HashMap<>(); // La clave sera el contador y el valor el id de la habilidad
+        // Pongo en false todas las habilidades del personaje seleccionado para activar despues solo las elegidas:
+        for (Habilidad habilidad : habilidades) {
+            personajesHabilidadesDAO.desequiparHabilidad(personaje.getId(), habilidad.getId());
+        }
 
         Boolean elegirHabilidad = true;
+        List<Habilidad> habilidades_escogidas = new ArrayList<>();
         while(elegirHabilidad) {
             ids_habilidades_posibles.clear(); // Limpio el hasmap cada ve que se vuelve a llamar al bucle
             Integer contador = 1;
+            // Mostrar las posibles habilidades del personaje
             for (Personajes_Habilidades personaje_habilidades : personajes_habilidades) { // Recorro las filas de la tabla personajes_habilidades (porque cada personajes_habilidades es lo mismo que una fila)
                 if (personaje.getId().equals(personaje_habilidades.getId_personaje())) { // Si el id del personaje que le pasamos es igual al id de personajes_habilidad
                     // Muestro las habilidades correspondientes al id del personaje
@@ -111,13 +119,26 @@ public class Menus {
                     }
                 }
             }
-            System.out.print("Seleccione la que quiera que tenga el personaje o seleccione cualquier otro numero si desea salir: ");
+            System.out.println("Habilidades seleccionadas: " + habilidades_escogidas.size() + " / 3");
+            System.out.print("Personaje "+valor+". Seleccione la que quiera que tenga el personaje o seleccione cualquier otro numero si desea salir: ");
             Integer opcion_escogida = s.nextInt();
-            // Si la opcion_escogida esta dentro del hashmap
+            // Si la opcion_escogida esta dentro del hashmap (Añadir la habilidad al personaje)
             if (ids_habilidades_posibles.containsKey(opcion_escogida)) {
+                // si ya ha escogido 3 habilidades
+                if (habilidades_escogidas.size()>=3) { // Lanza error y no deja escoger mas
+                    logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: El personaje +"+personaje.getId()+". Ha intentado escoger más habilidades de las permitidas.");
+                    throw new LimiteHabilidadesException("ERROR: Ha escogido más habilidades de las permitidas.");
+                }
                 // pone como true la columna equipada_combate de personajes_habilidades
                 personajesHabilidadesDAO.equiparHabilidad(personaje.getId(),ids_habilidades_posibles.get(opcion_escogida)); // Le pasamos el id del personaje y el id de la habilidad que estamos equipando (que sera el valor de la clave de la opcion que escogio el usuario)
+                // Añado la habilidad escogida a la lista de habilidades que ha seleccionado el jugador:
+                for (Habilidad habilidad : habilidades) {
+                    if (habilidad.getId().equals(ids_habilidades_posibles.get(opcion_escogida))) {
+                        habilidades_escogidas.add(habilidad);
+                    }
+                }
             }
+
             // Sino esta dentro del hashmap, significa que el usuario no quiere tener mas habilidades asi que sale del bucle de escoger habilidades
             else {
                 elegirHabilidad = false;
@@ -241,5 +262,29 @@ public class Menus {
             logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: El personaje "+personaje_escogido.getId()+". No tiene fondos suficientes para comprar el item "+item_escogido.getId()+". Oro del jugador: "+ personaje_escogido.getOro()+". Precio Item: "+ item_escogido.getPrecio_oro()+".");
             throw new FondosInsuficientesException("No se ha podido comprar el item, fondos insuficientes.");
         }
+    }
+    public Personaje[] menuElegirPersonaje() {
+        List<Personaje> personajes = personajeDAO.getPersonajes();
+
+        System.out.println("De los siguientes personajes: ");
+        // Mostrar personajes
+        for (Personaje personaje : personajes) {
+            System.out.println(personaje.getId()+". Personaje: "+personaje.getNombre()+". Vida: "+personaje.getVida_actual());
+        }
+        System.out.print("Escoja el personaje 1: ");
+        Integer id_personaje1 = s.nextInt();
+        System.out.print("Y ahora escoja el personaje 2: ");
+        Integer id_personaje2 = s.nextInt();
+
+        Personaje[] personajes_pelean = new Personaje[2];
+        for (Personaje personaje : personajes) {
+            if (personaje.getId().equals(id_personaje1)) {
+                personajes_pelean[0] = personaje; // Personaje 1 posicion 0
+            }
+            if (personaje.getId().equals(id_personaje2)) {
+                personajes_pelean[1] = personaje; // Personaje 2 posicion 1
+            }
+        }
+        return personajes_pelean;
     }
 }
