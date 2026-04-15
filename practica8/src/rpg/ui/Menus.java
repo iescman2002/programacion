@@ -20,10 +20,12 @@ public class Menus {
 
     private Scanner s;
     private Logger logger;
+    private PersonajeDAO personajeDAO;
 
     public Menus() throws SQLException {
         this.logger = new Logger();
         this.s = new Scanner(System.in);
+        this.personajeDAO = new PersonajeDAO();
     }
 
     public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException {
@@ -50,7 +52,7 @@ public class Menus {
                 menuComprarItems();
                 break;
             case 4:
-                new Iteradores().cobroDeImpuestos(new PersonajeDAO().getPersonajes());
+                new Iteradores().cobroDeImpuestos(personajeDAO.getPersonajes());
                 break;
             default:
                 System.out.print("Saliendo...");
@@ -79,7 +81,7 @@ public class Menus {
         System.out.print("Seleccione la que quiera que tenga el personaje: ");
         int id_clase =  s.nextInt();
 
-        new PersonajeDAO().crearPersonaje(nombre,id_raza,id_clase);
+        personajeDAO.crearPersonaje(nombre,id_raza,id_clase);
     }
     public void menuElegirHabilidades(Personaje personaje) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         // Elegir las habilidades que quiere tener el personaje
@@ -126,7 +128,6 @@ public class Menus {
         System.out.println("Ha seleccionado cambiar al personaje de ciudad.");
         System.out.println("De los siguientes jugadores:");
         // Imprimir los posibles personajes:
-        PersonajeDAO personajeDAO = new PersonajeDAO();
 
         List<Personaje> personajes = personajeDAO.getPersonajes();
         for (Personaje personaje : personajes) {
@@ -197,7 +198,6 @@ public class Menus {
         System.out.println("Ha seleccionado la opción para comprar items.");
         System.out.println("De los siguientes jugadores:");
         // Imprimir los posibles personajes:
-        PersonajeDAO personajeDAO = new PersonajeDAO();
         List<Personaje> personajes = personajeDAO.getPersonajes();
         for (Personaje personaje : personajes) {
             System.out.println(personaje.getId()+". Personaje "+personaje.getNombre()+". Oro: "+personaje.getOro());
