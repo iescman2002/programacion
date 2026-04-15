@@ -12,7 +12,7 @@ public class Logger {
     private String path;
 
     public Logger() {
-        this.path = "Info.logs";
+        this.path = "practica8/src/rpg/utils/Info.logs";
     }
 
 
