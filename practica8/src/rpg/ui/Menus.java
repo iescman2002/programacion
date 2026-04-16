@@ -8,6 +8,7 @@ import rpg.model.*;
 import rpg.utils.Logger;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -265,7 +266,7 @@ public class Menus {
         }
     }
 
-    public Personaje[] menuElegirPersonaje() {
+    public Personaje[] menuElegirPersonaje() throws RecursoNoEncontradoException, DatoInvalidoException {
         List<Personaje> personajes = personajeDAO.getPersonajes();
 
         System.out.println("De los siguientes personajes: ");
@@ -275,30 +276,40 @@ public class Menus {
         }
         System.out.print("Escoja el personaje 1: ");
         Integer id_personaje1 = s.nextInt();
-        System.out.print("Y ahora escoja el personaje 2: ");
+        System.out.print("Escoja el personaje 2: ");
         Integer id_personaje2 = s.nextInt();
 
         Personaje[] personajes_pelean = new Personaje[2];
         for (Personaje personaje : personajes) {
             if (personaje.getId().equals(id_personaje1)) {
                 personajes_pelean[0] = personaje; // Personaje 1 posicion 0
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: Personaje 1 seleccionado.");
             }
             if (personaje.getId().equals(id_personaje2)) {
                 personajes_pelean[1] = personaje; // Personaje 2 posicion 1
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: Personaje 2 seleccionado.");
             }
         }
         return personajes_pelean;
     }
-    public Habilidad mostrarYEscogerHabilidad (List<Habilidad> habilidades)  {
-        // Imprimo las habilidades del personaje y sus usos:
-        System.out.println("Habilidades del personaje:");
+    public Habilidad mostrarYEscogerHabilidad (HashMap<Habilidad,Integer> habilidades_usos_restantes, Integer def_enemigo)  {
+        // Guardo las habilidades del personaje:
+        List<Habilidad> habilidades = new ArrayList<>();
+        for (Habilidad habilidad : habilidades_usos_restantes.keySet()) {
+            habilidades.add(habilidad);
+        }
+
+        // Imprimo las habilidades del personaje y sus usos (HashMap):
         System.out.println("------------------------------------------");
+        System.out.println("Habilidades del personaje:");
         for (Habilidad habilidad : habilidades) {
-            System.out.println("Habilidad "+habilidad.getId()+". "+habilidad.getNombre()+". Usos restantes: "+ habilidad.getUsos_maximos());
+            Integer dmg_habilidad = habilidad.getDanio_base()-(def_enemigo/2);
+            if (dmg_habilidad == 0) dmg_habilidad = 1;
+            System.out.println("Habilidad "+habilidad.getId()+". "+habilidad.getNombre()+" Daño:  "+dmg_habilidad+". Usos restantes: "+ habilidades_usos_restantes.get(habilidad)+".");
         }
         System.out.println("------------------------------------------");
         // Escoger habilidad que va a usar en este turno:
-        System.out.println("Escoja la habilidad que quiera usar o introduzca 0 para hacer el ataque básico: ");
+        System.out.print("Escoja la habilidad que quiera usar o introduzca 0 para hacer el ataque básico: ");
         Integer id_habilidad_escogida = s.nextInt(); // Si habilidad_escogida es 0 o cualquier numero que no este en las habilidades_escogidas devuelve null (que será igual al ataque básico).
         Habilidad habilidad_escogida = null;
         // Bucle para obtener la habilidad escogida:
@@ -309,5 +320,20 @@ public class Menus {
         }
 
         return habilidad_escogida;
+    }
+    public void mostrarEstadisticasCombate(Personaje pj1, Integer valor, Personaje pj2) {
+        System.out.println("--------------------------------------");
+        if (valor == 1) {
+            System.out.println("Stats Personaje actual:");
+            System.out.println(pj1.getNombre()+". Vida actual: "+ pj1.getVida_actual());
+            System.out.println("Stats Personaje rival:");
+            System.out.println(pj2.getNombre()+". Vida actual: "+ pj2.getVida_actual());
+        }
+        else {
+            System.out.println("Stats Personaje actual:");
+            System.out.println(pj2.getNombre()+". Vida actual: "+ pj2.getVida_actual());
+            System.out.println("Stats Personaje rival:");
+            System.out.println(pj1.getNombre()+". Vida actual: "+ pj1.getVida_actual());
+        }
     }
 }

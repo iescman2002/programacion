@@ -6,8 +6,10 @@ import rpg.exception.LimiteHabilidadesException;
 import rpg.exception.RecursoNoEncontradoException;
 import rpg.model.*;
 import rpg.ui.Menus;
+import rpg.utils.Logger;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +28,10 @@ public class MotorCombate {
     Integer pj1_defensa;
     Integer pj2_defensa;
     Menus menus;
+    Logger logger;
+
     public MotorCombate() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+        this.logger = new Logger();
         this.menus = new Menus();
         // Primero, Elegir personajes que van a combatir
         Personaje[] personajes_pelean = this.menus.menuElegirPersonaje();
@@ -64,48 +69,16 @@ public class MotorCombate {
         this.pj2_defensa = stats_pj2[1];
 
         // Iniciar combate
+        System.out.println("-------------------------------");
         System.out.println("FASE 2. Comienza el combate!");
-        while (this.personaje1.getVida_actual() > 0 && this.personaje2.getVida_actual() > 0) {
-            // Turno jugador 1:
-            System.out.println("Turno del jugador 1:");
-            // Escoger habilidades:
-            Habilidad habilidad_escogida = this.menus.mostrarYEscogerHabilidad(this.habilidades_pj1);
-            // Si la habilidad escogida es null (ataque básico):
-            if (habilidad_escogida == null) {
-                ataqueBasico(this.personaje1);
-            }
-            // Si la habilidad seleccionada se puede usar y no es null:
-            else if (habilidadSePuedeUsar(habilidad_escogida, 1)) {
-                usarHabilidad(this.personaje1, habilidad_escogida);
-            }
-            // Si no le quedan usos a la habilidad:
-            else {
-                // ataca por defecto:
-                ataqueBasico(this.personaje1);
-            }
-            // Si en el turno del jugador 1:
-            if (this.personaje2.getVida_actual() <= 0) {
-                break;
-            }
-            // Turno jugador 2:
-            System.out.println("Turno del jugador 2:");
-            habilidad_escogida = this.menus.mostrarYEscogerHabilidad(this.habilidades_pj2);
-            // Si la habilidad escogida es null (ataque básico):
-            if (habilidad_escogida == null) {
-                ataqueBasico(this.personaje2);
-            }
-            // Si la habilidad seleccionada se puede usar y no es null:
-            else if (habilidadSePuedeUsar(habilidad_escogida, 2)) {
-                usarHabilidad(this.personaje2, habilidad_escogida);
-            }
-        }
-
-        // Si la vida de personaj1 es <= 0 El ganador es personaje2, sino el ganador es personaje1
+        combatir();
+        // Si la vida de personaje1 es <= 0 El ganador es personaje2, sino el ganador es personaje1
         Personaje ganador = (this.personaje1.getVida_actual() <= 0) ? personaje2 : personaje1;
         System.out.println("El ganador es: " + ganador.getNombre());
+        logger.escribirLog("["+ LocalDate.now()+"] INFO: El jugador "+ganador.getNombre()+" ha ganado el combate.");
     }
 
-    private Integer[] obtenerDanioYDefensa(Personaje pj) throws SQLException {
+    private Integer[] obtenerDanioYDefensa(Personaje pj) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         InventarioDAO inventarioDAO = new InventarioDAO();
         List<Inventario> inventarios = inventarioDAO.getInventarios();
 
@@ -139,6 +112,7 @@ public class MotorCombate {
         Integer[] stats = new Integer[2];
         stats[0] =  dmgTotal_pj; // El daño del personaje en la posicion 0
         stats[1] =  defTotal_pj; // La defensa del personaje en la posicion 1
+        logger.escribirLog("["+ LocalDate.now()+"] INFO: La defensa y el daño de los personajes que pelearán han sido cargadas con éxito.");
         return stats;
     }
 
@@ -170,6 +144,8 @@ public class MotorCombate {
             if (dmg_habilidad<=0) {dmg_habilidad = 1;} // Si el daño acaba siendo negativo o 0 pongo un daño minimo de 1
             // 3ro: Restarle a la vida del personaje al que le atacamos el daño que haremos:
             this.personaje2.setVida_actual(this.personaje2.getVida_actual()-dmg_habilidad);
+            System.out.println("------------------------------------------");
+            System.out.println("El personaje "+pj.getNombre()+" ha infligido un total de: "+dmg_habilidad+" daño.");
         }
         // Sino pos el personaje que ataca será el pj2:
         else {
@@ -181,6 +157,7 @@ public class MotorCombate {
             if (dmg_habilidad<=0) {dmg_habilidad = 1;} // Si el daño acaba siendo negativo o 0 pongo un daño minimo de 1
             // 3ro: Restarle a la vida del personaje al que le atacamos el daño que haremos:
             this.personaje1.setVida_actual(this.personaje1.getVida_actual()-dmg_habilidad);
+            System.out.println("El personaje "+pj.getNombre()+" ha infligido un total de: "+dmg_habilidad+" daño.");
         }
     }
 
@@ -200,6 +177,74 @@ public class MotorCombate {
             if (dmg_total<=0) {dmg_total = 1;} // Si el daño acaba siendo negativo o 0 pongo un daño minimo de 1
             // 2ndo: Le resto a la vida del personaje al que le atacamos el daño que haremos:
             this.personaje1.setVida_actual(this.personaje1.getVida_actual()-dmg_total);
+        }
+    }
+
+    private void combatir() throws RecursoNoEncontradoException, DatoInvalidoException {
+        logger.escribirLog("["+ LocalDate.now()+"] INFO: Combate empezado entre el jugador "+this.personaje1.getId()+" y el jugador + "+this.personaje2.getId()+".");
+        Integer turno = 1;
+        while (this.personaje1.getVida_actual() > 0 && this.personaje2.getVida_actual() > 0) {
+            // Turno jugador 1:
+            System.out.println("Turno  "+turno+". Va el jugador 1:");
+            turno(this.personaje1);
+            logger.escribirLog("["+ LocalDate.now()+"] INFO: Turno "+turno+" finalizado.");
+            turno++;
+            // Si en el turno del jugador 1 muere el jugador 2:
+            if (this.personaje2.getVida_actual() <= 0) {
+                break; // Salgo del bucle para que no ataque el personaje 2 estando muerto
+            }
+            // Turno jugador 2:
+            System.out.println("Turno  "+turno+". Va el jugador 2:");
+            turno(this.personaje2);
+            logger.escribirLog("["+ LocalDate.now()+"] INFO: Turno "+turno+" finalizado.");
+            turno++;
+        }
+    }
+
+    private void turno(Personaje personaje) throws RecursoNoEncontradoException, DatoInvalidoException {
+
+        // Si el turno corresponde al personaje 1:
+        if (personaje.equals(this.personaje1)) {
+            menus.mostrarEstadisticasCombate(this.personaje1,1,this.personaje2);
+            // Escoger habilidades:
+            Habilidad habilidad_escogida = this.menus.mostrarYEscogerHabilidad(pj1_Habilidades_usos_restantes,this.pj2_defensa); // Le paso las habilidades del personaje (clave) y sus usos restantes (valor), asi como la defensa del personaje contrario
+            // Si la habilidad escogida es null (ataque básico):
+            if (habilidad_escogida == null) {
+                ataqueBasico(personaje);
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado la habilidad ataque básico.");
+            }
+            // Si la habilidad seleccionada se puede usar y no es null:
+            else if (habilidadSePuedeUsar(habilidad_escogida, 1)) {
+                usarHabilidad(personaje, habilidad_escogida);
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 1 ha usado la habilidad:"+habilidad_escogida.getNombre());
+            }
+            // Si no le quedan usos a la habilidad:
+            else {
+                // ataca por defecto:
+                ataqueBasico(personaje);
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
+            }
+        }
+        // Sino pos el turno es del personaje 2:
+        else {
+            menus.mostrarEstadisticasCombate(this.personaje2,2,this.personaje1);
+            // Escoger habilidades:
+            Habilidad habilidad_escogida = this.menus.mostrarYEscogerHabilidad(pj2_Habilidades_usos_restantes,this.pj1_defensa); // Le paso las habilidades del personaje (clave) y sus usos restantes (valor), asi como la defensa del personaje contrario
+            if (habilidad_escogida == null) {
+                ataqueBasico(personaje);
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado la habilidad ataque básico.");
+            }
+            // Si la habilidad seleccionada se puede usar y no es null:
+            else if (habilidadSePuedeUsar(habilidad_escogida, 2)) {
+                usarHabilidad(personaje, habilidad_escogida);
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado la habilidad:"+habilidad_escogida.getNombre());
+            }
+            // Si no le quedan usos a la habilidad:
+            else {
+                // ataca por defecto:
+                ataqueBasico(personaje);
+                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
+            }
         }
     }
 }
