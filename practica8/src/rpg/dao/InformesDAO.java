@@ -8,32 +8,37 @@ import rpg.utils.Logger;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class InformesDAO extends ConexionBaseDatos {
     List<Personaje> personajes;
     Logger logger;
-    public InformesDAO() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    public InformesDAO() throws DatoInvalidoException {
         this.personajes = new ArrayList<>();
         this.logger = new Logger();
 
         cargarPersonajes();
     }
 
-    private void cargarPersonajes() throws SQLException {
-        this.resultSet = statement.executeQuery("SELECT * FROM PERSONAJES");
+    private void cargarPersonajes() throws DatoInvalidoException {
+        try {
+            this.resultSet = statement.executeQuery("SELECT * FROM PERSONAJES");
 
-        while (resultSet.next()) {
-            Integer id = resultSet.getInt("id");
-            String nombre = resultSet.getString("nombre");
-            Integer nivel = resultSet.getInt("nivel");
-            Integer oro = resultSet.getInt("oro");
-            Integer vida_actual = resultSet.getInt("vida_actual");
-            Integer id_raza = resultSet.getInt("id_raza");
-            Integer id_clase = resultSet.getInt("id_clase");
-            Integer id_ciudad_actual = resultSet.getInt("id_ciudad_actual");
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                String nombre = resultSet.getString("nombre");
+                Integer nivel = resultSet.getInt("nivel");
+                Integer oro = resultSet.getInt("oro");
+                Integer vida_actual = resultSet.getInt("vida_actual");
+                Integer id_raza = resultSet.getInt("id_raza");
+                Integer id_clase = resultSet.getInt("id_clase");
+                Integer id_ciudad_actual = resultSet.getInt("id_ciudad_actual");
 
-            personajes.add(new Personaje(id,nombre,nivel,oro,vida_actual,id_raza,id_clase,id_ciudad_actual));
+                personajes.add(new Personaje(id, nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual));
+            }
+        } catch (SQLException e) {
+            logger.escribirLog("["+ LocalDateTime.now() +"] ERROR: No se pudieron cargar los personajes: " + e.getMessage());
         }
     }
     // Ordenar de mayor a menor
@@ -41,7 +46,8 @@ public class InformesDAO extends ConexionBaseDatos {
         ordenarPersonajesOroMayorAMenor();
         verPodio();
     }
-    private void ordenarPersonajesOroMayorAMenor() throws RecursoNoEncontradoException, DatoInvalidoException {
+
+    private void ordenarPersonajesOroMayorAMenor() throws DatoInvalidoException {
         // Ordeno la lista directamente de this.personajes usando el metodo sort (no devuelve nada solo se encarga de ordenar la lista que le pasao)
         // Donde dentro llamo al comparador que comparará el oro de los personajes
         personajes.sort(Comparator.comparingInt(Personaje::getOro).reversed()); // Sin .reserved ordena de menor a mayor y quiero que ordene de mas a menos por eso pongo reserved
@@ -55,7 +61,7 @@ public class InformesDAO extends ConexionBaseDatos {
         }
     }
 
-    public void censoDeClases() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    public void censoDeClases() throws DatoInvalidoException {
         HashMap<String, Integer> clases_cantidad = new HashMap<>(); // La clave será la clase y el valor la cantidad
         HashMap<Integer, Integer> auxiliar = new HashMap<>(); // Mapa auxiliar donde la clave será el id_clase y el valor la cantidad
 

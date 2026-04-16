@@ -22,14 +22,14 @@ public class Menus {
     private PersonajeDAO personajeDAO;
     private InformesDAO informesDAO;
 
-    public Menus() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    public Menus() throws DatoInvalidoException {
         this.logger = new Logger();
         this.s = new Scanner(System.in);
         this.personajeDAO = new PersonajeDAO();
         this.informesDAO = new InformesDAO();
     }
 
-    public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+    public void cargarMenuPrincipal() throws FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         System.out.println("¡Bienvenido al XPG Guild Master!");
         System.out.println("A continuación, indique que opción deseas acceder:");
         System.out.println("1. Crear personaje.");
@@ -70,7 +70,7 @@ public class Menus {
         }
     }
 
-    private void menuCrearPersonaje() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+    private void menuCrearPersonaje() throws RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         System.out.println("Ha seleccionado crear personaje.");
         System.out.print("Indique el nombre del personaje: ");
         String nombre = s.nextLine();
@@ -93,7 +93,7 @@ public class Menus {
 
         personajeDAO.crearPersonaje(nombre,id_raza,id_clase);
     }
-    public List<Habilidad> menuElegirHabilidades(Personaje personaje, Integer valor) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+    public List<Habilidad> menuElegirHabilidades(Personaje personaje, Integer valor) throws DatoInvalidoException, LimiteHabilidadesException {
         // Elegir las habilidades que quiere tener el personaje
         System.out.println("---------------------------------------------------------------------------------");
         System.out.println("Elija a continuación las habilidades que quiere que tenga el personaje "+valor);
@@ -135,7 +135,7 @@ public class Menus {
             if (ids_habilidades_posibles.containsKey(opcion_escogida)) {
                 // si ya ha escogido 3 habilidades
                 if (habilidades_escogidas.size()>=3) { // Lanza error y no deja escoger mas
-                    logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: El personaje +"+personaje.getId()+". Ha intentado escoger más habilidades de las permitidas.");
+                    this.logger.escribirLog("["+ LocalDateTime.now()+"] ERROR: El personaje +"+personaje.getId()+". Ha intentado escoger más habilidades de las permitidas.");
                     throw new LimiteHabilidadesException("ERROR: Ha escogido más habilidades de las permitidas.");
                 }
                 // pone como true la columna equipada_combate de personajes_habilidades
@@ -155,7 +155,7 @@ public class Menus {
         }
         return habilidades_escogidas;
     }
-    private void menuCambiarDeCiudad() throws SQLException, RecursoNoEncontradoException,DatoInvalidoException {
+    private void menuCambiarDeCiudad() throws DatoInvalidoException {
         System.out.println("Ha seleccionado cambiar al personaje de ciudad.");
         System.out.println("De los siguientes jugadores:");
         // Imprimir los posibles personajes:
@@ -224,7 +224,7 @@ public class Menus {
             logger.escribirLog("["+LocalDateTime.now()+"] ERROR: Se ha intentado cambiar la ciudad del personaje "+personaje_escogido.getId()+". El personaje se encuentra actualmente desterrado (Oro: "+personaje_escogido.getOro()+").");
         }
     }
-    private void menuComprarItems() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException {
+    private void menuComprarItems() throws FondosInsuficientesException, DatoInvalidoException {
         // Elegir el personaje que vaya a comprar el item:
         System.out.println("Ha seleccionado la opción para comprar items.");
         System.out.println("De los siguientes jugadores:");
@@ -274,7 +274,7 @@ public class Menus {
         }
     }
 
-    public Personaje[] menuElegirPersonaje() throws RecursoNoEncontradoException, DatoInvalidoException {
+    public Personaje[] menuElegirPersonaje() throws DatoInvalidoException {
         List<Personaje> personajes = personajeDAO.getPersonajes();
 
         System.out.println("De los siguientes personajes: ");

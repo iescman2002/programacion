@@ -20,7 +20,7 @@ public class Iteradores {
         this.logger = new Logger();
     }
 
-    public void cobroDeImpuestos(List<Personaje> listaPersonajes) throws SQLException, DatoInvalidoException, RecursoNoEncontradoException {
+    public void cobroDeImpuestos(List<Personaje> listaPersonajes) throws DatoInvalidoException {
         PersonajeDAO personajeDAO = new PersonajeDAO();
         // Crear lista de personajes que SI tengan ciudad
         List<Personaje> personajes_con_ciudad = new ArrayList<>();

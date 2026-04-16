@@ -16,13 +16,11 @@ public class Logger {
     }
 
 
-    public void escribirLog(String mensaje) throws RecursoNoEncontradoException, DatoInvalidoException {
+    public void escribirLog(String mensaje) throws DatoInvalidoException {
         // Copia y pega de la practica 7
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.path, true))) { // Leer el fichero
             writer.write(mensaje);
             writer.newLine();
-        } catch (FileNotFoundException e) {
-            throw new RecursoNoEncontradoException("El fichero: " + e.getMessage() + " no ha sido encontrado.");
         } catch (IOException e) {
             throw new DatoInvalidoException("No se ha podido escribir en el fichero logs.");
         }

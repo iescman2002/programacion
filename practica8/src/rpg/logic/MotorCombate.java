@@ -10,6 +10,7 @@ import rpg.utils.Logger;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +31,7 @@ public class MotorCombate {
     Menus menus;
     Logger logger;
 
-    public MotorCombate() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+    public MotorCombate() throws DatoInvalidoException, LimiteHabilidadesException {
         this.logger = new Logger();
         this.menus = new Menus();
         // Primero, Elegir personajes que van a combatir
@@ -46,7 +47,7 @@ public class MotorCombate {
         InicioCombate();
     }
 
-    private void InicioCombate() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+    private void InicioCombate() throws DatoInvalidoException, LimiteHabilidadesException {
         System.out.println("FASE 1. Preparación del combate.");
         // Despues, elegir las habilidades de los personajes
         this.habilidades_pj1 = this.menus.menuElegirHabilidades(this.personaje1, 1);
@@ -85,11 +86,11 @@ public class MotorCombate {
             perdedor = this.personaje2;
         }
         System.out.println("El ganador es: " + ganador.getNombre());
-        logger.escribirLog("["+ LocalDate.now()+"] INFO: El jugador "+ganador.getNombre()+" ha ganado el combate. El jugador "+perdedor.getNombre()+" ha perdido.");
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El jugador "+ganador.getNombre()+" ha ganado el combate. El jugador "+perdedor.getNombre()+" ha perdido.");
         darPremioGanador(ganador,perdedor);
     }
 
-    private Integer[] obtenerDanioYDefensa(Personaje pj) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
+    private Integer[] obtenerDanioYDefensa(Personaje pj) throws DatoInvalidoException {
         InventarioDAO inventarioDAO = new InventarioDAO();
         List<Inventario> inventarios = inventarioDAO.getInventarios();
 
@@ -123,7 +124,7 @@ public class MotorCombate {
         Integer[] stats = new Integer[2];
         stats[0] =  dmgTotal_pj; // El daño del personaje en la posicion 0
         stats[1] =  defTotal_pj; // La defensa del personaje en la posicion 1
-        logger.escribirLog("["+ LocalDate.now()+"] INFO: La defensa y el daño de los personajes que pelearán han sido cargadas con éxito.");
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: La defensa y el daño de los personajes que pelearán han sido cargadas con éxito.");
         return stats;
     }
 
@@ -191,14 +192,14 @@ public class MotorCombate {
         }
     }
 
-    private void combatir() throws RecursoNoEncontradoException, DatoInvalidoException {
-        logger.escribirLog("["+ LocalDate.now()+"] INFO: Combate empezado entre el jugador "+this.personaje1.getId()+" y el jugador + "+this.personaje2.getId()+".");
+    private void combatir() throws DatoInvalidoException {
+        logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Combate empezado entre el jugador "+this.personaje1.getId()+" y el jugador + "+this.personaje2.getId()+".");
         Integer turno = 1;
         while (this.personaje1.getVida_actual() > 0 && this.personaje2.getVida_actual() > 0) {
             // Turno jugador 1:
             System.out.println("Turno  "+turno+". Va el jugador 1:");
             turno(this.personaje1);
-            logger.escribirLog("["+ LocalDate.now()+"] INFO: Turno "+turno+" finalizado.");
+            logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Turno "+turno+" finalizado.");
             turno++;
             // Si en el turno del jugador 1 muere el jugador 2:
             if (this.personaje2.getVida_actual() <= 0) {
@@ -207,12 +208,12 @@ public class MotorCombate {
             // Turno jugador 2:
             System.out.println("Turno  "+turno+". Va el jugador 2:");
             turno(this.personaje2);
-            logger.escribirLog("["+ LocalDate.now()+"] INFO: Turno "+turno+" finalizado.");
+            logger.escribirLog("["+ LocalDateTime.now()+"] INFO: Turno "+turno+" finalizado.");
             turno++;
         }
     }
 
-    private void turno(Personaje personaje) throws RecursoNoEncontradoException, DatoInvalidoException {
+    private void turno(Personaje personaje) throws DatoInvalidoException {
 
         // Si el turno corresponde al personaje 1:
         if (personaje.equals(this.personaje1)) {
@@ -222,18 +223,18 @@ public class MotorCombate {
             // Si la habilidad escogida es null (ataque básico):
             if (habilidad_escogida == null) {
                 ataqueBasico(personaje);
-                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado la habilidad ataque básico.");
+                logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje 2 ha usado la habilidad ataque básico.");
             }
             // Si la habilidad seleccionada se puede usar y no es null:
             else if (habilidadSePuedeUsar(habilidad_escogida, 1)) {
                 usarHabilidad(personaje, habilidad_escogida);
-                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 1 ha usado la habilidad:"+habilidad_escogida.getNombre());
+                logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje 1 ha usado la habilidad:"+habilidad_escogida.getNombre());
             }
             // Si no le quedan usos a la habilidad:
             else {
                 // ataca por defecto:
                 ataqueBasico(personaje);
-                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
+                logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
             }
         }
         // Sino pos el turno es del personaje 2:
@@ -243,28 +244,28 @@ public class MotorCombate {
             Habilidad habilidad_escogida = this.menus.mostrarYEscogerHabilidad(pj2_Habilidades_usos_restantes,this.pj1_defensa); // Le paso las habilidades del personaje (clave) y sus usos restantes (valor), asi como la defensa del personaje contrario
             if (habilidad_escogida == null) {
                 ataqueBasico(personaje);
-                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado la habilidad ataque básico.");
+                logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje 2 ha usado la habilidad ataque básico.");
             }
             // Si la habilidad seleccionada se puede usar y no es null:
             else if (habilidadSePuedeUsar(habilidad_escogida, 2)) {
                 usarHabilidad(personaje, habilidad_escogida);
-                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado la habilidad:"+habilidad_escogida.getNombre());
+                logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje 2 ha usado la habilidad:"+habilidad_escogida.getNombre());
             }
             // Si no le quedan usos a la habilidad:
             else {
                 // ataca por defecto:
                 ataqueBasico(personaje);
-                logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
+                logger.escribirLog("["+ LocalDateTime.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
             }
         }
     }
 
-    private void darPremioGanador(Personaje ganador, Personaje perdedor) throws SQLException {
+    private void darPremioGanador(Personaje ganador, Personaje perdedor) throws DatoInvalidoException {
         PersonajeDAO personajeDAO = new PersonajeDAO();
         // 1ero: Obtengo 20% del oro del perdedor
         double premioInicial = perdedor.getOro()*0.20;
         // 1.5: Casteo el valor del premio de double a int redondeando
-        int premio = (int) Math.round(perdedor.getOro() * 0.20);
+        int premio = (int) Math.round(premioInicial);
         // 2ndo: Actualizo el oro del jugador al oro que tenía menos el 20%
         perdedor.setOro(perdedor.getOro()-premio);
         // 3ro: Actualizo el oro del personaje en la BBDD
@@ -273,5 +274,6 @@ public class MotorCombate {
         ganador.setOro(ganador.getOro()+premio);
         // 5to: Actualizo el oro del ganador en la BBDD
         personajeDAO.actualizarOroPersonaje(ganador);
+        System.out.println("El perdedor le ha dado al ganador un total de: "+premio+" monedas.");
     }
 }

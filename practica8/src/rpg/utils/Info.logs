@@ -325,3 +325,23 @@
 [2026-04-16] INFO: Lista de personajes ordenada por oro de mayor a menor.
 [2026-04-17T00:07:22.782145559] INFO: MenuPrincipal cargado con exito.
 [2026-04-17] INFO: Censo de clases mostrado.
+[2026-04-17T00:51:53.763387873] INFO: MenuPrincipal cargado con exito.
+[2026-04-17] INFO: Personaje 1 seleccionado.
+[2026-04-17] INFO: Personaje 2 seleccionado.
+[2026-04-17T00:52:03.215022703] INFO: Habilidad 6 del personaje 2 equipada (true).
+[2026-04-17T00:52:04.571979002] INFO: Habilidad 5 del personaje 2 equipada (true).
+[2026-04-17T00:52:07.459772935] INFO: Habilidad 5 del personaje 3 equipada (true).
+[2026-04-17] INFO: La defensa y el daño de los personajes que pelearán han sido cargadas con éxito.
+[2026-04-17] INFO: La defensa y el daño de los personajes que pelearán han sido cargadas con éxito.
+[2026-04-17] INFO: Combate empezado entre el jugador 2 y el jugador + 3.
+[2026-04-17] INFO: El personaje 1 ha usado la habilidad:Relampago
+[2026-04-17] INFO: Turno 1 finalizado.
+[2026-04-17] INFO: El personaje 2 ha usado la habilidad:Dardo de Hielo
+[2026-04-17] INFO: Turno 2 finalizado.
+[2026-04-17] INFO: El personaje 1 ha usado la habilidad:Relampago
+[2026-04-17] INFO: Turno 3 finalizado.
+[2026-04-17] INFO: El personaje 2 ha usado la habilidad:Dardo de Hielo
+[2026-04-17] INFO: Turno 4 finalizado.
+[2026-04-17] INFO: El personaje 1 ha usado la habilidad:Relampago
+[2026-04-17] INFO: Turno 5 finalizado.
+[2026-04-17] INFO: El jugador Eldara Sabia ha ganado el combate. El jugador Sujeto de pruebas ha perdido.
