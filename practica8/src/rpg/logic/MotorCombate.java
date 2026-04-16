@@ -72,10 +72,21 @@ public class MotorCombate {
         System.out.println("-------------------------------");
         System.out.println("FASE 2. Comienza el combate!");
         combatir();
+        // Obtener ganador y perdedor
+        Personaje ganador = null;
+        Personaje perdedor = null;
         // Si la vida de personaje1 es <= 0 El ganador es personaje2, sino el ganador es personaje1
-        Personaje ganador = (this.personaje1.getVida_actual() <= 0) ? personaje2 : personaje1;
+        if (this.personaje1.getVida_actual() <= 0) {
+            ganador = this.personaje2;
+            perdedor = this.personaje1;
+        }
+        else {
+            ganador = this.personaje1;
+            perdedor = this.personaje2;
+        }
         System.out.println("El ganador es: " + ganador.getNombre());
-        logger.escribirLog("["+ LocalDate.now()+"] INFO: El jugador "+ganador.getNombre()+" ha ganado el combate.");
+        logger.escribirLog("["+ LocalDate.now()+"] INFO: El jugador "+ganador.getNombre()+" ha ganado el combate. El jugador "+perdedor.getNombre()+" ha perdido.");
+        darPremioGanador(ganador,perdedor);
     }
 
     private Integer[] obtenerDanioYDefensa(Personaje pj) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
@@ -246,5 +257,21 @@ public class MotorCombate {
                 logger.escribirLog("["+ LocalDate.now()+"] INFO: El personaje 2 ha usado una habilidad sin usos restantes o ha elegido una habilidad que no tiene equipada.");
             }
         }
+    }
+
+    private void darPremioGanador(Personaje ganador, Personaje perdedor) throws SQLException {
+        PersonajeDAO personajeDAO = new PersonajeDAO();
+        // 1ero: Obtengo 20% del oro del perdedor
+        double premioInicial = perdedor.getOro()*0.20;
+        // 1.5: Casteo el valor del premio de double a int redondeando
+        int premio = (int) Math.round(perdedor.getOro() * 0.20);
+        // 2ndo: Actualizo el oro del jugador al oro que tenía menos el 20%
+        perdedor.setOro(perdedor.getOro()-premio);
+        // 3ro: Actualizo el oro del personaje en la BBDD
+        personajeDAO.actualizarOroPersonaje(perdedor);
+        // 4ro: Le doy el oro obtenido del perdedor al ganador
+        ganador.setOro(ganador.getOro()+premio);
+        // 5to: Actualizo el oro del ganador en la BBDD
+        personajeDAO.actualizarOroPersonaje(ganador);
     }
 }
