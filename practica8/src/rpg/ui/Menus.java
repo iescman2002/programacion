@@ -35,6 +35,7 @@ public class Menus {
         System.out.println("3. Comprar Items.");
         System.out.println("4. Cobro de Impuestos.");
         System.out.println("5. Iniciar Combate.");
+        System.out.println("6. Ver Top 3 Jugadores más ricos.");
         System.out.println("--------------------------------");
 
         logger.escribirLog("["+ LocalDateTime.now()+"] INFO: MenuPrincipal cargado con exito.");
@@ -56,6 +57,8 @@ public class Menus {
             case 5:
                 new MotorCombate();
                 break;
+            case 6:
+                new InformesDAO();
             default:
                 System.out.print("Saliendo...");
                 break;
