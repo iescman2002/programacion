@@ -44,13 +44,13 @@ public class MotorCombate {
     private void InicioCombate() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         System.out.println("FASE 1. Preparación del combate.");
         // Despues, elegir las habilidades de los personajes
-        this.habilidades_pj1 = this.menus.menuElegirHabilidades(this.personaje1,1);
-        this.habilidades_pj2 = this.menus.menuElegirHabilidades(this.personaje2,2);
+        this.habilidades_pj1 = this.menus.menuElegirHabilidades(this.personaje1, 1);
+        this.habilidades_pj2 = this.menus.menuElegirHabilidades(this.personaje2, 2);
         for (Habilidad habilidad : this.habilidades_pj1) {
-            this.pj1_Habilidades_usos_restantes.put(habilidad,habilidad.getUsos_maximos());
+            this.pj1_Habilidades_usos_restantes.put(habilidad, habilidad.getUsos_maximos());
         }
         for (Habilidad habilidad : this.habilidades_pj2) {
-            this.pj2_Habilidades_usos_restantes.put(habilidad,habilidad.getUsos_maximos());
+            this.pj2_Habilidades_usos_restantes.put(habilidad, habilidad.getUsos_maximos());
         }
 
         // Ahora, calculamos el daño total de cada personaje
@@ -65,15 +65,44 @@ public class MotorCombate {
 
         // Iniciar combate
         System.out.println("FASE 2. Comienza el combate!");
-        while (this.personaje1.getVida_actual()>0&&this.personaje2.getVida_actual()>0) {
+        while (this.personaje1.getVida_actual() > 0 && this.personaje2.getVida_actual() > 0) {
             // Turno jugador 1:
             System.out.println("Turno del jugador 1:");
+            // Escoger habilidades:
             Habilidad habilidad_escogida = this.menus.mostrarYEscogerHabilidad(this.habilidades_pj1);
-            // Si la habilidad seleccionada se puede usar:
-            if (habilidadSePuedeUsar(habilidad_escogida,1)) {
-                usarHabilidad(this.personaje1,habilidad_escogida);
+            // Si la habilidad escogida es null (ataque básico):
+            if (habilidad_escogida == null) {
+                ataqueBasico(this.personaje1);
+            }
+            // Si la habilidad seleccionada se puede usar y no es null:
+            else if (habilidadSePuedeUsar(habilidad_escogida, 1)) {
+                usarHabilidad(this.personaje1, habilidad_escogida);
+            }
+            // Si no le quedan usos a la habilidad:
+            else {
+                // ataca por defecto:
+                ataqueBasico(this.personaje1);
+            }
+            // Si en el turno del jugador 1:
+            if (this.personaje2.getVida_actual() <= 0) {
+                break;
+            }
+            // Turno jugador 2:
+            System.out.println("Turno del jugador 2:");
+            habilidad_escogida = this.menus.mostrarYEscogerHabilidad(this.habilidades_pj2);
+            // Si la habilidad escogida es null (ataque básico):
+            if (habilidad_escogida == null) {
+                ataqueBasico(this.personaje2);
+            }
+            // Si la habilidad seleccionada se puede usar y no es null:
+            else if (habilidadSePuedeUsar(habilidad_escogida, 2)) {
+                usarHabilidad(this.personaje2, habilidad_escogida);
             }
         }
+
+        // Si la vida de personaj1 es <= 0 El ganador es personaje2, sino el ganador es personaje1
+        Personaje ganador = (this.personaje1.getVida_actual() <= 0) ? personaje2 : personaje1;
+        System.out.println("El ganador es: " + ganador.getNombre());
     }
 
     private Integer[] obtenerDanioYDefensa(Personaje pj) throws SQLException {
@@ -132,7 +161,7 @@ public class MotorCombate {
 
     private void usarHabilidad(Personaje pj,Habilidad habilidad) {
         // Si el personaje que ataca es el pj1:
-        if (pj.getId().equals(this.personaje1.getId())) {
+        if (pj.equals(this.personaje1)) {
             // 1ero: Resto 1 a los usos restantes de la habilidad:
             Integer usos_restantes = pj1_Habilidades_usos_restantes.get(habilidad)-1;
             this.pj1_Habilidades_usos_restantes.replace(habilidad,usos_restantes);
@@ -152,6 +181,25 @@ public class MotorCombate {
             if (dmg_habilidad<=0) {dmg_habilidad = 1;} // Si el daño acaba siendo negativo o 0 pongo un daño minimo de 1
             // 3ro: Restarle a la vida del personaje al que le atacamos el daño que haremos:
             this.personaje1.setVida_actual(this.personaje1.getVida_actual()-dmg_habilidad);
+        }
+    }
+
+    private void ataqueBasico(Personaje pj) {
+        // Si el personaje que ataca es el pj1:
+        if (pj.equals(this.personaje1)) {
+            // 1ero: Guardo el daño total que haré (para que sea más legible)
+            Integer dmg_total = this.pj1_danio_fisico-(pj2_defensa/2);
+            if (dmg_total<=0) {dmg_total = 1;} // Si el daño acaba siendo negativo o 0 pongo un daño minimo de 1
+            // 2ndo: Le resto a la vida del personaje al que le atacamos el daño que haremos:
+            this.personaje2.setVida_actual(this.personaje2.getVida_actual()-dmg_total);
+        }
+        // Sino pos el personaje que ataca será el pj2:
+        else {
+            // 1ero: Guardo el daño total que haré (para que sea más legible)
+            Integer dmg_total = this.pj2_danio_fisico-(pj1_defensa/2);
+            if (dmg_total<=0) {dmg_total = 1;} // Si el daño acaba siendo negativo o 0 pongo un daño minimo de 1
+            // 2ndo: Le resto a la vida del personaje al que le atacamos el daño que haremos:
+            this.personaje1.setVida_actual(this.personaje1.getVida_actual()-dmg_total);
         }
     }
 }

@@ -298,8 +298,8 @@ public class Menus {
         }
         System.out.println("------------------------------------------");
         // Escoger habilidad que va a usar en este turno:
-        System.out.println("Escoja la habilidad que quiera usar: ");
-        Integer id_habilidad_escogida = s.nextInt();
+        System.out.println("Escoja la habilidad que quiera usar o introduzca 0 para hacer el ataque básico: ");
+        Integer id_habilidad_escogida = s.nextInt(); // Si habilidad_escogida es 0 o cualquier numero que no este en las habilidades_escogidas devuelve null (que será igual al ataque básico).
         Habilidad habilidad_escogida = null;
         // Bucle para obtener la habilidad escogida:
         for (Habilidad habilidad : habilidades) {
