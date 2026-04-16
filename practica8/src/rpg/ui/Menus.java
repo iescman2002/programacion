@@ -84,7 +84,7 @@ public class Menus {
 
         personajeDAO.crearPersonaje(nombre,id_raza,id_clase);
     }
-    public void menuElegirHabilidades(Personaje personaje, Integer valor) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
+    public List<Habilidad> menuElegirHabilidades(Personaje personaje, Integer valor) throws SQLException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
         // Elegir las habilidades que quiere tener el personaje
         System.out.println("---------------------------------------------------------------------------------");
         System.out.println("Elija a continuación las habilidades que quiere que tenga el personaje "+valor);
@@ -144,6 +144,7 @@ public class Menus {
                 elegirHabilidad = false;
             }
         }
+        return habilidades_escogidas;
     }
     private void menuCambiarDeCiudad() throws SQLException, RecursoNoEncontradoException,DatoInvalidoException {
         System.out.println("Ha seleccionado cambiar al personaje de ciudad.");
@@ -263,6 +264,7 @@ public class Menus {
             throw new FondosInsuficientesException("No se ha podido comprar el item, fondos insuficientes.");
         }
     }
+
     public Personaje[] menuElegirPersonaje() {
         List<Personaje> personajes = personajeDAO.getPersonajes();
 
@@ -286,5 +288,26 @@ public class Menus {
             }
         }
         return personajes_pelean;
+    }
+    public Habilidad mostrarYEscogerHabilidad (List<Habilidad> habilidades)  {
+        // Imprimo las habilidades del personaje y sus usos:
+        System.out.println("Habilidades del personaje:");
+        System.out.println("------------------------------------------");
+        for (Habilidad habilidad : habilidades) {
+            System.out.println("Habilidad "+habilidad.getId()+". "+habilidad.getNombre()+". Usos restantes: "+ habilidad.getUsos_maximos());
+        }
+        System.out.println("------------------------------------------");
+        // Escoger habilidad que va a usar en este turno:
+        System.out.println("Escoja la habilidad que quiera usar: ");
+        Integer id_habilidad_escogida = s.nextInt();
+        Habilidad habilidad_escogida = null;
+        // Bucle para obtener la habilidad escogida:
+        for (Habilidad habilidad : habilidades) {
+           if (habilidad.getId().equals(id_habilidad_escogida)) {
+               habilidad_escogida = habilidad;
+           }
+        }
+
+        return habilidad_escogida;
     }
 }
