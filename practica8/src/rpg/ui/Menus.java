@@ -20,11 +20,13 @@ public class Menus {
     private Scanner s;
     private Logger logger;
     private PersonajeDAO personajeDAO;
+    private InformesDAO informesDAO;
 
-    public Menus() throws SQLException {
+    public Menus() throws SQLException, RecursoNoEncontradoException, DatoInvalidoException {
         this.logger = new Logger();
         this.s = new Scanner(System.in);
         this.personajeDAO = new PersonajeDAO();
+        this.informesDAO = new InformesDAO();
     }
 
     public void cargarMenuPrincipal() throws SQLException, FondosInsuficientesException, RecursoNoEncontradoException, DatoInvalidoException, LimiteHabilidadesException {
@@ -36,6 +38,7 @@ public class Menus {
         System.out.println("4. Cobro de Impuestos.");
         System.out.println("5. Iniciar Combate.");
         System.out.println("6. Ver Top 3 Jugadores más ricos.");
+        System.out.println("7. Ver Censo de Clases.");
         System.out.println("--------------------------------");
 
         logger.escribirLog("["+ LocalDateTime.now()+"] INFO: MenuPrincipal cargado con exito.");
@@ -58,7 +61,9 @@ public class Menus {
                 new MotorCombate();
                 break;
             case 6:
-                new InformesDAO();
+                this.informesDAO.verPersonajesMasRicos();
+            case 7:
+                this.informesDAO.censoDeClases();
             default:
                 System.out.print("Saliendo...");
                 break;
