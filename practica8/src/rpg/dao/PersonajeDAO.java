@@ -62,7 +62,6 @@ public class PersonajeDAO extends ConexionBaseDatos {
         }
         Personaje personaje = new Personaje(null, nombre, 1, 100, vida, id_raza, id_clase, 1);
         this.personajes.add(personaje);
-
         // Insertar en la base de datos el personaje creado:
         insertarPersonaje(personaje);
         // Actualizar personajes_habilidades con las habilidades correspondientes del nuevo personaje creado:
@@ -80,6 +79,18 @@ public class PersonajeDAO extends ConexionBaseDatos {
 
             preparedStatement.setString(1, personaje.getNombre());
             preparedStatement.setInt(2, personaje.getNivel());
+            // guardar la ciudad del personaje:
+            CiudadDAO ciudadDAO = new CiudadDAO();
+            for (Ciudad ciudad: ciudadDAO.getCiudades()) {
+                // Si el id de la ciudad es el mismo que el del personaje:
+                if (ciudad.getId().equals(personaje.getId())) {
+                    // Si el nivel de la ciudad es >1:
+                    if (ciudad.getNivel_minimo_acceso()>1) {
+                        personaje.setOro(500);
+                    }
+                    // Si no lo es el oro del personaje será 100
+                }
+            }
             preparedStatement.setInt(3, personaje.getOro());
             preparedStatement.setInt(4, personaje.getVida_actual());
             preparedStatement.setInt(5, personaje.getId_raza());
@@ -216,6 +227,22 @@ public class PersonajeDAO extends ConexionBaseDatos {
         } catch (SQLException e) {
             logger.escribirLog("[" + LocalDateTime.now() + "] ERROR: No se pudo actualizar el oro del personaje "+ personaje.getId() + " - " + e.getMessage());
 
+        }
+    }
+
+    public void actualizarIdPersonaje(Personaje personaje, Integer IdDemonio) throws DatoInvalidoException {
+        try {
+            String sql = "UPDATE PERSONAJES SET ID=? WHERE ID=?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            // Actualizamos solo el oro del jugador porque es el unico valor que cambiamos (-20)
+            // No actualizamos la columna id_ciudad_actual porque la actualizamos ya cuando la desterramos
+            preparedStatement.setInt(1,IdDemonio);
+            preparedStatement.setInt(2,personaje.getId());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            logger.escribirLog("[" + LocalDateTime.now() + "] INFO: ID actualizado a "+ IdDemonio + " - " + e.getMessage());
         }
     }
 }
